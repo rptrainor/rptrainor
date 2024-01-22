@@ -1,20 +1,17 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
+<Layout title='Welcome to Astro.'>
+  <main class='flex flex-col gap-4'>
 		<div>
-			<h1>Ryan Trainor</h1>
+			<h1 class='text-5xl leading-tight text-left'>
+				Software Engineer <br />&amp; Startup Specialist
+			</h1>
+			<h2 class='text-lg sm:text-xl font-bold'>
+				Over 8 years at the forefront of startup development,<br /> often as a pioneering
+				engineering hire
+			</h2>
 		</div>
-	</main>
+  </main>
 </Layout>
-
-<style>
-	div {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 100vh;
-	}
-</style>
