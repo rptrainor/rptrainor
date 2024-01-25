@@ -11,9 +11,23 @@ const { title } = Astro.props;
 <html lang='en'>
   <head>
     <meta charset='UTF-8' />
-    <meta name='description' content='Astro description' />
+    <meta name='description' content='RPTRAINOR: Where cutting-edge software engineering meets dynamic startup growth strategies. Dive into a world of technological innovation and business acumen.' />
     <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link rel="icon" type="image/png" sizes="48x48" href="https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/c15d9764-0aca-46bb-895d-c8ca1e28f700/favicon">    
+    <meta name='theme-color' content='#181e23' />
+    <meta name='twitter:card' content='summary' />
+    <meta name='twitter:site' content='@rptrainor' />
+    <meta name='twitter:creator' content='@rptrainor' />
+    <meta name='twitter:title' content='RPTRAINOR | Expert in Software Engineering and Startup Growth' />
+    <meta name='twitter:description' content='RPTRAINOR: Where cutting-edge software engineering meets dynamic startup growth strategies. Dive into a world of technological innovation and business acumen.' />
+    <meta name='twitter:image' content='https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/314eb404-2862-445d-efe0-eb9b7a55cf00/ogImage' />
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content='RPTRAINOR: Where cutting-edge software engineering meets dynamic startup growth strategies. Dive into a world of technological innovation and business acumen.' />
+    <meta property='og:image' content='https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/314eb404-2862-445d-efe0-eb9b7a55cf00/ogImage' />
+    <meta property='og:url' content='https://rptrainor.com' />
+    <meta property='og:site_name' content='RPTRAINOR' />
+    <meta property='og:locale' content='en_US' />
+    <meta property='og:type' content='website' />
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -21,15 +35,20 @@ const { title } = Astro.props;
     class='p-4 sm:px-12 max-w-prose flex flex-col gap-4 items-start mx-auto'
   >
     <header class='flex gap-4 justify-start items-center w-full'>
-      <img
-        src='https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/b9e35925-14a2-4eab-3732-750c68910c00/logo'
-        alt='RPTRAINOR'
-        width='32'
-        height='32'
-        class='rounded-full'
-      />
-      <p class='grow'>RPTRAINOR</p>
-      <a href='mailto:ryan@lightup.fyi' aria-label="Email ryan at ryan@lightup.fyi">
+      <a href='/' class='flex flex-nowrap gap-2 grow'>
+        <img
+          src='https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/b9e35925-14a2-4eab-3732-750c68910c00/logo'
+          alt='RPTRAINOR'
+          width='32'
+          height='32'
+          class='rounded-full'
+        />
+        <p class='grow'>RPTRAINOR</p>
+      </a>
+      <a
+        href='mailto:ryan@lightup.fyi'
+        aria-label='Email ryan at ryan@lightup.fyi'
+      >
         <svg
           xmlns='http://www.w3.org/2000/svg'
           fill='none'
@@ -38,7 +57,6 @@ const { title } = Astro.props;
           stroke-width='2'
           stroke-linecap='round'
           stroke-linejoin='round'
-          stroke='currentColor'
           class='h-5 w-5'
         >
           <path
@@ -48,7 +66,10 @@ const { title } = Astro.props;
           ></path>
         </svg>
       </a>
-      <a href='https://wa.me/+16127475815' aria-label="Whatsapp message ryan at +16127475815">
+      <a
+        href='https://wa.me/+16127475815'
+        aria-label='Whatsapp message ryan at +16127475815'
+      >
         <svg
           fill='currentColor'
           class='h-5 w-5'
@@ -90,7 +111,10 @@ const { title } = Astro.props;
           </g>
         </svg>
       </a>
-      <a href='https://twitter.com/rptrainor' aria-label="Visit Ryan's Twitter page">
+      <a
+        href='https://twitter.com/rptrainor'
+        aria-label="Visit Ryan's Twitter page"
+      >
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='24'
@@ -107,7 +131,11 @@ const { title } = Astro.props;
           ></path>
         </svg>
       </a>
-      <a href='https://github.com/rptrainor' class="hidden sm:block" aria-label="Visit Ryan's Github page">
+      <a
+        href='https://github.com/rptrainor'
+        class='hidden sm:block'
+        aria-label="Visit Ryan's Github page"
+      >
         <svg
           viewBox='0 0 438.549 438.549'
           class='h-5 w-5'
@@ -122,7 +150,11 @@ const { title } = Astro.props;
           ></path></svg
         >
       </a>
-      <a href='https://linkedin.com/in/rptrainor' class="hidden sm:block" aria-label="Visit Ryan's LinkedIn page">
+      <a
+        href='https://linkedin.com/in/rptrainor'
+        class='hidden sm:block'
+        aria-label="Visit Ryan's LinkedIn page"
+      >
         <svg
           fill='currentColor'
           version='1.1'
@@ -157,7 +189,7 @@ const { title } = Astro.props;
 <style is:global>
   html {
     font-family: "Montserrat Variable", sans-serif;
-    background: #13151a;
+    background: #181e23;
     color: #fff;
   }
   *,
