@@ -1,5 +1,7 @@
 ---
 import "@fontsource-variable/montserrat";
+
+import Posthog from '../analytics/Posthog.astro'
 interface Props {
   title: string;
 }
@@ -186,6 +188,7 @@ const { title } = Astro.props;
     </header>
     <slot />
   </body>
+  <Posthog />
 </html>
 <style is:global>
   html {
