@@ -2,9 +2,7 @@
 export const prerender = true
 import AstroImage from '~/layouts/AstroImage.astro'
 import LargeScores from '~/images/LargeScores.webp'
-import ScoresLarge390x430 from '~/images/ScoresLarge390x430.webp'
 ---
 <div>
-  <AstroImage src={ScoresLarge390x430} alt="Ryan Trainor" height={380} width={420} class="block md:hidden" loading="eager" />
-  <AstroImage src={LargeScores} alt="Ryan Trainor" height={500} width={500} class="hidden md:block" loading="eager" />
+  <AstroImage src={LargeScores} alt="Ryan Trainor" width={570} height={629} class="object-cover" loading="eager" />
 </div>
