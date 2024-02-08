@@ -5,5 +5,12 @@ import LargeScores from '~/images/LargeScores.webp'
 ---
 
 <div>
-	<AstroImage src={LargeScores} alt="Ryan Trainor" class="object-cover" loading="eager" />
+	<AstroImage
+		src={LargeScores}
+    widths={[240, 540, 720, LargeScores.width]}
+    sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${LargeScores.width}px`}
+		alt="Ryan Trainor"
+		class="object-cover"
+		loading="eager"
+	/>
 </div>
