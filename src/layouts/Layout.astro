@@ -1,213 +1,109 @@
 ---
-export const prerender = true
+// * src/layouts/Layout.astro
+export const prerender = true;
 import "@fontsource-variable/montserrat";
 
+// import "~/styles/global.css";
+import Header from "~/features/header_section/HeaderSection.astro";
 import Posthog from '~/analytics/Posthog.astro'
 interface Props {
   title: string;
+  description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang="en-US">
   <head>
-    <meta charset='UTF-8' />
-    <meta name='description' content='RPTRAINOR: Where cutting-edge software engineering meets dynamic startup growth strategies. Dive into a world of technological innovation and business acumen.' />
-    <meta name='viewport' content='width=device-width' />
-    <link rel="icon" type="image/png" sizes="48x48" href="https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/c15d9764-0aca-46bb-895d-c8ca1e28f700/favicon">    
+    <link rel="preconnect" href="https://imagedelivery.net" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={Astro.url} />
+
+    {/* SEO Meta Tags */}
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="Ryan P Trainor Newsletter, Web Performance Tips, App Optimization Strategies, Sales Funnel Best Practices, Landing Page Design Insights, Tech Innovations by Ryan P Trainor, Software Development Techniques, Business Growth Hacks, Digital Marketing Trends, High-Performance Computing, Entrepreneurial Insights, User Experience Best Practices, Technology Leadership, Efficient Coding Practices, Ryan P Trainor Tech Insights"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/5e9f5cd3-caae-443d-c433-bed5d0a18d00/favicon48x48"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/5e9f5cd3-caae-443d-c433-bed5d0a18d00/favicon32x32"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/5e9f5cd3-caae-443d-c433-bed5d0a18d00/favicon180x180"
+    />
+
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta name='theme-color' content='#181e23' />
-    <meta name='twitter:card' content='summary' />
-    <meta name='twitter:site' content='@rptrainor' />
-    <meta name='twitter:creator' content='@rptrainor' />
-    <meta name='twitter:title' content='RPTRAINOR | Expert in Software Engineering and Startup Growth' />
-    <meta name='twitter:description' content='RPTRAINOR: Where cutting-edge software engineering meets dynamic startup growth strategies. Dive into a world of technological innovation and business acumen.' />
-    <meta name='twitter:image' content='https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/314eb404-2862-445d-efe0-eb9b7a55cf00/ogImage' />
-    <meta property='og:title' content={title} />
-    <meta property='og:description' content='RPTRAINOR: Where cutting-edge software engineering meets dynamic startup growth strategies. Dive into a world of technological innovation and business acumen.' />
-    <meta property='og:image' content='https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/314eb404-2862-445d-efe0-eb9b7a55cf00/ogImage' />
-    <meta property='og:url' content='https://rptrainor.com' />
-    <meta property='og:site_name' content='RPTRAINOR' />
-    <meta property='og:locale' content='en_US' />
-    <meta property='og:type' content='website' />
-    <meta name='generator' content={Astro.generator} />
+
+    {/* Open Graph Meta Tags */}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta
+      property="og:image"
+      content="https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/314eb404-2862-445d-efe0-eb9b7a55cf00/ogImage"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`Open graph image for ${title}`} />
+
+    {/* Twitter Card Meta Tags */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={Astro.url} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta
+      name="twitter:image"
+      content="https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/314eb404-2862-445d-efe0-eb9b7a55cf00/ogImage"
+    />
+
+    {/* Theme Color for Mobile Browsers */}
+    <meta name="theme-color" content="#181E23" />
+
+    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body
-    class='p-4 sm:px-12 max-w-prose flex flex-col gap-4 items-start mx-auto'
+    class="flex flex-col p-4 gap-4 justify-center items-center mx-auto max-w-7xl bg-brand_black"
   >
-    <header class='flex gap-4 justify-start items-center w-full'>
-      <a href='/' class='flex flex-nowrap gap-2 grow'>
-        <img
-          src='https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/b9e35925-14a2-4eab-3732-750c68910c00/logo'
-          alt='Ryan Trainor profile picture'
-          width='32'
-          height='32'
-          class='rounded-full'
-        />
-        <p class='grow'>RPTRAINOR</p>
-      </a>
-      <a
-        href='mailto:ryan@lightup.fyi'
-        aria-label='Email ryan at ryan@lightup.fyi'
-      >
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          fill='none'
-          viewBox='0 0 24 24'
-          stroke='currentColor'
-          stroke-width='2'
-          stroke-linecap='round'
-          stroke-linejoin='round'
-          class='h-5 w-5'
-        >
-          <path
-            stroke-linecap='round'
-            stroke-linejoin='round'
-            d='M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75'
-          ></path>
-        </svg>
-      </a>
-      <a
-        href='https://wa.me/+16127475815'
-        aria-label='Whatsapp message ryan at +16127475815'
-      >
-        <svg
-          fill='currentColor'
-          class='h-5 w-5'
-          height='800px'
-          width='800px'
-          version='1.1'
-          id='Layer_1'
-          xmlns='http://www.w3.org/2000/svg'
-          viewBox='0 0 308 308'
-          stroke='currentColor'
-          stroke-width='2'
-          stroke-linecap='round'
-          stroke-linejoin='round'
-        >
-          <g id='XMLID_468_'>
-            <path
-              id='XMLID_469_'
-              d='M227.904,176.981c-0.6-0.288-23.054-11.345-27.044-12.781c-1.629-0.585-3.374-1.156-5.23-1.156
-		c-3.032,0-5.579,1.511-7.563,4.479c-2.243,3.334-9.033,11.271-11.131,13.642c-0.274,0.313-0.648,0.687-0.872,0.687
-		c-0.201,0-3.676-1.431-4.728-1.888c-24.087-10.463-42.37-35.624-44.877-39.867c-0.358-0.61-0.373-0.887-0.376-0.887
-		c0.088-0.323,0.898-1.135,1.316-1.554c1.223-1.21,2.548-2.805,3.83-4.348c0.607-0.731,1.215-1.463,1.812-2.153
-		c1.86-2.164,2.688-3.844,3.648-5.79l0.503-1.011c2.344-4.657,0.342-8.587-0.305-9.856c-0.531-1.062-10.012-23.944-11.02-26.348
-		c-2.424-5.801-5.627-8.502-10.078-8.502c-0.413,0,0,0-1.732,0.073c-2.109,0.089-13.594,1.601-18.672,4.802
-		c-5.385,3.395-14.495,14.217-14.495,33.249c0,17.129,10.87,33.302,15.537,39.453c0.116,0.155,0.329,0.47,0.638,0.922
-		c17.873,26.102,40.154,45.446,62.741,54.469c21.745,8.686,32.042,9.69,37.896,9.69c0.001,0,0.001,0,0.001,0
-		c2.46,0,4.429-0.193,6.166-0.364l1.102-0.105c7.512-0.666,24.02-9.22,27.775-19.655c2.958-8.219,3.738-17.199,1.77-20.458
-		C233.168,179.508,230.845,178.393,227.904,176.981z'
-            ></path>
-            <path
-              id='XMLID_470_'
-              d='M156.734,0C73.318,0,5.454,67.354,5.454,150.143c0,26.777,7.166,52.988,20.741,75.928L0.212,302.716
-		c-0.484,1.429-0.124,3.009,0.933,4.085C1.908,307.58,2.943,308,4,308c0.405,0,0.813-0.061,1.211-0.188l79.92-25.396
-		c21.87,11.685,46.588,17.853,71.604,17.853C240.143,300.27,308,232.923,308,150.143C308,67.354,240.143,0,156.734,0z
-		 M156.734,268.994c-23.539,0-46.338-6.797-65.936-19.657c-0.659-0.433-1.424-0.655-2.194-0.655c-0.407,0-0.815,0.062-1.212,0.188
-		l-40.035,12.726l12.924-38.129c0.418-1.234,0.209-2.595-0.561-3.647c-14.924-20.392-22.813-44.485-22.813-69.677
-		c0-65.543,53.754-118.867,119.826-118.867c66.064,0,119.812,53.324,119.812,118.867
-		C276.546,215.678,222.799,268.994,156.734,268.994z'
-            ></path>
-          </g>
-        </svg>
-      </a>
-      <a
-        href='https://twitter.com/rptrainor'
-        aria-label="Visit Ryan's Twitter page"
-      >
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          width='24'
-          height='24'
-          viewBox='0 0 24 24'
-          fill='none'
-          stroke='currentColor'
-          stroke-width='2'
-          stroke-linecap='round'
-          stroke-linejoin='round'
-          class='h-5 w-5'
-          ><path
-            d='M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z'
-          ></path>
-        </svg>
-      </a>
-      <a
-        href='https://github.com/rptrainor'
-        class='hidden sm:block'
-        aria-label="Visit Ryan's Github page"
-      >
-        <svg
-          viewBox='0 0 438.549 438.549'
-          class='h-5 w-5'
-          stroke='currentColor'
-          stroke-width='2'
-          stroke-linecap='round'
-          stroke-linejoin='round'
-        >
-          <path
-            fill='currentColor'
-            d='M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z'
-          ></path></svg
-        >
-      </a>
-      <a
-        href='https://linkedin.com/in/rptrainor'
-        class='hidden sm:block'
-        aria-label="Visit Ryan's LinkedIn page"
-      >
-        <svg
-          fill='currentColor'
-          version='1.1'
-          xmlns='http://www.w3.org/2000/svg'
-          width='800px'
-          height='800px'
-          viewBox='0 0 512 512'
-          class='h-5 w-5'
-          stroke='currentColor'
-          stroke-width='2'
-          stroke-linecap='round'
-          stroke-linejoin='round'
-        >
-          <g id='7935ec95c421cee6d86eb22ecd125aef'>
-            <path
-              style='display: inline; fill-rule: evenodd; clip-rule: evenodd;'
-              d='M116.504,500.219V170.654H6.975v329.564H116.504
-		L116.504,500.219z M61.751,125.674c38.183,0,61.968-25.328,61.968-56.953c-0.722-32.328-23.785-56.941-61.252-56.941
-		C24.994,11.781,0.5,36.394,0.5,68.722c0,31.625,23.772,56.953,60.53,56.953H61.751L61.751,125.674z M177.124,500.219
-		c0,0,1.437-298.643,0-329.564H286.67v47.794h-0.727c14.404-22.49,40.354-55.533,99.44-55.533
-		c72.085,0,126.116,47.103,126.116,148.333v188.971H401.971V323.912c0-44.301-15.848-74.531-55.497-74.531
-		c-30.254,0-48.284,20.38-56.202,40.08c-2.897,7.012-3.602,16.861-3.602,26.711v184.047H177.124L177.124,500.219z'
-            >
-            </path>
-          </g>
-        </svg>
-      </a>
-    </header>
+    <Header />
     <slot />
   </body>
   <Posthog />
 </html>
+
 <style is:global>
   @tailwind base;
   @tailwind utilities;
-  /* @tailwind components; */
+
+  body,
   html {
-    font-family: "Montserrat Variable", sans-serif;
-    background: #181e23;
-    color: #fff;
-  }
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
     min-width: 0;
+    font-family: "Montserrat", "sans";
   }
+
   body {
     line-height: 1;
+    background: #181e23;
     font-style: normal;
     transition: font-size 0.3s ease-out;
     font-weight: 700;
@@ -216,8 +112,109 @@ const { title } = Astro.props;
     font-size: 18px;
   }
 
+  /* width */
+  *::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* Track */
+  *::-webkit-scrollbar-track {
+    border-radius: 1px;
+  }
+
+  /* Handle */
+  *::-webkit-scrollbar-thumb {
+    background: #a9a2a2;
+    border-radius: 1px;
+  }
+
+  a {
+    text-decoration: none;
+    color: currentColor;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  label,
+  button,
+  input {
+    font-weight: 700;
+  }
+
+  /* Optional: Add this CSS to hide the scrollbar aesthetically */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  h1 {
+    font-size: 1.67rem;
+    scroll-margin: 5rem;
+    line-height: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: #fff;
+    overflow-wrap: break-word;
+    text-align: center;
+    @media (min-width: 1024px) {
+      line-height: 1;
+    }
+  }
+
+  h2 {
+    font-size: 1.39rem;
+    scroll-margin: 5rem;
+    line-height: 2.25rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    margin-top: 0px;
+  }
+
   p {
     line-height: 1.75rem;
     max-width: 65ch;
+  }
+
+  /* Tablet screen sizes */
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 2.22rem; /* Scaled up for tablet */
+    }
+
+    h2 {
+      font-size: 1.94rem; /* Scaled up for tablet */
+    }
+  }
+
+  /* Desktop screen sizes */
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 2.78rem; /* Scaled up for desktop */
+    }
+
+    h2 {
+      font-size: 2.22rem; /* Scaled up for desktop */
+    }
+  }
+
+  ::selection {
+    background-color: #ffda00;
+    color: #181e23;
   }
 </style>
