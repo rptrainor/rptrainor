@@ -1,220 +1,202 @@
 ---
 // * src/layouts/Layout.astro
-export const prerender = true;
-import "@fontsource-variable/montserrat";
+export const prerender = true
+import '@fontsource-variable/montserrat'
 
 // import "~/styles/global.css";
-import Header from "~/features/header_section/HeaderSection.astro";
+import Header from '~/features/header_section/HeaderSection.astro'
 import Posthog from '~/analytics/Posthog.astro'
 interface Props {
-  title: string;
-  description: string;
+	title: string
+	description: string
 }
 
-const { title, description } = Astro.props;
+const { title, description } = Astro.props
 ---
 
 <!doctype html>
 <html lang="en-US">
-  <head>
-    <link rel="preconnect" href="https://imagedelivery.net" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={Astro.url} />
+	<head>
+		<link rel="preconnect" href="https://imagedelivery.net" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href={Astro.url} />
 
-    {/* SEO Meta Tags */}
-    <meta name="title" content={title} />
-    <meta name="description" content={description} />
-    <meta
-      name="keywords"
-      content="Ryan P Trainor Newsletter, Web Performance Tips, App Optimization Strategies, Sales Funnel Best Practices, Landing Page Design Insights, Tech Innovations by Ryan P Trainor, Software Development Techniques, Business Growth Hacks, Digital Marketing Trends, High-Performance Computing, Entrepreneurial Insights, User Experience Best Practices, Technology Leadership, Efficient Coding Practices, Ryan P Trainor Tech Insights"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="48x48"
-      href="https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/5e9f5cd3-caae-443d-c433-bed5d0a18d00/favicon48x48"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/5e9f5cd3-caae-443d-c433-bed5d0a18d00/favicon32x32"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/5e9f5cd3-caae-443d-c433-bed5d0a18d00/favicon180x180"
-    />
+		{/* SEO Meta Tags */}
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<meta
+			name="keywords"
+			content="Ryan P Trainor Newsletter, Web Performance Tips, App Optimization Strategies, Sales Funnel Best Practices, Landing Page Design Insights, Tech Innovations by Ryan P Trainor, Software Development Techniques, Business Growth Hacks, Digital Marketing Trends, High-Performance Computing, Entrepreneurial Insights, User Experience Best Practices, Technology Leadership, Efficient Coding Practices, Ryan P Trainor Tech Insights"
+		/>
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+		<meta name="msapplication-TileColor" content="#da532c" />
+		<meta name="theme-color" content="#ffffff" />
 
-    <link rel="sitemap" href="/sitemap-index.xml" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
 
-    {/* Open Graph Meta Tags */}
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta
-      property="og:image"
-      content="https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/314eb404-2862-445d-efe0-eb9b7a55cf00/ogImage"
-    />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content={`Open graph image for ${title}`} />
+		{/* Open Graph Meta Tags */}
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content={`Open graph image for ${title}`} />
 
-    {/* Twitter Card Meta Tags */}
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content={Astro.url} />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta
-      name="twitter:image"
-      content="https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/314eb404-2862-445d-efe0-eb9b7a55cf00/ogImage"
-    />
+		{/* Twitter Card Meta Tags */}
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={Astro.url} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
 
-    {/* Theme Color for Mobile Browsers */}
-    <meta name="theme-color" content="#181E23" />
+		{/* Theme Color for Mobile Browsers */}
+		<meta name="theme-color" content="#181E23" />
 
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
-  <body
-    class="flex flex-col p-4 gap-4 justify-center items-center mx-auto max-w-7xl bg-brand_black"
-  >
-    <Header />
-    <slot />
-  </body>
-  <Posthog />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body
+		class="mx-auto flex max-w-7xl flex-col items-center justify-center gap-4 bg-brand_black p-4"
+	>
+		<Header />
+		<slot />
+	</body>
+	<Posthog />
 </html>
 
 <style is:global>
-  @tailwind base;
-  @tailwind utilities;
+	@tailwind base;
+	@tailwind utilities;
 
-  body,
-  html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-width: 0;
-    font-family: "Montserrat", "sans";
-  }
+	body,
+	html {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		min-width: 0;
+		font-family: 'Montserrat', 'sans';
+	}
 
-  body {
-    line-height: 1;
-    background: #181e23;
-    font-style: normal;
-    transition: font-size 0.3s ease-out;
-    font-weight: 700;
-    color: #ffffff;
-    -webkit-font-smoothing: antialiased;
-    font-size: 18px;
-  }
+	body {
+		line-height: 1;
+		background: #181e23;
+		font-style: normal;
+		transition: font-size 0.3s ease-out;
+		font-weight: 700;
+		color: #ffffff;
+		-webkit-font-smoothing: antialiased;
+		font-size: 18px;
+	}
 
-  /* width */
-  *::-webkit-scrollbar {
-    display: none;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
+	/* width */
+	*::-webkit-scrollbar {
+		display: none;
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
 
-  /* Track */
-  *::-webkit-scrollbar-track {
-    border-radius: 1px;
-  }
+	/* Track */
+	*::-webkit-scrollbar-track {
+		border-radius: 1px;
+	}
 
-  /* Handle */
-  *::-webkit-scrollbar-thumb {
-    background: #a9a2a2;
-    border-radius: 1px;
-  }
+	/* Handle */
+	*::-webkit-scrollbar-thumb {
+		background: #a9a2a2;
+		border-radius: 1px;
+	}
 
-  a {
-    text-decoration: none;
-    color: currentColor;
-  }
+	a {
+		text-decoration: none;
+		color: currentColor;
+	}
 
-  img {
-    max-width: 100%;
-    height: auto;
-    border: 0;
-  }
+	img {
+		max-width: 100%;
+		height: auto;
+		border: 0;
+	}
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  label,
-  button,
-  input {
-    font-weight: 700;
-  }
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	label,
+	button,
+	input {
+		font-weight: 700;
+	}
 
-  /* Optional: Add this CSS to hide the scrollbar aesthetically */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
+	/* Optional: Add this CSS to hide the scrollbar aesthetically */
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
 
-  .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
+	.no-scrollbar {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
 
-  h1 {
-    font-size: 1.67rem;
-    scroll-margin: 5rem;
-    line-height: 2.5rem;
-    font-weight: 800;
-    letter-spacing: -0.025em;
-    color: #fff;
-    overflow-wrap: break-word;
-    text-align: center;
-    @media (min-width: 1024px) {
-      line-height: 1;
-    }
-  }
+	h1 {
+		font-size: 1.67rem;
+		scroll-margin: 5rem;
+		line-height: 2.5rem;
+		font-weight: 800;
+		letter-spacing: -0.025em;
+		color: #fff;
+		overflow-wrap: break-word;
+		text-align: center;
+		@media (min-width: 1024px) {
+			line-height: 1;
+		}
+	}
 
-  h2 {
-    font-size: 1.39rem;
-    scroll-margin: 5rem;
-    line-height: 2.25rem;
-    font-weight: 600;
-    letter-spacing: -0.025em;
-    margin-top: 0px;
-  }
+	h2 {
+		font-size: 1.39rem;
+		scroll-margin: 5rem;
+		line-height: 2.25rem;
+		font-weight: 600;
+		letter-spacing: -0.025em;
+		margin-top: 0px;
+	}
 
-  p {
-    line-height: 1.75rem;
-    max-width: 65ch;
-  }
+	p {
+		line-height: 1.75rem;
+		max-width: 65ch;
+	}
 
-  /* Tablet screen sizes */
-  @media (min-width: 768px) {
-    h1 {
-      font-size: 2.22rem; /* Scaled up for tablet */
-    }
+	/* Tablet screen sizes */
+	@media (min-width: 768px) {
+		h1 {
+			font-size: 2.22rem; /* Scaled up for tablet */
+		}
 
-    h2 {
-      font-size: 1.94rem; /* Scaled up for tablet */
-    }
-  }
+		h2 {
+			font-size: 1.94rem; /* Scaled up for tablet */
+		}
+	}
 
-  /* Desktop screen sizes */
-  @media (min-width: 1024px) {
-    h1 {
-      font-size: 2.78rem; /* Scaled up for desktop */
-    }
+	/* Desktop screen sizes */
+	@media (min-width: 1024px) {
+		h1 {
+			font-size: 2.78rem; /* Scaled up for desktop */
+		}
 
-    h2 {
-      font-size: 2.22rem; /* Scaled up for desktop */
-    }
-  }
+		h2 {
+			font-size: 2.22rem; /* Scaled up for desktop */
+		}
+	}
 
-  ::selection {
-    background-color: #ffda00;
-    color: #181e23;
-  }
+	::selection {
+		background-color: #ffda00;
+		color: #181e23;
+	}
 </style>
