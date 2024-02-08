@@ -1,8 +1,6 @@
 ---
-import AstroImage from '~/layouts/AstroImage.astro'
 import Layout from '~/layouts/Layout.astro'
-import LargeScores from '~/images/LargeScores.webp'
-import ScoresLarge390x430 from '~/images/ScoresLarge390x430.webp'
+import ScreenShots from '~/features/header_section/ScreenShots.astro'
 ---
 
 <Layout title="RPTRAINOR | Expert in Software Engineering and Startup Growth" description="">
@@ -34,9 +32,6 @@ import ScoresLarge390x430 from '~/images/ScoresLarge390x430.webp'
 				</div>
 			</button>
 		</div>
-		<div class="h-full w-full">
-      <AstroImage src={ScoresLarge390x430} alt="Ryan Trainor" height={380} width={420} class="block md:hidden" loading="eager" />
-			<AstroImage src={LargeScores} alt="Ryan Trainor" height={500} width={500} class="hidden md:block" loading="eager" />
-		</div>
+    <ScreenShots />
 	</main>
 </Layout>
