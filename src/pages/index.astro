@@ -2,18 +2,19 @@
 import AstroImage from '~/layouts/AstroImage.astro'
 import Layout from '~/layouts/Layout.astro'
 import LargeScores from '~/images/LargeScores.webp'
+import ScoresLarge390x430 from '~/images/ScoresLarge390x430.webp'
 ---
 
 <Layout title="RPTRAINOR | Expert in Software Engineering and Startup Growth" description="">
 	<main class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-		<div class="flex flex-col gap-4">
+		<div class="flex flex-col gap-4 max-w-sm">
 			<h1 class="text-pretty text-left">Software Engineer &amp; Google Core Web Vitals Expert</h1>
 			<h2 class="text-lg font-bold sm:text-xl">
 				Over 8 years at the forefront of startup development, often as a pioneering engineering hire
 			</h2>
 			<button
 				type="button"
-				class="inline-flex items-center justify-around gap-x-2 rounded-md bg-brand_pink px-3.5 py-2.5 font-black text-brand_black shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand_pink max-w-sm mx-auto hover:scale-125 transition-all"
+				class="inline-flex items-center justify-around gap-x-2 rounded-md bg-brand_pink px-3.5 py-2.5 font-black text-brand_black shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand_pink hover:scale-125 transition-all"
 			>
 				<p class="text-4xl">Meet the Pro</p>
 				<div
@@ -34,7 +35,8 @@ import LargeScores from '~/images/LargeScores.webp'
 			</button>
 		</div>
 		<div class="h-full w-full">
-			<AstroImage src={LargeScores} alt="Ryan Trainor" height={500} width={500} loading="eager" />
+      <AstroImage src={ScoresLarge390x430} alt="Ryan Trainor" height={380} width={420} class="block md:hidden" loading="eager" />
+			<AstroImage src={LargeScores} alt="Ryan Trainor" height={500} width={500} class="hidden md:block" loading="eager" />
 		</div>
 	</main>
 </Layout>
