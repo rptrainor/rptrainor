@@ -4,10 +4,6 @@ export default {
   theme: {
     extend: {
       colors: {
-        brand_gray: "#A7B5CC",
-        brand_aqua: "#5DA5FA",
-        brand_orange: "#F4C47C",
-        brand_cyan: "#3CD8E2",
         brand_pink: "#FF1B8D",
         brand_yellow: "#FFDA00",
         brand_blue: "#1BB3FF",

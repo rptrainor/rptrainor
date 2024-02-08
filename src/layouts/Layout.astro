@@ -1,7 +1,8 @@
 ---
+export const prerender = true
 import "@fontsource-variable/montserrat";
 
-import Posthog from '../analytics/Posthog.astro'
+import Posthog from '~/analytics/Posthog.astro'
 interface Props {
   title: string;
 }
@@ -191,6 +192,9 @@ const { title } = Astro.props;
   <Posthog />
 </html>
 <style is:global>
+  @tailwind base;
+  @tailwind utilities;
+  /* @tailwind components; */
   html {
     font-family: "Montserrat Variable", sans-serif;
     background: #181e23;

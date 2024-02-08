@@ -1,35 +1,14 @@
 ---
+import AstroImage from "~/layouts/AstroImage.astro";
 import Layout from "~/layouts/Layout.astro";
-const APP_DETAILS_LIST = [
-  {
-    name: "Lightup",
-    url: "https://lightup.fyi",
-    description:
-      "Discover great scientists, and the projects they're working on",
-  },
-	{
-		name: "Auction",
-		url: "https://auction.rptrainor.com",
-		description: "Bid on the price you are willing to pay to build your app idea, and the winning bidder will get their app built for that price."
-	},
-  {
-    name: "OfColor",
-    url: "https://www.ofcolor.com",
-    description: "OfColor is a financial wellness platform for coaching, immersive learning, and intelligent insights for employees of color",
-  },
-	{
-		name: "Confidence",
-		url: "https://www.confidence.com",
-		description: "The Confidence platform enables companies to define and document business processes and derive real time data on the execution of these processes to measure productivity and efficiency."
-	}
-];
+import LargeScores from "~/images/LargeScores.webp";
 ---
 
 <Layout title='RPTRAINOR | Expert in Software Engineering and Startup Growth'>
   <main class='flex flex-col gap-4 md:grid md:grid-cols-12'>
     <div class='md:col-span-5'>
       <h1 class='text-5xl leading-tight text-left'>
-        Software Engineer <br />&amp; Startup Specialist
+        Software Engineer <br />&amp; Google Core Web Vitals Expert
       </h1>
       <h2 class='text-lg sm:text-xl font-bold'>
         Over 8 years at the forefront of startup development, often as a
@@ -37,14 +16,13 @@ const APP_DETAILS_LIST = [
       </h2>
     </div>
     <div class='md:col-span-7 flex flex-col gap-4'>
-      {APP_DETAILS_LIST.map((app) => (
-        <div class="bg-white">
-          <a href={app.url} class="block px-6 py-2">
-            <p class='text-brand_black font-black underline'>{app.name}</p>
-            <p class='text-brand_black'>{app.description}</p>
-          </a>
-        </div>
-      ))}
+      <AstroImage
+        src={LargeScores}
+        alt='Ryan Trainor'
+        height={500}
+        width={500}
+        loading="eager"
+        />
     </div>
   </main>
 </Layout>
