@@ -62,7 +62,7 @@ const { title, description } = Astro.props
 		<title>{title}</title>
 	</head>
 	<body
-		class="mx-auto flex max-w-7xl flex-col items-center justify-center gap-4 bg-brand_black p-4"
+		class="mx-auto flex max-w-4xl flex-col items-center justify-center gap-4 bg-brand_black p-4"
 	>
 		<Header />
 		<slot />
@@ -94,24 +94,6 @@ const { title, description } = Astro.props
 		font-size: 18px;
 	}
 
-	/* width */
-	*::-webkit-scrollbar {
-		display: none;
-		-ms-overflow-style: none; /* IE and Edge */
-		scrollbar-width: none; /* Firefox */
-	}
-
-	/* Track */
-	*::-webkit-scrollbar-track {
-		border-radius: 1px;
-	}
-
-	/* Handle */
-	*::-webkit-scrollbar-thumb {
-		background: #a9a2a2;
-		border-radius: 1px;
-	}
-
 	a {
 		text-decoration: none;
 		color: currentColor;
@@ -122,29 +104,6 @@ const { title, description } = Astro.props
 		height: auto;
 		border: 0;
 	}
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	label,
-	button,
-	input {
-		font-weight: 700;
-	}
-
-	/* Optional: Add this CSS to hide the scrollbar aesthetically */
-	.no-scrollbar::-webkit-scrollbar {
-		display: none;
-	}
-
-	.no-scrollbar {
-		-ms-overflow-style: none; /* IE and Edge */
-		scrollbar-width: none; /* Firefox */
-	}
-
 	h1 {
 		font-size: 1.67rem;
 		scroll-margin: 5rem;
@@ -170,6 +129,7 @@ const { title, description } = Astro.props
 
 	p {
 		line-height: 1.75rem;
+    font-weight: 600;
 		max-width: 65ch;
 	}
 
