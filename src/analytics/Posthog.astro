@@ -1,6 +1,11 @@
 ---
-import posthog from 'posthog-js'
-if (!window.location.host.includes('127.0.0.1') && !window.location.host.includes('localhost')) {
-  posthog.init('phc_zNb4WiofibhVaL5DbrRrUBKwAWDZsH1OlkRB1iQSO3O', { api_host: 'https://app.posthog.com' })
-}
+const posthog = import('posthog-js').then((module) => {
+  const posthog = module.default;
+  // Initialize PostHog with your project API key and configuration
+  posthog.init('phc_zNb4WiofibhVaL5DbrRrUBKwAWDZsH1OlkRB1iQSO3O', {
+    api_host: 'https://app.posthog.com',
+  });
+});
 ---
+
+<div hidden></div>
