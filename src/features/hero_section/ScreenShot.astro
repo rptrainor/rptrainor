@@ -1,0 +1,14 @@
+---
+export const prerender = true
+import score from './scores.png'
+import AstroImage from '../../layouts/AstroImage.astro'
+---
+
+<AstroImage
+	src={score}
+	alt="Screenshot of Google Lighthouse test for Cornerstone page that has straight 100 scores"
+	width={score.width}
+	height={score.height}
+  loading="eager"
+/>
+```
