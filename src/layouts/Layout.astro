@@ -53,8 +53,8 @@ const { title, description } = Astro.props
 	>
 		<Header />
 		<slot />
-		<Posthog client:load />
 	</body>
+	<Posthog />
 </html>
 
 <style is:global>
@@ -116,7 +116,7 @@ const { title, description } = Astro.props
 
 	p {
 		line-height: 1.75rem;
-    font-weight: 600;
+		font-weight: 600;
 		max-width: 65ch;
 	}
 
