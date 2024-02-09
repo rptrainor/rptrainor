@@ -1,16 +1,20 @@
 ---
 import Layout from '~/layouts/Layout.astro'
-import ScreenShots from '~/features/header_section/ScreenShots.astro'
+import ScreenCapture from '~/features/header_section/ScreenCapture.astro'
 ---
 
-<Layout title="Boost Conversions with Straight 100 Scores on Google Lighthouse: Expert Web Solutions & Insightful Analytics" description="Elevate your online business with RPTRAINOR's custom-engineered web solutions. Transition from 'no code' limitations to high-performance landing pages designed to maximize conversions and sales with top Google Lighthouse scores. Experience the difference that expertly optimized web pages can make in achieving your business goals.">
-	<main class="grid grid-cols-1 gap-y-4 sm:gap-4 sm:grid-cols-3">
-		<div class="flex flex-col col-span-2 gap-4 max-w-prose justify-stretch">
-			<h1>Boost Conversions with Straight 100 Scores on Google Lighthouse</h1>
-      <p class="text-center">Expert Web Solutions & Insightful Analytics</p>
-			<button
-				type="button"
-				class="inline-flex items-center justify-center gap-x-2 rounded-md bg-brand_pink px-3.5 py-2.5 font-black text-brand_black shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand_pink hover:scale-105 transition-all"
+<Layout
+	title="Boost Conversions with Straight 100 Scores on Google Lighthouse: Expert Web Solutions & Insightful Analytics"
+	description="Elevate your online business with RPTRAINOR's custom-engineered web solutions. Transition from 'no code' limitations to high-performance landing pages designed to maximize conversions and sales with top Google Lighthouse scores. Experience the difference that expertly optimized web pages can make in achieving your business goals."
+>
+	<main class="flex flex-col sm:flex-row gap-4">
+		<div class="w-full sm:w-1/2 flex flex-col gap-2">
+			<h1 class="text-pretty">Boost Conversions with Straight 100 Scores on Google Lighthouse</h1>
+			<h2 class="text-pretty">Expert Web Solutions & Insightful Analytics</h2>
+			<a
+				href="mailto:ryan@lightup.fyi"
+				aria-label="Email ryan at ryan@lightup.fyi"
+				class="inline-flex items-center justify-center gap-x-2 rounded-md bg-brand_pink px-3.5 py-2.5 font-black text-brand_black shadow transition-all hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand_pink"
 			>
 				<p class="text-4xl">Meet the Pro</p>
 				<div
@@ -28,8 +32,10 @@ import ScreenShots from '~/features/header_section/ScreenShots.astro'
 							clip-rule="evenodd"></path>
 					</svg>
 				</div>
-			</button>
+			</a>
 		</div>
-    <ScreenShots />
+		<div class="w-full sm:w-1/2">
+			<ScreenCapture />
+		</div>
 	</main>
 </Layout>

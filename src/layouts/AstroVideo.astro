@@ -1,0 +1,10 @@
+---
+export const prerender = true;
+---
+
+<iframe
+  title={Astro.props.title}
+  src={Astro.props.src}
+  style={Astro.props.style}
+  allow={Astro.props.allow}
+  allowfullscreen={Astro.props.allowfullscreen}></iframe>
