@@ -1,14 +1,13 @@
 ---
 export const prerender = true
-import score from './scores.png'
+import scores380x540 from './scores380x540.svg'
 import AstroImage from '../../layouts/AstroImage.astro'
 ---
 
 <AstroImage
-	src={score}
+	src={scores380x540}
 	alt="Screenshot of Google Lighthouse test for Cornerstone page that has straight 100 scores"
-	width={score.width}
-	height={score.height}
-  loading="eager"
+	width="380"
+	height="540"
+	loading="eager"
 />
-```
