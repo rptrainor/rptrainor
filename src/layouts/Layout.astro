@@ -2,9 +2,10 @@
 // * src/layouts/Layout.astro
 export const prerender = true
 import '@fontsource-variable/montserrat'
+import '@fontsource/delicious-handrawn'
 
 import Header from '~/features/header_section/HeaderSection.astro'
-import Posthog from '~/analytics/Posthog.astro'
+// import Posthog from '~/analytics/Posthog.astro'
 interface Props {
 	title: string
 	description: string
@@ -95,28 +96,47 @@ const { title, description } = Astro.props
 		font-size: 1.67rem;
 		scroll-margin: 5rem;
 		line-height: 2.5rem;
-		font-weight: 800;
+		font-weight: 900;
 		letter-spacing: -0.025em;
-		color: #fff;
 		overflow-wrap: break-word;
 		text-align: center;
-		@media (min-width: 1024px) {
-			line-height: 1;
-		}
 	}
 
 	h2 {
 		font-size: 1.39rem;
 		scroll-margin: 5rem;
 		line-height: 2.25rem;
-		font-weight: 600;
+		font-weight: 700;
 		letter-spacing: -0.025em;
 		margin-top: 0px;
 	}
 
-	p {
+	h3 {
+		font-size: 1.25rem;
+		scroll-margin: 5rem;
+		line-height: 2rem;
+		font-weight: 500;
+		letter-spacing: -0.025em;
+	}
+
+	h4 {
+		font-size: 1.11rem;
+		scroll-margin: 5rem;
 		line-height: 1.75rem;
-		font-weight: 600;
+		font-weight: 500;
+		letter-spacing: -0.025em;
+	}
+
+	p {
+		font-weight: 500;
+		line-height: 1.75rem;
+		max-width: 65ch;
+	}
+
+	.handwritten {
+		font-family: 'Delicious Handrawn', 'cursive';
+		line-height: 1.75rem;
+		font-weight: 400;
 		max-width: 65ch;
 	}
 
@@ -129,16 +149,33 @@ const { title, description } = Astro.props
 		h2 {
 			font-size: 1.94rem; /* Scaled up for tablet */
 		}
+
+		h3 {
+			font-size: 1.67rem; /* Scaled up for tablet */
+		}
+
+		h4 {
+			font-size: 1.39rem; /* Scaled up for tablet */
+		}
 	}
 
 	/* Desktop screen sizes */
 	@media (min-width: 1024px) {
 		h1 {
 			font-size: 2.78rem; /* Scaled up for desktop */
+			line-height: 1;
 		}
 
 		h2 {
 			font-size: 2.22rem; /* Scaled up for desktop */
+		}
+
+		h3 {
+			font-size: 1.94rem; /* Scaled up for desktop */
+		}
+
+		h4 {
+			font-size: 1.67rem; /* Scaled up for desktop */
 		}
 	}
 

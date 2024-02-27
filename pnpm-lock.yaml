@@ -17,6 +17,9 @@ dependencies:
   '@fontsource-variable/montserrat':
     specifier: ^5.0.17
     version: 5.0.17
+  '@fontsource/delicious-handrawn':
+    specifier: ^5.0.18
+    version: 5.0.18
   astro:
     specifier: ^4.2.1
     version: 4.2.1
@@ -917,6 +920,10 @@ packages:
 
   /@fontsource-variable/montserrat@5.0.17:
     resolution: {integrity: sha512-kRPFY+sLUPE4fGTkuHu6phebYTwizsbGVIvqYa2vysRLPKUxwoiy1lb9Z4Qul8qoVspXnl0b9zA5LSn0scD9vA==}
+    dev: false
+
+  /@fontsource/delicious-handrawn@5.0.18:
+    resolution: {integrity: sha512-Dfu3d0DW4IOWI8ORU+XlWp9feekIyUVR9iZON5EtZ6yppNAPf8qhLD4EN4J5yhfvFpaQJ8hXy3OjxWdiZGLcLA==}
     dev: false
 
   /@iarna/toml@2.2.5:
