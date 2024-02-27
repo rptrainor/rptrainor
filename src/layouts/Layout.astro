@@ -2,7 +2,6 @@
 // * src/layouts/Layout.astro
 export const prerender = true
 import '@fontsource-variable/montserrat'
-import '@fontsource/delicious-handrawn'
 
 import Header from '~/features/header_section/HeaderSection.astro'
 // import Posthog from '~/analytics/Posthog.astro'
@@ -61,6 +60,14 @@ const { title, description } = Astro.props
 <style is:global>
 	@tailwind base;
 	@tailwind utilities;
+
+	@font-face {
+		font-family: 'Handrawn';
+		src: url('/fonts/delicious-handrawn-latin-400-normal.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
 
 	body,
 	html {
@@ -133,13 +140,13 @@ const { title, description } = Astro.props
 		max-width: 65ch;
 	}
 
-	.handwritten {
-		font-family: 'Delicious Handrawn', 'cursive';
+	/* .handwritten {
+		font-family: 'Handrawn', 'cursive';
 		line-height: 1.75rem;
 		font-weight: 400;
 		max-width: 65ch;
 		font-style: italic;
-	}
+	} */
 
 	/* Tablet screen sizes */
 	@media (min-width: 768px) {
