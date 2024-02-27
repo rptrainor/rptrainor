@@ -2,6 +2,8 @@
 export const prerender = true
 import crossWhite50 from '~/features/testimonials_section/cross_white_50.png'
 import chinChinChino_white_500x156 from '~/features/testimonials_section/chinChinChino_white_500x156.png'
+import ava_avatar_100x100 from '~/features/testimonials_section/ava_avatar_100x100.png'
+import wenchi_avatar_100x100 from '~/features/testimonials_section/wenchi_avatar_100x100.png'
 import AstroImage from '~/layouts/AstroImage.astro'
 ---
 
@@ -26,7 +28,7 @@ import AstroImage from '~/layouts/AstroImage.astro'
 						/>
 						<div class="flex flex-col rounded px-1 transition-colors">
 							<h1 class="m-0 p-0 text-left text-lg font-bold leading-none">Cornerstone</h1>
-							<p class="m-0 p-0 text-sm text-white/60 leading-none">Integrative Psychiatric</p>
+							<p class="m-0 p-0 text-sm leading-none text-white/60">Integrative Psychiatric</p>
 						</div>
 					</div>
 					<figure class="mt-10 flex flex-auto flex-col justify-between">
@@ -39,10 +41,12 @@ import AstroImage from '~/layouts/AstroImage.astro'
 							</p>
 						</blockquote>
 						<figcaption class="mt-10 flex h-20 items-center gap-x-6">
-							<img
+							<AstroImage
 								class="h-14 w-14 rounded-full bg-gray-50"
-								src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-								alt=""
+								src={wenchi_avatar_100x100}
+								alt="Wenchi Fan"
+								height={56}
+								width={56}
 							/>
 							<div class="text-base">
 								<div class="font-semibold text-white">Wenchi Fan</div>
@@ -70,10 +74,12 @@ import AstroImage from '~/layouts/AstroImage.astro'
 							</p>
 						</blockquote>
 						<figcaption class="mt-10 flex h-20 gap-x-6">
-							<img
+							<AstroImage
 								class="h-14 w-14 rounded-full bg-gray-50"
-								src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-								alt=""
+								src={ava_avatar_100x100}
+								height={56}
+								width={56}
+								alt="Ana Lin"
 							/>
 							<div class="text-base">
 								<div class="font-semibold text-white">Ana Lin</div>
