@@ -5,6 +5,7 @@ import TestimonialSingle from '~/features/testimonials_section/TestimonialSingle
 import WhySection from '~/features/why_section/WhySection.astro'
 import DifferentiationSection from '~/features/differentiation_section/DifferentiationSection.astro'
 import CTASection from '~/features/cta_section/CTASection.astro'
+import FooterSection from '~/features/footer_section/FooterSection.astro'
 ---
 
 <Layout
@@ -13,12 +14,12 @@ import CTASection from '~/features/cta_section/CTASection.astro'
 >
 	<main class="">
 		<Hero />
-		<div class="flex flex-col items-center justify-center gap-4 sm:gap-8 md:gap-12 mt-4 sm:mt-8 md:mt-12">
-			<div class="sticky top-0 z-10 flex w-full items-center justify-center bg-transparent py-4">
+		<div class="flex flex-col items-center justify-center gap-4 sm:gap-8 md:gap-12 sm:mt-8 md:mt-12">
+			<div class="sticky top-0 z-10 flex w-full items-center justify-center bg-transparent py-2">
 				<a
 					href="mailto:ryan@rptrainor.com"
 					aria-label="Email ryan at ryan@rptrainor.com"
-					class="inline-flex items-center justify-center gap-x-2 rounded-md bg-brand_pink px-3.5 py-2.5 font-black text-brand_black shadow transition-all hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand_pink"
+					class="inline-flex items-center justify-center gap-x-2 rounded-md bg-brand_pink px-2 py-1 sm:px-3.5 sm:py-2.5 font-black text-brand_black shadow transition-all hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand_pink"
 				>
 					<p class="flex flex-nowrap items-center gap-1 text-center text-lg font-black sm:text-2xl">
 						Get Your Perfect Scores
@@ -57,6 +58,7 @@ import CTASection from '~/features/cta_section/CTASection.astro'
 			<WhySection />
 			<DifferentiationSection />
 			<CTASection />
+			<FooterSection />
 		</div>
 	</main>
 </Layout>
