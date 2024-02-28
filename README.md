@@ -1,4 +1,4 @@
-### RPTRAINOR
+### RPTrainor
 
 - email: ryan@lightup.fyi
 

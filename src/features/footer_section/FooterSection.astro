@@ -1,16 +1,18 @@
+---
+export const prerender = true
+import Logo from 'src/logo/Logo.astro'
+---
 <footer class="py-4 w-full" aria-labelledby="footer-heading">
-  <!-- <div class="block grow py-4 sm:hidden">
+  <div class="block grow py-4 sm:hidden">
     <Logo />
   </div>
   <div class="flex flex-wrap items-center justify-between gap-4 pb-2 sm:justify-start">
     <div class="hidden grow sm:flex">
       <Logo />
     </div>
-    <a href="/policies" class="text-xs font-bold leading-5">Policies</a>
-    <a href="/disclaimers" class="text-xs font-bold leading-5">Disclaimers</a>
-    <a href="/services" class="text-xs font-bold leading-5">Services</a>
-    <a href="/supplements" class="text-xs font-bold leading-5">Supplements</a>
-  </div> -->
+    <a href="/privacy" class="text-xs font-bold leading-5 hover:rounded transition-all hover:scale-125 hover:bg-white/20 px-1">Privacy</a>
+    <a href="/tos" class="text-xs font-bold leading-5 hover:rounded transition-all hover:scale-125 hover:bg-white/20 px-1">TOS</a>
+  </div>
   <div class="border-t border-white/10 pt-4 md:flex md:items-center md:justify-between">
     <p class="mt-4 text-xs leading-5 md:order-1 md:mt-0">
       &copy;{
