@@ -11,23 +11,52 @@ import CTASection from '~/features/cta_section/CTASection.astro'
 	title="Boost Conversions with Straight 100 Scores on Google Lighthouse: Expert Web Solutions & Insightful Analytics"
 	description="Elevate your online business with RPTrainor's custom-engineered web solutions. Transition from 'no code' limitations to high-performance landing pages designed to maximize conversions and sales with top Google Lighthouse scores. Experience the difference that expertly optimized web pages can make in achieving your business goals."
 >
-	<main class="flex flex-col items-center justify-center gap-4 sm:gap-8 md:gap-12">
+	<main class="">
 		<Hero />
-		<TestimonialSingle />
-		<WhySection />
-		<DifferentiationSection />
-		<CTASection />
-		<!-- <section class="grid grid-cols-1 place-content-center place-items-center sm:grid-cols-2">
-			<div class="flex flex-col items-center justify-center gap-4">
-				<h2>The Cost of Slow Performance</h2>
-				<p>
-					Slow websites are a major turn-off for users. A 1-second delay in page load time can
-					result in a 7% reduction in conversions. This means that if an e-commerce site is making
-					$100,000 per day, a 1-second page delay could potentially cost $2.5 million in lost sales
-					every year.
-				</p>
+		<div class="flex flex-col items-center justify-center gap-4 sm:gap-8 md:gap-12 mt-4 sm:mt-8 md:mt-12">
+			<div class="sticky top-0 z-10 flex w-full items-center justify-center bg-transparent py-4">
+				<a
+					href="mailto:ryan@rptrainor.com"
+					aria-label="Email ryan at ryan@rptrainor.com"
+					class="inline-flex items-center justify-center gap-x-2 rounded-md bg-brand_pink px-3.5 py-2.5 font-black text-brand_black shadow transition-all hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand_pink"
+				>
+					<p class="flex flex-nowrap items-center gap-1 text-center text-lg font-black sm:text-2xl">
+						Get Your Perfect Scores
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="h-6 w-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path>
+						</svg>
+					</p>
+				</a>
 			</div>
-			<div class="flex flex-col items-center justify-center gap-4"></div>
-		</section> -->
+			<div class="flex w-full flex-nowrap items-center justify-center gap-4 pt-8">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="3"
+					stroke="currentColor"
+					class="h-12 w-12 animate-bounce"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"></path>
+				</svg>
+			</div>
+			<TestimonialSingle />
+			<WhySection />
+			<DifferentiationSection />
+			<CTASection />
+		</div>
 	</main>
 </Layout>
