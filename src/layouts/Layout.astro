@@ -2,7 +2,7 @@
 // * src/layouts/Layout.astro
 export const prerender = true
 import '@fontsource-variable/montserrat'
-import '@fontsource/delicious-handrawn';
+import '@fontsource/delicious-handrawn'
 
 import { ViewTransitions } from 'astro:transitions'
 
@@ -69,6 +69,7 @@ const { title, description } = Astro.props
 			}
 
 			body {
+				font-family: 'Montserrat Variable', sans-serif;
 				line-height: 1;
 				background: #181e23;
 				font-style: normal;
@@ -77,6 +78,10 @@ const { title, description } = Astro.props
 				color: #ffffff;
 				-webkit-font-smoothing: antialiased;
 				font-size: 18px;
+			}
+
+			q {
+				font-family: 'Delicious Handrawn', cursive;
 			}
 
 			a {
