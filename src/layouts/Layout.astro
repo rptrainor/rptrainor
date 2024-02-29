@@ -1,6 +1,9 @@
 ---
 // * src/layouts/Layout.astro
 export const prerender = true
+import '@fontsource-variable/montserrat'
+import '@fontsource/delicious-handrawn';
+
 import { ViewTransitions } from 'astro:transitions'
 
 import Header from '~/features/header_section/HeaderSection.astro'
@@ -16,20 +19,6 @@ const { title, description } = Astro.props
 <!doctype html>
 <html lang="en-US">
 	<head>
-		<link
-			rel="preload"
-			href="/fonts/delicious-handrawn-latin-400-normal.woff"
-			as="font"
-			type="font/woff"
-			crossorigin="anonymous"
-		/>
-		<link
-			rel="preload"
-			href="/fonts/montserrat-latin-700-normal.woff"
-			as="font"
-			type="font/woff"
-			crossorigin="anonymous"
-		/>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="robots" content="index, follow" />
@@ -71,41 +60,12 @@ const { title, description } = Astro.props
 			@tailwind base;
 			@tailwind utilities;
 
-			@font-face {
-				font-family: 'Delicious Handrawn';
-				src: url('/fonts/delicious-handrawn-latin-400-normal.woff') format('woff');
-				font-weight: normal;
-				font-style: normal;
-				font-display: swap;
-			}
-
-			@font-face {
-				font-family: 'Montserrat';
-				src: url('/fonts/montserrat-latin-700-normal.woff') format('woff');
-				font-weight: normal;
-				font-style: normal;
-				font-display: swap;
-			}
-
 			body,
 			html {
 				margin: 0;
 				padding: 0;
 				width: 100%;
 				min-width: 0;
-				font-family: 'Montserrat';
-			}
-
-			h1,
-			h2,
-			h3,
-			h4,
-			p {
-				font-family: 'Montserrat', sans-serif;
-			}
-
-			q {
-				font-family: 'Delicious Handrawn', sans-serif;
 			}
 
 			body {
@@ -119,6 +79,17 @@ const { title, description } = Astro.props
 				font-size: 18px;
 			}
 
+			h1,
+			h2,
+			h3,
+			h4,
+			p {
+				font-family: 'Montserrat Variable', sans-serif;
+			}
+
+			q {
+				font-family: 'Delicious Handrawn', cursive;
+			}
 			a {
 				text-decoration: none;
 				color: currentColor;

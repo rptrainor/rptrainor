@@ -14,6 +14,12 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.1.0
     version: 5.1.0(astro@4.2.1)(tailwindcss@3.4.1)
+  '@fontsource-variable/montserrat':
+    specifier: ^5.0.17
+    version: 5.0.17
+  '@fontsource/delicious-handrawn':
+    specifier: ^5.0.18
+    version: 5.0.18
   astro:
     specifier: ^4.2.1
     version: 4.2.1
@@ -911,6 +917,14 @@ packages:
   /@fastify/busboy@2.1.0:
     resolution: {integrity: sha512-+KpH+QxZU7O4675t3mnkQKcZZg56u+K/Ct2K+N2AZYNVK8kyeo/bI18tI8aPm3tvNNRyTWfj6s5tnGNlcbQRsA==}
     engines: {node: '>=14'}
+
+  /@fontsource-variable/montserrat@5.0.17:
+    resolution: {integrity: sha512-kRPFY+sLUPE4fGTkuHu6phebYTwizsbGVIvqYa2vysRLPKUxwoiy1lb9Z4Qul8qoVspXnl0b9zA5LSn0scD9vA==}
+    dev: false
+
+  /@fontsource/delicious-handrawn@5.0.18:
+    resolution: {integrity: sha512-Dfu3d0DW4IOWI8ORU+XlWp9feekIyUVR9iZON5EtZ6yppNAPf8qhLD4EN4J5yhfvFpaQJ8hXy3OjxWdiZGLcLA==}
+    dev: false
 
   /@iarna/toml@2.2.5:
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
