@@ -14,10 +14,5 @@ export default defineConfig({
 	adapter: cloudflare({
 		imageService: 'passthrough'
 	}),
-	integrations: [
-		tailwind({
-			applyBaseStyles: false
-		}),
-		sitemap()
-	]
+	integrations: [tailwind(), sitemap()]
 })
