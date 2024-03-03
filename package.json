@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^8.1.0",
-    "@astrojs/partytown": "^2.0.4",
     "@astrojs/sitemap": "^3.0.5",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/montserrat": "^5.0.17",

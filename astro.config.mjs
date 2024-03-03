@@ -3,8 +3,6 @@ import cloudflare from '@astrojs/cloudflare'
 import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
 
-import partytown from '@astrojs/partytown'
-
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://rptrainor.com',
@@ -16,9 +14,8 @@ export default defineConfig({
 	adapter: cloudflare({
 		imageService: 'passthrough'
 	}),
-	integrations: [tailwind(), sitemap(), partytown({
-    config: {
-      forward: ['posthog.*'],
-    },
-  })]
+	integrations: [
+		tailwind(),
+		sitemap()
+	]
 })
