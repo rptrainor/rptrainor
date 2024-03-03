@@ -7,7 +7,7 @@ import '@fontsource/delicious-handrawn'
 import { ViewTransitions } from 'astro:transitions'
 
 import Header from '~/features/header_section/HeaderSection.astro'
-// import Posthog from '~/analytics/Posthog.astro'
+import Posthog from "../analytics/Posthog.astro"
 interface Props {
 	title: string
 	description: string
@@ -53,6 +53,7 @@ const { title, description } = Astro.props
 		<title>{title}</title>
 		<ViewTransitions />
 		<meta name="trustpilot-one-time-domain-verification-id" content="13da4616-3ddf-4eda-8a5c-68f8b22d3dc6"/>
+		<Posthog />
 	</head>
 	<body class="mx-auto max-w-7xl bg-brand_black p-4">
 		<Header />
