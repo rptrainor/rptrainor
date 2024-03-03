@@ -21,7 +21,7 @@ export default defineConfig({
 		sitemap(),
 		partytown({
 			config: {
-				forward: [['posthog', { preserveBehavior: true }]]
+				forward: ['posthog']
 			}
 		})
 	]
