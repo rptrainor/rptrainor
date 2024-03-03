@@ -16,13 +16,5 @@ export default defineConfig({
 	adapter: cloudflare({
 		imageService: 'passthrough'
 	}),
-	integrations: [
-		tailwind(),
-		sitemap(),
-		partytown({
-			config: {
-				forward: ['posthog']
-			}
-		})
-	]
+	integrations: [tailwind(), sitemap(), partytown()]
 })
