@@ -61,6 +61,7 @@ const { title, description } = Astro.props
 		<Header />
 		<slot />
 		<Posthog />
+
 		<style is:global>
 			@tailwind base;
 			@tailwind utilities;
@@ -122,6 +123,28 @@ const { title, description } = Astro.props
 				line-height: 1.75rem;
 				font-weight: 600;
 				max-width: 65ch;
+			}
+
+			/* Tablet screen sizes */
+			@media (min-width: 768px) {
+				h1 {
+					font-size: 2.22rem; /* Scaled up for tablet */
+				}
+
+				h2 {
+					font-size: 1.94rem; /* Scaled up for tablet */
+				}
+			}
+
+			/* Desktop screen sizes */
+			@media (min-width: 1024px) {
+				h1 {
+					font-size: 2.78rem; /* Scaled up for desktop */
+				}
+
+				h2 {
+					font-size: 2.22rem; /* Scaled up for desktop */
+				}
 			}
 
 			::selection {
