@@ -2,19 +2,31 @@
 export const prerender = true
 import Logo from 'src/logo/Logo.astro'
 ---
-<footer class="py-4 w-full" aria-labelledby="footer-heading">
-  <div class="flex flex-wrap items-center justify-between gap-4 pb-2 sm:justify-start">
-    <div class="grow flex">
-      <Logo />
-    </div>
-    <a href="/privacy" class="text-xs font-bold leading-5 hover:rounded transition-all hover:scale-125 hover:bg-white/20 px-1">Privacy</a>
-    <a href="/tos" class="text-xs font-bold leading-5 hover:rounded transition-all hover:scale-125 hover:bg-white/20 px-1">TOS</a>
-  </div>
-  <div class="border-t border-white/10 pt-4 md:flex md:items-center md:justify-between">
-    <p class="mt-4 text-xs leading-5 md:order-1 md:mt-0">
-      &copy;{
-        ` ${new Date().getFullYear()} RPTrainor, Inc. All rights reserved.`
-      }
-    </p>
-  </div>
+
+<footer class="w-full py-4 text-white" aria-labelledby="footer-heading">
+	<div class="flex flex-wrap items-center justify-between gap-4 pb-2 sm:justify-start">
+		<div class="flex grow">
+			<Logo />
+		</div>
+		<a
+			style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
+			href="/privacy"
+			class="px-1 text-xs font-bold leading-5 transition-all hover:scale-125 hover:rounded hover:bg-white/20"
+			>Privacy</a
+		>
+		<a
+			style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
+			href="/tos"
+			class="px-1 text-xs font-bold leading-5 transition-all hover:scale-125 hover:rounded hover:bg-white/20"
+			>TOS</a
+		>
+	</div>
+	<div class="border-t border-white/10 pt-4 md:flex md:items-center md:justify-between">
+		<p
+			style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
+			class="mt-4 text-xs leading-5 md:order-1 md:mt-0"
+		>
+			&copy;{` ${new Date().getFullYear()} RPTrainor, Inc. All rights reserved.`}
+		</p>
+	</div>
 </footer>
