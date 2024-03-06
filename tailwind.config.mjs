@@ -5,8 +5,7 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Montserrat', 'Montserrat Variable', 'sans-serif'],
-				handrawn: ['Delicious Handrawn', 'cursive']
+				sans: ['Montserrat', 'Montserrat Variable', 'sans-serif']
 			},
 			colors: {
 				brand_pink: '#FF1B8D',

@@ -9,5 +9,6 @@ import AstroImage from '../../layouts/AstroImage.astro'
 	alt="Screenshot of Google Lighthouse test for Cornerstone page that has straight 100 scores"
 	loading="eager"
 	class="mx-auto"
-	width="380"
+  widths={[380, resize511x146.width]}
+  sizes={`(max-width: 640px) 380px, ${resize511x146.width}px`}
 />

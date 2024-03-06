@@ -10,7 +10,13 @@ import { Image } from 'astro:assets'
 	class="flex w-52 flex-row items-center gap-1 text-sm sm:text-base font-black text-white relative"
 >
 	<p>Excelent</p>
-	<Image src={trustpilot} alt="Trustpilot Logo" width="50" class="w-12" />
+	<Image 
+	src={trustpilot} 
+	alt="Trustpilot Logo" 
+  widths={[380, 540, 720, trustpilot.width]}
+  sizes={`(max-width: 360px) 380px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${trustpilot.width}px`}
+  
+	/>
 	<p>on</p>
 	<Image src={TPLogoTricolorWhiteRGB} alt="Trustpilot Logo" width="60" />
 </div>
