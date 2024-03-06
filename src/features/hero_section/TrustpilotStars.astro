@@ -7,16 +7,10 @@ import { Image } from 'astro:assets'
 
 <div
 	style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-	class="flex w-52 flex-row items-center gap-1 text-sm sm:text-base font-black text-white relative"
+	class="relative flex w-52 flex-row items-center gap-1 text-sm font-black text-white sm:text-base"
 >
 	<p>Excelent</p>
-	<Image 
-	src={trustpilot} 
-	alt="Trustpilot Logo" 
-  widths={[380, 540, 720, trustpilot.width]}
-  sizes={`(max-width: 360px) 380px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${trustpilot.width}px`}
-  
-	/>
+	<Image src={trustpilot} alt="Trustpilot Logo" class="w-12" widths={[48]} sizes={'48px'} />
 	<p>on</p>
 	<Image src={TPLogoTricolorWhiteRGB} alt="Trustpilot Logo" width="60" />
 </div>
