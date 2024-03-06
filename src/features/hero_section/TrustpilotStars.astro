@@ -1,0 +1,25 @@
+---
+export const prerender = true
+import trustpilot from 'src/features/hero_section/trustpilot.png'
+import TPLogoTricolorWhiteRGB from 'src/features/hero_section/TP-Logo-Tricolor-White-RGB.svg'
+import { Image } from 'astro:assets'
+---
+
+<div
+	style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
+	class="flex w-52 flex-row items-center gap-1 text-sm sm:text-base font-black text-white relative"
+>
+	<p>Excelent</p>
+	<Image src={trustpilot} alt="Trustpilot Logo" width="50" />
+	<p>on</p>
+	<Image src={TPLogoTricolorWhiteRGB} alt="Trustpilot Logo" width="60" />
+	<div
+		class="trustpilot-widget"
+		data-locale="en-US"
+		data-template-id="56278e9abfbbba0bdcd568bc"
+		data-businessunit-id="65e2290bcaf8815c6491c7f5"
+		data-style-height="52px"
+		class="text-start"
+	>
+	</div>
+</div>

@@ -1,14 +1,15 @@
 ---
-import ScreenShot from '../../features/hero_section/ScreenShot.astro'
 export const prerender = true
+
+import ScreenShot from '~/features/hero_section/ScreenShot.astro'
 ---
 
 <div class="mx-auto flex flex-col items-center">
 	<p
 		style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-		class="mx-auto text-pretty text-center text-4xl italic text-brand_yellow font-bold"
+		class="mx-auto mt-4 text-pretty text-center font-bold italic text-brand_yellow sm:mt-16 md:text-xl lg:text-3xl"
 	>
-		Struggling To Get More Customers<br />with your "No Code" tools?
+		Struggling To Get More Customers with your "No Code" tools?
 	</p>
 	<h1
 		style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
@@ -16,11 +17,11 @@ export const prerender = true
 	>
 		Increase Conversions
 	</h1>
-	<ScreenShot />
 	<p
 		style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-		class="text-pretty py-4 text-center text-lg font-bold leading-snug text-white sm:text-4xl"
+		class="text-pretty py-4 text-center font-bold text-white leading-snug text-base sm:text-lg md:text-2xl lg:text-4xl"
 	>
-		Transform Your "No Code" Pages with Perfect 100 Google Lighthouse Scores<br />or Your Money Back
+		Improve Your "No Code" Pages with Perfect 100 Google Lighthouse Scores or Your Money Back
 	</p>
+	<ScreenShot />
 </div>
