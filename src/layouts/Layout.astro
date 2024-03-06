@@ -4,6 +4,7 @@ export const prerender = true
 import '@fontsource-variable/montserrat'
 
 import Header from '~/features/header_section/HeaderSection.astro'
+import Posthog from '../analytics/Posthog.astro'
 interface Props {
 	title: string
 	description: string
@@ -51,5 +52,6 @@ const { title, description } = Astro.props
 	<body class="mx-auto max-w-7xl bg-brand_black p-4">
 		<Header />
 		<slot />
+		<Posthog />
 	</body>
 </html>
