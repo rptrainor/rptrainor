@@ -1,6 +1,6 @@
 ---
 export const prerender = true
-import trustpilot from 'src/features/hero_section/trustpilot_75.png'
+import trustpilot from 'src/features/hero_section/trustpilot_96.png'
 import TPLogoTricolorWhiteRGB from 'src/features/hero_section/TP-Logo-Tricolor-White-RGB.svg'
 import { Image } from 'astro:assets'
 ---
@@ -10,7 +10,13 @@ import { Image } from 'astro:assets'
 	class="relative flex w-52 flex-row items-center gap-1 text-sm font-black text-white sm:text-base"
 >
 	<p>Excelent</p>
-	<Image src={trustpilot} alt="Trustpilot Logo" class="w-12" widths={[48]} sizes={'48px'} />
+	<Image
+		src={trustpilot}
+		alt="Trustpilot Logo"
+		class="w-12"
+		widths={[48, trustpilot.width]}
+		sizes={`(max-width: 640px) 48px, ${trustpilot.width}px`}
+	/>
 	<p>on</p>
 	<Image src={TPLogoTricolorWhiteRGB} alt="Trustpilot Logo" width="60" />
 </div>
