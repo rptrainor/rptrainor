@@ -21,5 +21,7 @@
 	],
 	"theme_color": "#181e23",
 	"background_color": "#181e23",
-	"display": "standalone"
+	"display": "standalone",
+    "start_url": "https://rptrainor.com"
+
 }
