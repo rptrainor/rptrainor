@@ -1,100 +1,45 @@
 ---
-import Layout from '~/layouts/Layout.astro'
-export const prerender = true
+import Layout from "~/layouts/Layout.astro";
 ---
 
-<Layout title="Terms of Service | RPTrainor" description="RPTrainor TOS Page">
-	<main class="flex flex-col gap-4 p-4 text-white md:grid md:grid-cols-12 md:p-8">
-		<div class="md:col-span-5">
-			<h1
-				style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-				class="text-left text-5xl font-bold leading-tight"
-			>
-				Our Terms of Service
-			</h1>
-		</div>
-		<div class="flex flex-col gap-4 md:col-span-7">
-			<section>
-				<h2
-					style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-					class="mb-4 text-3xl font-semibold"
-				>
-					Acceptance of Terms
-				</h2>
-				<p
-					style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-					class="mb-4 text-lg leading-relaxed"
-				>
-					By accessing and using the RPTrainor website and services, you agree to be bound by these
-					terms of service and all terms incorporated by reference. If you do not agree to all of
-					these terms, do not use our services.
-				</p>
-			</section>
-			<section>
-				<h2
-					style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-					class="mb-4 text-3xl font-semibold"
-				>
-					Respectful Conduct
-				</h2>
-				<p
-					style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-					class="mb-4 text-lg leading-relaxed"
-				>
-					We expect all users to interact with each other in a respectful and compassionate manner.
-					Any form of harassment, discrimination, or abuse towards other users is strictly
-					prohibited and may result in termination of your access to our services.
-				</p>
-			</section>
-			<section>
-				<h2
-					style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-					class="mb-4 text-3xl font-semibold"
-				>
-					No User-Generated Content
-				</h2>
-				<p
-					style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-					class="mb-4 text-lg leading-relaxed"
-				>
-					Our services do not include or allow user-generated content. Users are responsible for
-					ensuring that their use of our services complies with this policy and all applicable laws
-					and regulations.
-				</p>
-			</section>
-			<section>
-				<h2
-					style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-					class="mb-4 text-3xl font-semibold"
-				>
-					Changes to Terms
-				</h2>
-				<p
-					style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-					class="mb-4 text-lg leading-relaxed"
-				>
-					RPTrainor reserves the right to modify these terms at any time. We will notify users of
-					any changes by updating the terms on our website. Your continued use of our services after
-					any such changes take effect constitutes your acceptance of the new terms.
-				</p>
-			</section>
-			<section>
-				<h2
-					style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-					class="mb-4 text-3xl font-semibold"
-				>
-					Contact Information
-				</h2>
-				<p
-					style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-					class="mb-4 text-lg leading-relaxed"
-				>
-					If you have any questions or concerns about these terms, please contact us at <a
-						href="mailto:ryan@rptrainor.com"
-						class="text-blue-600 hover:text-blue-800">ryan@rptrainor.com</a
-					>.
-				</p>
-			</section>
-		</div>
-	</main>
+<Layout title='Terms of Service | RPTrainor' description="RPTrainor TOS Page">
+  <main class='flex flex-col gap-4 md:grid md:grid-cols-12 p-4 md:p-8 text-white'>
+    <div class='md:col-span-5'>
+      <h1 class='text-5xl font-bold leading-tight text-left'>
+        Our Terms of Service
+      </h1>
+    </div>
+    <div class='md:col-span-7 flex flex-col gap-4'>
+      <section>
+        <h2 class='text-3xl font-semibold mb-4'>Acceptance of Terms</h2>
+        <p class='text-lg leading-relaxed mb-4'>
+          By accessing and using the RPTrainor website and services, you agree to be bound by these terms of service and all terms incorporated by reference. If you do not agree to all of these terms, do not use our services.
+        </p>
+      </section>
+      <section>
+        <h2 class='text-3xl font-semibold mb-4'>Respectful Conduct</h2>
+        <p class='text-lg leading-relaxed mb-4'>
+          We expect all users to interact with each other in a respectful and compassionate manner. Any form of harassment, discrimination, or abuse towards other users is strictly prohibited and may result in termination of your access to our services.
+        </p>
+      </section>
+      <section>
+        <h2 class='text-3xl font-semibold mb-4'>No User-Generated Content</h2>
+        <p class='text-lg leading-relaxed mb-4'>
+          Our services do not include or allow user-generated content. Users are responsible for ensuring that their use of our services complies with this policy and all applicable laws and regulations.
+        </p>
+      </section>
+      <section>
+        <h2 class='text-3xl font-semibold mb-4'>Changes to Terms</h2>
+        <p class='text-lg leading-relaxed mb-4'>
+          RPTrainor reserves the right to modify these terms at any time. We will notify users of any changes by updating the terms on our website. Your continued use of our services after any such changes take effect constitutes your acceptance of the new terms.
+        </p>
+      </section>
+      <section>
+        <h2 class='text-3xl font-semibold mb-4'>Contact Information</h2>
+        <p class='text-lg leading-relaxed mb-4'>
+          If you have any questions or concerns about these terms, please contact us at <a href='mailto:ryan@rptrainor.com' class='text-blue-600 hover:text-blue-800'>ryan@rptrainor.com</a>.
+        </p>
+      </section>
+    </div>
+  </main>
 </Layout>

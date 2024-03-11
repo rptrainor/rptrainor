@@ -5,8 +5,8 @@ import TestimonialSingle from '~/features/testimonials_section/TestimonialSingle
 import WhySection from '~/features/why_section/WhySection.astro'
 import DifferentiationSection from '~/features/differentiation_section/DifferentiationSection.astro'
 import FooterSection from '~/features/footer_section/FooterSection.astro'
-import TrustpilotStars from '~/features/hero_section/TrustpilotStars.astro'
 import CalSection from '~/features/cal_section/CalSection.astro'
+import FloatingSection from '~/features/floating_section/FloatingSection.astro'
 ---
 
 <Layout
@@ -18,53 +18,7 @@ import CalSection from '~/features/cal_section/CalSection.astro'
 		<div
 			class="flex flex-col items-center justify-center gap-4 sm:mt-8 sm:gap-8 md:mt-12 md:gap-12"
 		>
-			<div
-				class="sticky top-0 z-10 flex w-full max-w-fit items-center justify-center bg-transparent py-2"
-			>
-				<a
-					href="https://cal.com/rptrainor/boost-your-page-conversions-free-strategy-session"
-					aria-label="Book a free strategy session with RPTrainor to boost your page conversions."
-					class="inline-flex items-center justify-center gap-x-2 rounded-md bg-brand_pink px-2 py-1 font-black text-brand_black shadow transition-all hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand_pink sm:px-3.5 sm:py-2.5"
-				>
-					<p
-						style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-						class="flex flex-nowrap items-center gap-1 text-center text-lg font-black sm:text-2xl"
-					>
-						Get your free strategy session
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke-width="1.5"
-							stroke="currentColor"
-							class="h-6 w-6"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"></path>
-						</svg>
-					</p>
-				</a>
-			</div>
-			<div class="flex flex-col w-full flex-nowrap items-center justify-center gap-4 text-white">
-				<div class="bottom-4 sm:bottom-8 md:bottom-12 relative px-4">
-					<TrustpilotStars />
-				</div>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke-width="3"
-					stroke="currentColor"
-					class="h-12 w-12 animate-bounce"
-				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"></path>
-				</svg>
-			</div>
+			<FloatingSection />
 			<TestimonialSingle />
 			<WhySection />
 			<DifferentiationSection />

@@ -1,81 +1,39 @@
 ---
-import Layout from '~/layouts/Layout.astro'
-export const prerender = true
+import Layout from "~/layouts/Layout.astro";
 ---
 
-<Layout title="Privacy Policy | RPTrainor" description="RPTrainor  Privacy Policy">
-	<main class="flex flex-col gap-4 p-4 text-white md:grid md:grid-cols-12 md:p-8">
-		<div class="md:col-span-5">
-			style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;" class='text-5xl
-			font-bold leading-tight text-left'> Our Privacy Policy
-		</div>
-	</main>
-	<div class="flex flex-col gap-4 md:col-span-7">
-		<section>
-			<h2
-				style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-				class="mb-4 text-3xl font-semibold"
-			>
-				Privacy Statement
-			</h2>
-			<p
-				style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-				class="mb-4 text-lg leading-relaxed"
-			>
-				At RPTrainor, we are committed to maintaining the trust and confidence of our visitors to
-				our web site. In particular, we want you to know that RPTrainor is not in the business of
-				selling, renting or trading email lists with other companies and businesses for marketing
-				purposes. In this Privacy Policy, we’ve provided detailed information on when and why we
-				collect your personal information, how we use it, and how we keep it secure.
-			</p>
-		</section>
-		<section>
-			<h2
-				style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-				class="mb-4 text-3xl font-semibold"
-			>
-				Types of Data We Collect
-			</h2>
-			<p
-				style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-				class="mb-4 text-lg leading-relaxed"
-			>
-				The only information we collect is basic profile information and your email address which
-				you provide upon registration or interaction with our services.
-			</p>
-		</section>
-		<section>
-			<h2
-				style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-				class="mb-4 text-3xl font-semibold"
-			>
-				Usage of Data
-			</h2>
-			<p
-				style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-				class="mb-4 text-lg leading-relaxed"
-			>
-				We use your information to provide the services you have requested and to communicate with
-				you about our products and services. We do not share or sell your information to third
-				parties for any marketing purposes.
-			</p>
-		</section>
-		<section>
-			<h2
-				style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-				class="mb-4 text-3xl font-semibold"
-			>
-				Contact Details
-			</h2>
-			<p
-				style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
-				class="mb-4 text-lg leading-relaxed"
-			>
-				If you have any questions about this privacy policy, please contact us at <a
-					href="mailto:ryan@rptrainor.com"
-					class="text-blue-600 hover:text-blue-800">ryan@rptrainor.com</a
-				>.
-			</p>
-		</section>
-	</div>
+<Layout title='Privacy Policy | RPTrainor' description="RPTrainor  Privacy Policy">
+  <main class='flex flex-col gap-4 md:grid md:grid-cols-12 p-4 md:p-8 text-white'>
+    <div class='md:col-span-5'>
+      <h1 class='text-5xl font-bold leading-tight text-left'>
+        Our Privacy Policy
+      </h1>
+    </div>
+    <div class='md:col-span-7 flex flex-col gap-4'>
+      <section>
+        <h2 class='text-3xl font-semibold mb-4'>Privacy Statement</h2>
+        <p class='text-lg leading-relaxed mb-4'>
+          At RPTrainor, we are committed to maintaining the trust and confidence of our visitors to our web site. In particular, we want you to know that RPTrainor is not in the business of selling, renting or trading email lists with other companies and businesses for marketing purposes. In this Privacy Policy, we’ve provided detailed information on when and why we collect your personal information, how we use it, and how we keep it secure.
+        </p>
+      </section>
+      <section>
+        <h2 class='text-3xl font-semibold mb-4'>Types of Data We Collect</h2>
+        <p class='text-lg leading-relaxed mb-4'>
+          The only information we collect is basic profile information and your email address which you provide upon registration or interaction with our services.
+        </p>
+      </section>
+      <section>
+        <h2 class='text-3xl font-semibold mb-4'>Usage of Data</h2>
+        <p class='text-lg leading-relaxed mb-4'>
+          We use your information to provide the services you have requested and to communicate with you about our products and services. We do not share or sell your information to third parties for any marketing purposes.
+        </p>
+      </section>
+      <section>
+        <h2 class='text-3xl font-semibold mb-4'>Contact Details</h2>
+        <p class='text-lg leading-relaxed mb-4'>
+          If you have any questions about this privacy policy, please contact us at <a href='mailto:ryan@rptrainor.com' class='text-blue-600 hover:text-blue-800'>ryan@rptrainor.com</a>.
+        </p>
+      </section>
+    </div>
+  </main>
 </Layout>
