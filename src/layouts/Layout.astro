@@ -47,7 +47,7 @@ const { title, description } = Astro.props
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="mx-auto max-w-7xl bg-brand_black p-4">
+	<body class="mx-auto max-w-7xl bg-brand_black p-4 font-bold">
 		<Header />
 		<slot />
 	</body>
@@ -55,11 +55,9 @@ const { title, description } = Astro.props
 <style is:global>
 	@font-face {
 		font-family: 'Montserrat';
-		src:
-			url('/fonts/montserrat-variablefont_wght-webfont.woff2') format('woff2'),
-			url('/fonts/montserrat-variablefont_wght-webfont.woff') format('woff');
-		font-weight: 700;
+		src: url('/fonts/Montserrat-VariableFont_wght.ttf') format('ttf');
 		font-style: normal;
+		font-weight: 100 900; /* Ensure this range includes the bold weight */
 		font-display: swap;
 	}
 
@@ -69,17 +67,20 @@ const { title, description } = Astro.props
 		padding: 0;
 		width: 100%;
 		min-width: 0;
-		font-family: 'Montserrat', 'Montserrat Variable', sans-serif;
+		font-family:
+			'Montserrat',
+			'Montserrat Variable' sans-serif;
+		font-size: 18px;
+		font-weight: 700; /* Bold weight */
 	}
 
-	body {
-		line-height: 1;
-		background: #181e23;
-		font-style: normal;
-		transition: font-size 0.3s ease-out;
-		font-weight: 700;
-		color: #ffffff;
-		-webkit-font-smoothing: antialiased;
-		font-size: 18px;
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	strong {
+		font-weight: 700; /* Ensure headings and strong elements are bold */
 	}
 </style>
