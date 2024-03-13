@@ -53,22 +53,23 @@ const { title, description } = Astro.props
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="mx-auto max-w-7xl bg-brand_black p-4 montserrat-variable">
+	<body class="mx-auto max-w-7xl bg-brand_black p-4">
 		<Header />
 		<slot />
 	</body>
 </html>
 <style is:global>
-	.montserrat-variable {
-		font-family: 'Montserrat', sans-serif;
-		font-optical-sizing: auto;
-		font-weight: <weight>;
+	@font-face {
+		font-family: 'Montserrat';
+		src:
+			url('/fonts/montserrat-variablefont_wght-webfont.woff2') format('woff2'),
+			url('/fonts/montserrat-variablefont_wght-webfont.woff') format('woff');
+		font-weight: normal;
 		font-style: normal;
+		font-display: swap;
 	}
-	html, body {
+
+	html {
 		font-family: 'Montserrat', sans-serif;
-		font-optical-sizing: auto;
-		font-weight: 400;
-		font-style: normal;
 	}
 </style>
