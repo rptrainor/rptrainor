@@ -12,6 +12,7 @@
     "build-cf-types": "wrangler types"
   },
   "dependencies": {
+    "@astro-community/astro-embed-youtube": "^0.5.2",
     "@astrojs/check": "^0.5.10",
     "@astrojs/cloudflare": "^10.2.0",
     "@astrojs/db": "^0.10.4",
