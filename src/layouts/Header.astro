@@ -1,0 +1,37 @@
+---
+import Logo from '../components/Logo.astro'
+
+export const prerender = true
+---
+
+<nav
+	class="absolute left-0 right-0 top-0 z-10 mx-auto flex max-w-7xl justify-between gap-4 p-4 text-white"
+>
+	<Logo />
+	<span class="grow" />
+	<a
+	 aria-label="Learn about the business impact of page performance"
+		href="/learn"
+		class="flex flex-nowrap items-center gap-1 transition-all hover:animate-hover-pop hover:rounded-md hover:bg-white/20 px-1"
+	>
+		<p
+			style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
+			class="block text-base font-black leading-none md:text-lg"
+		>
+			Learn
+		</p>
+	</a>
+
+	<a
+		aria-label="Go to the pricing page"
+		href="/pricing"
+		class="flex flex-nowrap items-center gap-1 transition-all hover:animate-hover-pop hover:rounded-md hover:bg-white/20 px-1"
+	>
+		<p
+			style="font-family: 'Montserrat', 'Montserrat Variable', sans-serif;"
+			class="block text-base font-black leading-none md:text-lg"
+		>
+			Pricing
+		</p>
+	</a>
+</nav>

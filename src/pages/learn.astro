@@ -1,0 +1,98 @@
+---
+import { YouTube } from '@astro-community/astro-embed-youtube'
+
+import CaseStudyCard from '../components/CaseStudyCard.astro'
+import GridContainer from '../layouts/GridContainer.astro'
+import Layout from '../layouts/Layout.astro'
+
+const caseStudies = [
+	{
+		id: 0,
+		title: 'Vodafone: A 31% improvement in LCP increased sales by 8%',
+		link: 'https://web.dev/case-studies/vodafone'
+	},
+	{
+		id: 1,
+		title:
+			"How redBus improved their website's Interaction to Next Paint (INP) and increased sales by 7%",
+		link: 'https://web.dev/case-studies/redbus-inp'
+	},
+	{
+		id: 2,
+		title: "How Goibibo's PWA improved conversions by 60%",
+		link: 'https://web.dev/case-studies/goibibo'
+	},
+	{
+		id: 3,
+		link: 'https://web.dev/case-studies/lancome',
+		title: 'Lancôme rebuilds their mobile website as a PWA, increases conversions 17%'
+	},
+	{
+		id: 4,
+		title:
+			"How Rakuten 24's investment in Core Web Vitals increased revenue per visitor by 53.37% and conversion rate by 33.13%",
+		link: 'https://web.dev/case-studies/rakuten'
+	},
+	{
+		id: 5,
+		title: 'Housing.com increases conversions and lowers bounce rate by 40% with new PWA',
+		link: 'https://web.dev/case-studies/housing'
+	},
+	{
+		id: 6,
+		title:
+			'How The Economic Times passed Core Web Vitals thresholds and achieved an overall 43% better bounce rate',
+		link: 'https://web.dev/case-studies/economic-times-cwv'
+	},
+	{
+		id: 7,
+		title:
+			'How Renault improved its bounce and conversion rates by measuring and optimizing Largest Contentful Paint',
+		link: 'https://web.dev/case-studies/renault'
+	},
+	{
+		id: 8,
+		title: 'Luxury retailer Farfetch sees higher conversion rates for better Core Web Vitals',
+		link: 'https://web.dev/case-studies/farfetch'
+	}
+]
+---
+
+<Layout
+	title="The business impact of Core Web Vitals"
+	description="Does page load speed influence conversions? Case studies and a video from Google about the business impact of Google Core Web Vitals"
+>
+	<GridContainer>
+		<div
+			class="col-span-3 col-start-1 row-start-1 mx-auto flex w-full max-w-3xl flex-col place-content-end gap-4 sm:text-center lg:gap-8"
+		>
+			<h2 class="text-balance text-center text-xl xs:text-3xl sm:text-5xl font-bold tracking-tight text-white">
+				What is the business impact of Core Web Vitals improvements?
+			</h2>
+			<p class="mx-auto max-w-prose text-base xs:text-xl sm:text-3xl font-semibold leading-snug text-gray-300 text-balance text-center">
+				Learn why Core Web Vitals matter to your users and business
+			</p>
+		</div>
+
+		<div class="col-span-3 col-start-1 row-start-2 flex place-items-end justify-center">
+			<YouTube id="nPmAE0YjGK0" class="aspect-video h-full w-full max-w-md" />
+		</div>
+
+		<div class="col-span-3 col-start-1 row-start-3 flex flex-col xs:gap-4 gap-2">
+			<h2 class="text-center text-base xs:text-2xl font-bold text-white">Case studies:</h2>
+			<div class="flex gap-x-4 overflow-x-auto" style="scroll-behavior: smooth;">
+				{caseStudies.map((study) => <CaseStudyCard title={study.title} link={study.link} />)}
+			</div>
+		</div>
+	</GridContainer>
+</Layout>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const playButtons = document.querySelectorAll('lite-youtube a.lty-playbtn')
+		playButtons.forEach((button) => {
+			if (button instanceof HTMLAnchorElement && !button.href) {
+				button.href = 'https://youtube.com/watch?v=nPmAE0YjGK0'
+			}
+		})
+	})
+</script>
