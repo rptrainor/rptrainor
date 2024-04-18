@@ -8,11 +8,19 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
-  adapter: cloudflare({
-    platformProxy: {
+	site: 'https://rptrainor.com',
+	output: 'server',
+	prefetch: true,
+	adapter: cloudflare({
+		imageService: 'passthrough',
+		platformProxy: {
       enabled: true
     }
-  }),
-  integrations: [db(), tailwind(), solidJs(), sitemap()]
-});
+	}),
+	integrations: [
+		tailwind(),
+		sitemap(),
+		db(),
+		solidJs()
+	]
+})
