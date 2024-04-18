@@ -9,7 +9,7 @@ const Plans = () => {
       <Switch>
         <Match when={service() === 'Build + Manage'}>
           <div class="flex flex-col space-y-4 h-full">
-            <h3 id="tier-startup" class="text-xl font-bold leading-8 tracking-tight text-white sm:h-24 h-16 md:h-auto">
+            <h3 id="tier-startup" class="text-xl font-bold leading-8 tracking-tight text-white sm:h-16 md:h-8 xs:h-8 h-16">
               Build + Manage Service
             </h3>
 
@@ -17,7 +17,7 @@ const Plans = () => {
               <span class="text-4xl font-bold tracking-tight text-white">$834</span>
               <span class="text-sm font-semibold leading-6 text-gray-300">/month</span>
             </p>
-            <small class="block text-sm leading-snug text-gray-300 md:h-24 h-32 lg:h-auto grow">
+            <small class="block text-sm leading-snug text-gray-300 md:h-24 sm:h-28 xs:h-20 h-32 grow lg:h-20">
               Complete Done-For-You Service: Expert-crafted campaigns that even out the highs and lows
               of new leads, ensuring a steady growth path for your business
             </small>
@@ -33,13 +33,13 @@ const Plans = () => {
         <Match when={service() === 'Build Only'}>
           <div class="flex flex-col space-y-4 h-full">
 
-            <h3 id="tier-startup" class="text-xl font-bold leading-8 tracking-tight text-white sm:h-24 h-16 md:h-auto">
+            <h3 id="tier-startup" class="text-xl font-bold leading-8 tracking-tight text-white sm:h-16 md:h-8 xs:h-8 h-16">
               Build Only Service</h3>
             <p class="flex items-baseline gap-x-1">
               <span class="text-4xl font-bold tracking-tight text-white">$457</span>
               <span class="text-sm font-semibold leading-6 text-gray-300">once</span>
             </p>
-            <small class="block text-sm leading-snug text-gray-300 md:h-24 h-32 lg:h-auto grow">
+            <small class="block text-sm leading-snug text-gray-300 md:h-24 sm:h-28 xs:h-20 h-32 grow lg:h-20">
               Get a high-quality, professionally designed landing page with a one-time payment
             </small>
             <a
