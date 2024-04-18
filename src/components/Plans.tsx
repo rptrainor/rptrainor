@@ -18,8 +18,7 @@ const Plans = () => {
               <span class="text-sm font-semibold leading-6 text-gray-300">/month</span>
             </p>
             <small class="block text-sm leading-snug text-gray-300 md:h-24 sm:h-28 xs:h-20 h-32 grow lg:h-20">
-              Complete Done-For-You Service: Expert-crafted campaigns that even out the highs and lows
-              of new leads, ensuring a steady growth path for your business
+            Our comprehensive Done-For-You service includes expertly crafted campaigns and continuous management, designed to stabilize your lead generation and ensure sustained business growth. Experience the peace of mind that comes from having a steady stream of high-quality leads.
             </small>
             <a
               href="https://buy.stripe.com/aEU9AK2Ko2HicLufZ0"
@@ -40,7 +39,7 @@ const Plans = () => {
               <span class="text-sm font-semibold leading-6 text-gray-300">once</span>
             </p>
             <small class="block text-sm leading-snug text-gray-300 md:h-24 sm:h-28 xs:h-20 h-32 grow lg:h-20">
-              Get a high-quality, professionally designed landing page with a one-time payment
+            Invest once and reap the benefits indefinitely with a high-quality, professionally designed landing page crafted to convert visitors into leads efficiently.
             </small>
             <a
               href="https://buy.stripe.com/6oE28i1Gk3Lm3aUdQT"
