@@ -4,7 +4,7 @@ import { Image } from 'astro:assets'
 import NotificationSystem from '../components/NotificationSystem'
 import GridContainer from '../layouts/GridContainer.astro'
 import Layout from '../layouts/Layout.astro'
-import wenchi_avatar_100x100 from '../components/wenchi_avatar_100x100.webp'
+import wenchi_avatar from '../components/wenchi_avatar.jpeg'
 ---
 
 <Layout
@@ -129,13 +129,13 @@ import wenchi_avatar_100x100 from '../components/wenchi_avatar_100x100.webp'
 							going through a template! I highly recommend their service!”
 						</p>
 					</blockquote>
-					<figcaption class="mt-2 flex items-center gap-x-6">
+					<figcaption class="mt-2 flex items-center gap-x-4">
 						<Image
-							class="h-14 w-14 rounded-full bg-gray-50"
-							src={wenchi_avatar_100x100}
+							class="h-10 w-10 rounded-full bg-gray-50"
+							src={wenchi_avatar}
 							alt="Wenchi Fan"
-							height={56}
-							width={56}
+							height={40}
+							width={40}
 						/>
 						<div class="text-sm leading-6">
 							<div class="font-semibold text-gray-100">WenChi Fan</div>
