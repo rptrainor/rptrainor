@@ -11,11 +11,11 @@ const strategy = Astro.url.searchParams.get('strategy') || 'mobile'
 ---
 
 <Layout
-	title="Free CRO Calculator"
-	description="Free Conversion rate optimization calculator to see how many customers you are losing due to underperforming pages."
+	title="Free conversation rate optimization calculator"
+	description="Use the free CRO calculator to see how many customers you are losing due to underperforming pages."
 >
 	<GridContainer>
-		<form class="col-span-3 place-content-end h-full">
+		<form class="col-span-3 h-full place-content-end">
 			<div class="xs:space-y-4 space-y-2">
 				<div class="">
 					<h1
@@ -26,7 +26,7 @@ const strategy = Astro.url.searchParams.get('strategy') || 'mobile'
 					<p
 						class="xs:text-sm mt-1 w-full text-balance text-center text-xs text-gray-200 md:text-lg"
 					>
-						Find out how much money you are losing due to slow loading pages.
+						Find out how much money you are losing due to slow-loading pages.
 					</p>
 				</div>
 
@@ -47,7 +47,7 @@ const strategy = Astro.url.searchParams.get('strategy') || 'mobile'
 									required
 									placeholder="https://example.com/landing-page"
 									value={web_page_url}
-									class="block w-full rounded-md border-0 bg-white/10 py-1.5 text-white shadow-sm ring-1 ring-inset ring-black placeholder-white/60 focus:ring-2 focus:ring-inset focus:ring-contrast sm:text-sm sm:leading-6"
+									class="focus:ring-contrast block w-full rounded-md border-0 bg-white/10 py-1.5 text-white placeholder-white/60 shadow-sm ring-1 ring-inset ring-black focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -69,7 +69,7 @@ const strategy = Astro.url.searchParams.get('strategy') || 'mobile'
 									aria-describedby="current_conversion_rate"
 									autocomplete="current_conversion_rate"
 									value={current_conversion_rate}
-									class="block w-full rounded-md border-0 bg-white/10 py-1.5 pr-8 text-white shadow-sm ring-1 ring-inset ring-black placeholder-white/60 focus:ring-2 focus:ring-inset focus:ring-contrast sm:text-sm sm:leading-6"
+									class="focus:ring-contrast block w-full rounded-md border-0 bg-white/10 py-1.5 pr-8 text-white placeholder-white/60 shadow-sm ring-1 ring-inset ring-black focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
 								/>
 								<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
 									<span class="text-white sm:text-sm">&#37;</span>
@@ -87,7 +87,7 @@ const strategy = Astro.url.searchParams.get('strategy') || 'mobile'
 									id="strategy"
 									name="strategy"
 									autocomplete="device"
-									class="block w-full rounded-md border-0 bg-white/5 py-1.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-contrast sm:text-sm sm:leading-6 [&_*]:text-black"
+									class="focus:ring-contrast block w-full rounded-md border-0 bg-white/5 py-1.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6 [&_*]:text-black"
 								>
 									<option value="mobile" selected={strategy === 'mobile'}>Mobile</option>
 									<option value="desktop" selected={strategy === 'desktop'}>Desktop</option>
@@ -109,7 +109,7 @@ const strategy = Astro.url.searchParams.get('strategy') || 'mobile'
 									type="text"
 									name="current_conversion_value"
 									id="current_conversion_value"
-									class="block w-full rounded-md border-0 bg-white/10 py-1.5 pl-7 pr-12 text-white shadow-sm ring-1 ring-inset ring-black placeholder-white/60 focus:ring-2 focus:ring-inset focus:ring-contrast sm:text-sm sm:leading-6"
+									class="focus:ring-contrast block w-full rounded-md border-0 bg-white/10 py-1.5 pl-7 pr-12 text-white placeholder-white/60 shadow-sm ring-1 ring-inset ring-black focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
 									placeholder="0.00"
 									aria-describedby="current_conversion_value"
 									value={current_conversion_value}
@@ -134,7 +134,7 @@ const strategy = Astro.url.searchParams.get('strategy') || 'mobile'
 									name="current_monthly_traffic"
 									id="current_monthly_traffic"
 									autocomplete="current_monthly_traffic"
-									class="block w-full rounded-md border-0 bg-white/10 py-1.5 text-white shadow-sm ring-1 ring-inset ring-black placeholder-white/60 focus:ring-2 focus:ring-inset focus:ring-contrast sm:text-sm sm:leading-6"
+									class="focus:ring-contrast block w-full rounded-md border-0 bg-white/10 py-1.5 text-white placeholder-white/60 shadow-sm ring-1 ring-inset ring-black focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
 								/>
 							</div>
 						</div>
@@ -145,7 +145,7 @@ const strategy = Astro.url.searchParams.get('strategy') || 'mobile'
 			<div class="mt-4 flex items-center justify-end">
 				<button
 					type="submit"
-					class="rounded-md border-contrast bg-white px-3 py-2 text-sm font-semibold text-background shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-contrast"
+					class="border-contrast text-background focus-visible:outline-contrast rounded-md bg-white px-3 py-2 text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
 					>Calculate</button
 				>
 			</div>

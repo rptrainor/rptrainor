@@ -77,13 +77,13 @@ const PagespeedResults = (props: Props) => {
   return (
       <Suspense fallback={
         <>
-          <div class="col-span-3 col-start-1 row-start-2 place-content-end"><p class="text-white w-full text-center uppercase animate-pulse">Completed 0 Tests</p></div>
+          <div class="col-span-3 col-start-1 row-start-2 place-content-end"><p class="text-white w-full text-center uppercase animate-pulse">Completed 0 tests</p></div>
           <div class="col-span-3 col-start-1 row-start-3"><Loader width={0} /></div>
         </>
       }>
         <Switch fallback={
                 <>
-                <div class="col-span-3 col-start-1 row-start-2 place-content-end"><p class="text-white w-full text-center uppercase animate-pulse">Completed 0 Tests</p></div>
+                <div class="col-span-3 col-start-1 row-start-2 place-content-end"><p class="text-white w-full text-center uppercase animate-pulse">Completed 0 tests</p></div>
                 <div class="col-span-3 col-start-1 row-start-3"><Loader width={0} /></div>
               </>
         }>
