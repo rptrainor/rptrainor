@@ -11,13 +11,13 @@ type Notification = {
 };
 
 const notifications = [
-  { id: 1, text: "🔥 Issue Alert: Noticeable dip in lead quality despite increased ad spend. Urgent discussion needed!" },
+  { id: 1, text: "🔥 Issue Alert: Noticeable dip in lead quality despite increased ad spend. Urgent discussion is needed!" },
   { id: 2, text: "Despite our efforts, month-on-month growth is unpredictable. How can we stabilize this?" },
   { id: 3, text: "I've reviewed several strategies, but none seem right. We're at a crossroads." },
-  { id: 4, text: "Heard about RPTrainor at the recent CEO roundtable. They tailor campaigns for high variability markets. Thoughts?" },
+  { id: 4, text: "I heard about RPTrainor at the recent CEO roundtable. They tailor campaigns for high-variability markets. Thoughts?" },
   { id: 5, text: "Team meeting update: Decided to partner with RPTrainor. They'll handle our next campaign with a custom approach." },
   { id: 6, text: "Initial results are in! Seeing a more consistent lead quality and conversion rate. Is this our turning point?" },
-  { id: 7, text: "🚀 RPTrainor has not only stabilized our lead generation but also projected a strong QoQ growth. We’re on a new trajectory!" }
+  { id: 7, text: "🚀 RPTrainor has not only stabilized our lead generation but also projected strong QoQ growth. We’re on a new trajectory!" }
 ];
 
 function NotificationSystem() {
