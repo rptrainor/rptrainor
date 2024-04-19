@@ -8,17 +8,17 @@ const Plans = () => {
     >
       <Switch>
         <Match when={service() === 'Build + Manage'}>
-          <div class="flex flex-col space-y-4 h-full">
-            <h3 id="tier-startup" class="text-xl font-bold leading-8 tracking-tight text-white sm:h-16 md:h-8 xs:h-8 h-16">
+        <div class="flex flex-col space-y-4 justify-between sm:h-64 h-auto">
+            <h3 id="tier-startup" class="text-xl font-bold leading-8 tracking-tight text-white xs:h-12 h-16">
               Build + Manage Service
             </h3>
 
             <p class="flex items-baseline gap-x-1">
-              <span class="text-4xl font-bold tracking-tight text-white">$1,247</span>
+              <span class="text-xl font-bold tracking-tight text-white">$1,247</span>
               <span class="text-sm font-semibold leading-6 text-gray-200">/month</span>
             </p>
-            <small class="block text-sm leading-snug text-gray-200 md:h-24 sm:h-28 xs:h-20 h-32 grow lg:h-20">
-            Our comprehensive Done-For-You service includes expertly crafted campaigns and continuous management, designed to stabilize your lead generation and ensure sustained business growth. Experience the peace of mind that comes from having a steady stream of high-quality leads.
+            <small class="block text-sm leading-snug text-gray-200 grow h-auto">
+              Our comprehensive Done-For-You service includes expertly crafted campaigns and continuous management, designed to stabilize your lead generation and ensure sustained business growth.
             </small>
             <a
               href="https://buy.stripe.com/28ofZ884Ia9KaDmcMQ"
@@ -30,16 +30,15 @@ const Plans = () => {
           </div>
         </Match>
         <Match when={service() === 'Build Only'}>
-          <div class="flex flex-col space-y-4 h-full">
-
-            <h3 id="tier-startup" class="text-xl font-bold leading-8 tracking-tight text-white sm:h-16 md:h-8 xs:h-8 h-16">
+          <div class="flex flex-col space-y-4 justify-between sm:h-64 h-auto">
+            <h3 id="tier-startup" class="text-xl font-bold leading-8 tracking-tight text-white xs:h-12 h-16">
               Build Only Service</h3>
             <p class="flex items-baseline gap-x-1">
-              <span class="text-4xl font-bold tracking-tight text-white">$873</span>
+              <span class="text-xl font-bold tracking-tight text-white">$873</span>
               <span class="text-sm font-semibold leading-6 text-gray-200">once</span>
             </p>
-            <small class="block text-sm leading-snug text-gray-200 md:h-24 sm:h-28 xs:h-20 h-32 grow lg:h-20">
-            Invest once and reap the benefits indefinitely with a high-quality, professionally designed landing page crafted to convert visitors into leads efficiently.
+            <small class="block text-sm leading-snug text-gray-200 grow h-auto">
+              Invest once and reap the benefits indefinitely with a high-quality, professionally designed landing page crafted to convert visitors into leads efficiently.
             </small>
             <a
               href="https://buy.stripe.com/fZedR00Cgeq06n6149"
