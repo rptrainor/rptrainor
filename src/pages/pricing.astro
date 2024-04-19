@@ -121,23 +121,31 @@ import ryan from '../components/ryan.webp'
 		<div class="col-span-full hidden sm:col-span-1 sm:col-start-1 sm:row-start-3 sm:block">
 			<Image
 				class="aspect-square rounded-md object-contain sm:ml-auto"
-				width={200}
+				width={100}
 				alt="Ryan Trainor"
 				src={ryan}
 			/>
 		</div>
 		<article
-			class="col-span-full flex flex-col gap-1 rounded-md bg-transparent text-white sm:col-span-2 sm:col-start-2 sm:row-start-3"
+			class="col-span-full text-white sm:col-span-2 sm:col-start-2 sm:row-start-3 h-auto rounded-md bg-white/5 p-4 flex flex-col gap-2 sm:text-md text-base leading-normal lg:text-lg"
 		>
-			<div class="h-auto rounded-md bg-white/5 p-4">
-				<p class="sm:text-md text-base leading-normal text-gray-300 lg:text-lg">
-					Hi, I'm Ryan! I founded RPTrainor because while building a landing page is easy, creating
+				<div class="block sm:hidden">
+					<Image
+						class="aspect-square rounded-md object-contain"
+						width={100}
+						alt="Ryan Trainor"
+						src={ryan}
+					/>
+				</div>
+				<p>Hi, I'm Ryan!</p>
+				<p>
+					I founded RPTrainor because while building a landing page is easy, creating
 					one that converts is a challenge. Even before beginning my career as a software engineer,
 					I was launching my own businesses. I remember spending way too long trying to get the
 					ideas in my head onto the screen. Hand-coded, interactive landing pages will always
 					surpass any tool available today.
 				</p>
-				<p class="mt-4">
+				<p>
 					Excited to meet you! Say "hi" at <a
 						href="mailto:ryan@rptrainor.com?subject=👋&body=hi"
 						class="cursor-pointer text-blue-600 underline hover:text-blue-500">ryan@rptrainor.com</a
@@ -146,7 +154,6 @@ import ryan from '../components/ryan.webp'
 						class="cursor-pointer text-blue-600 underline hover:text-blue-500">+1.612.747.5815</a
 					>
 				</p>
-			</div>
 		</article>
 	</GridContainer>
 </Layout>
