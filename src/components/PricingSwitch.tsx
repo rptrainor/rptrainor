@@ -6,12 +6,12 @@ const PricingSwitch = () => {
   return (
     <div class="w-full">
       <h2 class="text-balance text-center text-lg font-semibold text-white">
-        Choose Your Service Level
+        Choose your service level
       </h2>
       <fieldset
         class="mx-auto grid w-full max-w-[325px] grid-cols-2 place-items-center gap-x-0 rounded-full bg-white/10 py-1 text-center text-xs font-semibold leading-5 text-white xs:text-sm sm:text-base"
       >
-        <legend class="sr-only">Choose Your Service Level</legend>
+        <legend class="sr-only">Choose your service level</legend>
         <label class="group cursor-pointer rounded-full px-1 py-1 sm:px-2.5 hover:animate-hover-pop">
           <input
             type="radio"
