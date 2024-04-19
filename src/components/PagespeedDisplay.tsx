@@ -74,7 +74,7 @@ export default function PagespeedDisplay(props: Props) {
       <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-2 gap-y-4 grid-rows-auto col-span-3 col-start-1 row-start-2">
 
         <div class="flex flex-col">
-          <p class="text-lg font-medium leading-6 text-gray-400">Performance Score</p>
+          <p class="text-lg font-medium leading-6 text-gray-200">Performance Score</p>
           <p class="flex items-baseline gap-x-2 flex-col">
             <span class="text-lg text-slow uppercase font-semibold">Now</span>
             <span class="text-2xl font-semibold tracking-tight text-white">{(props.perf * 100).toFixed(0)}</span>
@@ -86,7 +86,7 @@ export default function PagespeedDisplay(props: Props) {
         </div>
 
         <div class="flex flex-col">
-          <p class="text-lg font-medium leading-6 text-gray-400">Conversion Rate</p>
+          <p class="text-lg font-medium leading-6 text-gray-200">Conversion Rate</p>
           <p class="flex items-baseline gap-x-2 flex-col">
             <span class="text-lg text-slow uppercase font-semibold">Now</span>
             <span class="text-2xl font-semibold tracking-tight text-white">{parseInt(props.current_conversion_rate).toFixed(2)}&#37;</span>
@@ -98,7 +98,7 @@ export default function PagespeedDisplay(props: Props) {
         </div>
 
         <div class="flex flex-col">
-          <p class="text-lg font-medium leading-6 text-gray-400">Monthly Conversions</p>
+          <p class="text-lg font-medium leading-6 text-gray-200">Monthly Conversions</p>
           <p class="flex items-baseline gap-x-2 flex-col">
             <span class="text-lg text-slow uppercase font-semibold">Now</span>
             <span class="text-2xl font-semibold tracking-tight text-white">{current_conversion_count().toFixed(0)}</span>
@@ -110,7 +110,7 @@ export default function PagespeedDisplay(props: Props) {
         </div>
 
         <div class="flex flex-col">
-          <p class="text-lg font-medium leading-6 text-gray-400">Monthly Revenue</p>
+          <p class="text-lg font-medium leading-6 text-gray-200">Monthly Revenue</p>
           <p class="flex items-baseline gap-x-2 flex-col">
             <span class="text-lg text-slow uppercase font-semibold">Now</span>
             <span class="text-2xl font-semibold tracking-tight text-white">{usd.format(current_monthly_revenue())}</span>
@@ -133,7 +133,7 @@ export default function PagespeedDisplay(props: Props) {
           </dt>
           <dd class="ml-16 flex flex-col items-baseline">
             <p class={`${getClassByScore(props.firstContentfulPaint?.score || 0)} text-2xl font-semibold`}>{props.firstContentfulPaint?.displayValue}</p>
-            <p class='text-gray-400 text-sm text-wrap max-w-full'>First Contentful Paint marks the time at which the first text or image is painted.</p>
+            <p class='text-gray-200 text-sm text-wrap max-w-full'>First Contentful Paint marks the time at which the first text or image is painted.</p>
           </dd>
         </div>
 
@@ -145,7 +145,7 @@ export default function PagespeedDisplay(props: Props) {
           </dt>
           <dd class="ml-16 flex flex-col items-baseline">
             <p class={`${getClassByScore(props.largestContentfulPaint?.score || 0)} text-2xl font-semibold`}>{props.largestContentfulPaint?.displayValue}</p>
-            <p class='text-gray-400 text-sm text-wrap max-w-full'>Largest Contentful Paint marks the time at which the largest text or image is painted</p>
+            <p class='text-gray-200 text-sm text-wrap max-w-full'>Largest Contentful Paint marks the time at which the largest text or image is painted</p>
           </dd>
         </div>
 
@@ -157,7 +157,7 @@ export default function PagespeedDisplay(props: Props) {
           </dt>
           <dd class="ml-16 flex flex-col items-baseline">
             <p class={`${getClassByScore(props.totalBlockingTime?.score || 0)} text-2xl font-semibold`}>{props.totalBlockingTime?.displayValue}</p>
-            <p class='text-gray-400 text-sm text-wrap max-w-full'>Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds</p>
+            <p class='text-gray-200 text-sm text-wrap max-w-full'>Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds</p>
           </dd>
         </div>
 
@@ -169,7 +169,7 @@ export default function PagespeedDisplay(props: Props) {
           </dt>
           <dd class="ml-16 flex flex-col items-baseline">
             <p class={`${getClassByScore(props.cumulativeLayoutShift?.score || 0)} text-2xl font-semibold`}>{props.cumulativeLayoutShift?.displayValue}</p>
-            <p class='text-gray-400 text-sm text-wrap max-w-full'>Cumulative Layout Shift measures the movement of visible elements within the viewport.</p>
+            <p class='text-gray-200 text-sm text-wrap max-w-full'>Cumulative Layout Shift measures the movement of visible elements within the viewport.</p>
           </dd>
         </div>
 
@@ -181,7 +181,7 @@ export default function PagespeedDisplay(props: Props) {
           </dt>
           <dd class="ml-16 flex flex-col items-baseline">
             <p class={`${getClassByScore(props.firstInputDelay?.score || 0)} text-2xl font-semibold`}>{props.firstInputDelay?.displayValue}</p>
-            <p class='text-gray-400 text-sm text-wrap max-w-full'>The maximum potential First Input Delay that your users could experience is the duration of the longest task.</p>
+            <p class='text-gray-200 text-sm text-wrap max-w-full'>The maximum potential First Input Delay that your users could experience is the duration of the longest task.</p>
           </dd>
         </div>
 
@@ -193,7 +193,7 @@ export default function PagespeedDisplay(props: Props) {
           </dt>
           <dd class="ml-16 flex flex-col items-baseline">
             <p class={`${getClassByScore(props.speedIndex?.score || 0)} text-2xl font-semibold`}>{props.speedIndex?.displayValue}</p>
-            <p class='text-gray-400 text-sm text-wrap max-w-full'>Speed Index shows how quickly the contents of a page are visibly populated</p>
+            <p class='text-gray-200 text-sm text-wrap max-w-full'>Speed Index shows how quickly the contents of a page are visibly populated</p>
           </dd>
         </div>
 

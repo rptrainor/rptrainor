@@ -15,9 +15,9 @@ const Plans = () => {
 
             <p class="flex items-baseline gap-x-1">
               <span class="text-4xl font-bold tracking-tight text-white">$1,247</span>
-              <span class="text-sm font-semibold leading-6 text-gray-300">/month</span>
+              <span class="text-sm font-semibold leading-6 text-gray-200">/month</span>
             </p>
-            <small class="block text-sm leading-snug text-gray-300 md:h-24 sm:h-28 xs:h-20 h-32 grow lg:h-20">
+            <small class="block text-sm leading-snug text-gray-200 md:h-24 sm:h-28 xs:h-20 h-32 grow lg:h-20">
             Our comprehensive Done-For-You service includes expertly crafted campaigns and continuous management, designed to stabilize your lead generation and ensure sustained business growth. Experience the peace of mind that comes from having a steady stream of high-quality leads.
             </small>
             <a
@@ -36,9 +36,9 @@ const Plans = () => {
               Build Only Service</h3>
             <p class="flex items-baseline gap-x-1">
               <span class="text-4xl font-bold tracking-tight text-white">$873</span>
-              <span class="text-sm font-semibold leading-6 text-gray-300">once</span>
+              <span class="text-sm font-semibold leading-6 text-gray-200">once</span>
             </p>
-            <small class="block text-sm leading-snug text-gray-300 md:h-24 sm:h-28 xs:h-20 h-32 grow lg:h-20">
+            <small class="block text-sm leading-snug text-gray-200 md:h-24 sm:h-28 xs:h-20 h-32 grow lg:h-20">
             Invest once and reap the benefits indefinitely with a high-quality, professionally designed landing page crafted to convert visitors into leads efficiently.
             </small>
             <a
