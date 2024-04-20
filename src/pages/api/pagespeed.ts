@@ -12,12 +12,9 @@ export const GET: APIRoute = async ({ request }) => {
 
   const normalizedUrl = web_page_url.startsWith('http://') || web_page_url.startsWith('https://') ? web_page_url : `https://${web_page_url}`;
   const apiUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(normalizedUrl)}&strategy=${strategy}&key=${import.meta.env.PAGESPEED_API_KEY}`;
-
   try {
-    const dbPromise = db.insert(Query).values({ web_page_url: normalizedUrl });
-    const fetchPromise = fetch(apiUrl);
-
-    const [_, apiResponse] = await Promise.all([dbPromise, fetchPromise]);
+    await db.insert(Query).values({ web_page_url: normalizedUrl });
+    const apiResponse = await fetch(apiUrl);
 
     if (!apiResponse.ok) {
       throw new Error(`Google PageSpeed Insights API responded with status ${apiResponse.status}`);
@@ -44,6 +41,7 @@ export const GET: APIRoute = async ({ request }) => {
     return new Response(
       JSON.stringify({
         message: error instanceof Error ? error.message : String(error),
+        error: String(error),
         url: normalizedUrl,
         perf: 0.36,
         audits: {
