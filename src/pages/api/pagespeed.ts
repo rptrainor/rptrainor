@@ -45,7 +45,7 @@ export const GET: APIRoute = async ({ request }) => {
       JSON.stringify({
         message: error instanceof Error ? error.message : String(error),
         url: normalizedUrl,
-        perf: 0.33,
+        perf: 0.36,
         audits: {
           "largest-contentful-paint": {
             "id": "largest-contentful-paint",
