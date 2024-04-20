@@ -43,8 +43,7 @@ export const GET: APIRoute = async ({ request }) => {
   } catch (error) {
     return new Response(
       JSON.stringify({
-        message: "Failed to fetch data from Google PageSpeed Insights API",
-        error: error instanceof Error ? error.message : String(error),
+        message: error instanceof Error ? error.message : String(error),
         url: normalizedUrl,
         perf: 0.33,
         audits: {
