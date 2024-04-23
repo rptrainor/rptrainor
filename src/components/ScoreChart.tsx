@@ -28,7 +28,7 @@ const ScoreChart = (props: { score?: number; variant: 'large' | 'small' }): JSX.
   const scoreIndex = createMemo(() => Math.round((props.score || 0) * 100));
 
   return (
-    <div class={`${getClassByScore(props.score || 0)} absolute rounded-md`}>
+    <div class={`${getClassByScore(props.score || 0)} absolute rounded-xl`}>
       <div class="w-12 h-12 rounded-full flex items-center justify-center">
         <svg
           viewBox="0 0 120 120"

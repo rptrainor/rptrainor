@@ -4,7 +4,7 @@ import { service } from "./PricingSwitch";
 const Plans = () => {
   return (
     <div
-      class="col-span-2 col-start-1 row-start-2 flex flex-col gap-y-4 rounded-md bg-white/5 p-4 ring-2 ring-black"
+      class="col-span-2 col-start-1 row-start-2 flex flex-col gap-y-4 rounded-xl bg-white/5 p-4 ring-2 ring-black"
     >
       <Switch>
         <Match when={service() === 'Build + Manage'}>
@@ -23,7 +23,7 @@ const Plans = () => {
             <a
               href="https://buy.stripe.com/28ofZ884Ia9KaDmcMQ"
               aria-describedby="tier-startup"
-              class="block rounded-md bg-white px-3 py-2 text-center text-lg font-semibold leading-6 text-background shadow-sm hover:animate-hover-pop focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              class="block rounded-xl bg-white px-3 py-2 text-center text-lg font-semibold leading-6 text-background shadow-sm hover:animate-hover-pop focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               Buy plan
             </a>
@@ -43,7 +43,7 @@ const Plans = () => {
             <a
               href="https://buy.stripe.com/fZedR00Cgeq06n6149"
               aria-describedby="tier-startup"
-              class="block rounded-md bg-white px-3 py-2 text-center text-lg font-semibold leading-6 text-background shadow-sm hover:animate-hover-pop focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              class="block rounded-xl bg-white px-3 py-2 text-center text-lg font-semibold leading-6 text-background shadow-sm hover:animate-hover-pop focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               Buy plan
             </a>

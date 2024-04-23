@@ -65,9 +65,6 @@ const fetchPagespeedData = async (props: { web_page_url: string; strategy: strin
 type Props = {
     web_page_url: string;
     strategy: string;
-    current_conversion_value: string;
-    current_monthly_traffic: string;
-    current_conversion_rate: string;
 };
 
 const PagespeedResults = (props: Props) => {
@@ -115,9 +112,9 @@ const PagespeedResults = (props: Props) => {
                     <PagespeedDisplay
                         web_page_url={props.web_page_url}
                         strategy={props.strategy}
-                        current_conversion_value={props.current_conversion_value}
-                        current_monthly_traffic={props.current_monthly_traffic}
-                        current_conversion_rate={props.current_conversion_rate}
+                        // current_conversion_value={props.current_conversion_value}
+                        // current_monthly_traffic={props.current_monthly_traffic}
+                        // current_conversion_rate={props.current_conversion_rate}
                         firstContentfulPaint={data()?.data.lighthouse.audits["first-contentful-paint"]}
                         speedIndex={data()?.data.lighthouse.audits['speed-index']}
                         timeToInteractive={data()?.data.lighthouse.audits['interactive']}
@@ -134,9 +131,9 @@ const PagespeedResults = (props: Props) => {
                     <PagespeedDisplay
                         web_page_url={props.web_page_url}
                         strategy={props.strategy}
-                        current_conversion_value={props.current_conversion_value}
-                        current_monthly_traffic={props.current_monthly_traffic}
-                        current_conversion_rate={props.current_conversion_rate}
+                        // current_conversion_value={props.current_conversion_value}
+                        // current_monthly_traffic={props.current_monthly_traffic}
+                        // current_conversion_rate={props.current_conversion_rate}
                         firstContentfulPaint={data()?.data.lighthouse.audits["first-contentful-paint"]}
                         speedIndex={data()?.data.lighthouse.audits['speed-index']}
                         timeToInteractive={data()?.data.lighthouse.audits['interactive']}

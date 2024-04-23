@@ -1,17 +1,12 @@
-import { createMemo } from 'solid-js';
+import { createEffect, createMemo } from 'solid-js';
 
 import { type DataRunOutput } from "../types";
 import ScoreChart, { getClassByScore } from "./ScoreChart";
-
-const lcpImprovement = 0.31; // Vodafone's 31% LCP improvement
-const clsImprovement = 0.15; // iCook's 15% CLS improvement
+import { resultFormStore } from "../stores/resultFormStore";
 
 type Props = {
   web_page_url: string;
   strategy: string;
-  current_conversion_value: string;
-  current_monthly_traffic: string;
-  current_conversion_rate: string;
   firstContentfulPaint: DataRunOutput | undefined;
   speedIndex: DataRunOutput | undefined;
   timeToInteractive: DataRunOutput | undefined;
@@ -32,7 +27,7 @@ const usd = new Intl.NumberFormat('en-US', {
 export default function PagespeedDisplay(props: Props) {
 
   const improved_conversion_rate = createMemo(() => {
-    const baseConversionRate = parseFloat(props.current_conversion_rate) ?? 0;
+    const baseConversionRate = parseFloat(resultFormStore.current_conversion_rate) ?? 0;
   
     const currentLCPScore = props.largestContentfulPaint?.score ?? 0;
 
@@ -48,25 +43,24 @@ export default function PagespeedDisplay(props: Props) {
     return parseFloat(standardizedConversionRate.toFixed(2));
   });
   
-
   const current_conversion_count = createMemo(() => {
-    const number_of_traffic = parseFloat(props.current_monthly_traffic) ?? 0;
-    return number_of_traffic * (parseFloat(props.current_conversion_rate) / 100)
+    const number_of_traffic = parseFloat(resultFormStore.current_monthly_traffic) ?? 0;
+    return number_of_traffic * (parseFloat(resultFormStore.current_conversion_rate) / 100)
   });
 
   const improved_conversion_count = createMemo(() => {
-    const number_of_traffic = parseFloat(props.current_monthly_traffic) ?? 0;
+    const number_of_traffic = parseFloat(resultFormStore.current_monthly_traffic) ?? 0;
     return number_of_traffic * (improved_conversion_rate() / 100)
   });
 
   const current_monthly_revenue = createMemo(() => {
-    const number_of_traffic = parseFloat(props.current_monthly_traffic) ?? 0;
-    return number_of_traffic * (parseFloat(props.current_conversion_rate) / 100) * parseFloat(props.current_conversion_value)
+    const number_of_traffic = parseFloat(resultFormStore.current_monthly_traffic) ?? 0;
+    return number_of_traffic * (parseFloat(resultFormStore.current_conversion_rate) / 100) * parseFloat(resultFormStore.current_conversion_value)
   });
 
   const improved_monthly_revenue = createMemo(() => {
-    const number_of_traffic = parseFloat(props.current_monthly_traffic) ?? 0;
-    return number_of_traffic * (improved_conversion_rate() / 100) * parseFloat(props.current_conversion_value)
+    const number_of_traffic = parseFloat(resultFormStore.current_monthly_traffic) ?? 0;
+    return number_of_traffic * (improved_conversion_rate() / 100) * parseFloat(resultFormStore.current_conversion_value)
   });
 
   return (
@@ -89,7 +83,7 @@ export default function PagespeedDisplay(props: Props) {
           <p class="text-lg font-medium leading-6 text-gray-200">Conversion Rate</p>
           <p class="flex items-baseline gap-x-2 flex-col">
             <span class="text-lg text-slow uppercase font-semibold">Now</span>
-            <span class="text-2xl font-semibold tracking-tight text-white">{parseInt(props.current_conversion_rate).toFixed(2)}&#37;</span>
+            <span class="text-2xl font-semibold tracking-tight text-white">{parseInt(resultFormStore.current_conversion_rate).toFixed(2)}&#37;</span>
           </p>
           <p class="flex items-baseline gap-x-2 flex-col">
             <span class="text-lg text-fast uppercase font-semibold">Improved</span>
@@ -125,7 +119,7 @@ export default function PagespeedDisplay(props: Props) {
 
       <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 grid-rows-auto col-span-3 col-start-1 row-start-3">
 
-        <div class="relative overflow-hidden rounded-md">
+        <div class="relative overflow-hidden rounded-xl">
           <dt>
             <ScoreChart score={props.firstContentfulPaint?.score} variant="small" />
 
@@ -137,7 +131,7 @@ export default function PagespeedDisplay(props: Props) {
           </dd>
         </div>
 
-        <div class="relative overflow-hidden rounded-md">
+        <div class="relative overflow-hidden rounded-xl">
           <dt>
             <ScoreChart score={props.largestContentfulPaint?.score} variant="small" />
 
@@ -149,7 +143,7 @@ export default function PagespeedDisplay(props: Props) {
           </dd>
         </div>
 
-        <div class="relative overflow-hidden rounded-md">
+        <div class="relative overflow-hidden rounded-xl">
           <dt>
             <ScoreChart score={props.totalBlockingTime?.score} variant="small" />
 
@@ -161,7 +155,7 @@ export default function PagespeedDisplay(props: Props) {
           </dd>
         </div>
 
-        <div class="relative overflow-hidden rounded-md">
+        <div class="relative overflow-hidden rounded-xl">
           <dt>
             <ScoreChart score={props.cumulativeLayoutShift?.score} variant="small" />
 
@@ -173,7 +167,7 @@ export default function PagespeedDisplay(props: Props) {
           </dd>
         </div>
 
-        <div class="relative overflow-hidden rounded-md">
+        <div class="relative overflow-hidden rounded-xl">
           <dt>
             <ScoreChart score={props.firstInputDelay?.score} variant="small" />
 
@@ -185,7 +179,7 @@ export default function PagespeedDisplay(props: Props) {
           </dd>
         </div>
 
-        <div class="relative overflow-hidden rounded-md">
+        <div class="relative overflow-hidden rounded-xl">
           <dt>
             <ScoreChart score={props.speedIndex?.score} variant="small" />
 
