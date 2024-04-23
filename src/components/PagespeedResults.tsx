@@ -16,7 +16,7 @@ interface ApiResponse {
 }
 
 
-const pollForResults = async (jsonUrl: string, retryInterval = 30000, timeout = 10000): Promise<TestResult> => {
+const pollForResults = async (jsonUrl: string, retryInterval = 10000, timeout = 3333): Promise<TestResult> => {
     while (true) {
         try {
             // console.log(`Polling results from: ${jsonUrl}`);
