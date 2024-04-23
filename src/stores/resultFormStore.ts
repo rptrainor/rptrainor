@@ -1,9 +1,15 @@
 import { createStore } from "solid-js/store";
 
-const [resultFormStore, setResultFormStore] = createStore({
-  current_conversion_rate: "2",
-  current_conversion_value: "42",
-  current_monthly_traffic: "1680",
+type Props = {
+  current_conversion_rate: string | undefined;
+  current_conversion_value: string | undefined;
+  current_monthly_traffic: string | undefined;
+};
+
+const [resultFormStore, setResultFormStore] = createStore<Props>({
+  current_conversion_rate: undefined,
+  current_conversion_value: undefined,
+  current_monthly_traffic: undefined,
 });
 
 export { resultFormStore, setResultFormStore };

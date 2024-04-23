@@ -1,4 +1,4 @@
-import { createEffect, createMemo } from 'solid-js';
+import { createMemo } from 'solid-js';
 
 import { type DataRunOutput } from "../types";
 import ScoreChart, { getClassByScore } from "./ScoreChart";
@@ -27,9 +27,9 @@ const usd = new Intl.NumberFormat('en-US', {
 export default function PagespeedDisplay(props: Props) {
 
   const improved_conversion_rate = createMemo(() => {
-    const baseConversionRate = parseFloat(resultFormStore.current_conversion_rate) ?? 0;
+    const baseConversionRate = parseFloat(resultFormStore.current_conversion_rate || "0");
   
-    const currentLCPScore = props.largestContentfulPaint?.score ?? 0;
+    const currentLCPScore = props.largestContentfulPaint?.score || 0;
 
     // Calculate improvement factor based on Rakuten's observed outcome
     const improvementFactor = (1 - currentLCPScore) * 0.6113;
@@ -44,23 +44,23 @@ export default function PagespeedDisplay(props: Props) {
   });
   
   const current_conversion_count = createMemo(() => {
-    const number_of_traffic = parseFloat(resultFormStore.current_monthly_traffic) ?? 0;
-    return number_of_traffic * (parseFloat(resultFormStore.current_conversion_rate) / 100)
+    const number_of_traffic = parseFloat(resultFormStore.current_monthly_traffic || "0");
+    return number_of_traffic * (parseFloat(resultFormStore.current_conversion_rate || "0") / 100)
   });
 
   const improved_conversion_count = createMemo(() => {
-    const number_of_traffic = parseFloat(resultFormStore.current_monthly_traffic) ?? 0;
+    const number_of_traffic = parseFloat(resultFormStore.current_monthly_traffic || "0");
     return number_of_traffic * (improved_conversion_rate() / 100)
   });
 
   const current_monthly_revenue = createMemo(() => {
-    const number_of_traffic = parseFloat(resultFormStore.current_monthly_traffic) ?? 0;
-    return number_of_traffic * (parseFloat(resultFormStore.current_conversion_rate) / 100) * parseFloat(resultFormStore.current_conversion_value)
+    const number_of_traffic = parseFloat(resultFormStore.current_monthly_traffic || "0");
+    return number_of_traffic * (parseFloat(resultFormStore.current_conversion_rate || "0") / 100) * parseFloat(resultFormStore.current_conversion_value || "0")
   });
 
   const improved_monthly_revenue = createMemo(() => {
-    const number_of_traffic = parseFloat(resultFormStore.current_monthly_traffic) ?? 0;
-    return number_of_traffic * (improved_conversion_rate() / 100) * parseFloat(resultFormStore.current_conversion_value)
+    const number_of_traffic = parseFloat(resultFormStore.current_monthly_traffic || "0");
+    return number_of_traffic * (improved_conversion_rate() / 100) * parseFloat(resultFormStore.current_conversion_value || "0")
   });
 
   return (
@@ -83,7 +83,7 @@ export default function PagespeedDisplay(props: Props) {
           <p class="text-lg font-medium leading-6 text-gray-200">Conversion Rate</p>
           <p class="flex items-baseline gap-x-2 flex-col">
             <span class="text-lg text-slow uppercase font-semibold">Now</span>
-            <span class="text-2xl font-semibold tracking-tight text-white">{parseInt(resultFormStore.current_conversion_rate).toFixed(2)}&#37;</span>
+            <span class="text-2xl font-semibold tracking-tight text-white">{parseInt(resultFormStore.current_conversion_rate || "0").toFixed(2)}&#37;</span>
           </p>
           <p class="flex items-baseline gap-x-2 flex-col">
             <span class="text-lg text-fast uppercase font-semibold">Improved</span>

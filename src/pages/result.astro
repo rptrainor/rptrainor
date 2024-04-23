@@ -8,6 +8,9 @@ import CurrentMonthlyTrafficInput from '../components/CurrentMonthlyTrafficInput
 
 const web_page_url = Astro.url.searchParams.get('web_page_url') || ''
 const strategy = Astro.url.searchParams.get('strategy') || 'mobile'
+const current_monthly_traffic = Astro.url.searchParams.get('current_monthly_traffic') || '1680'
+const current_conversion_rate = Astro.url.searchParams.get('current_conversion_rate') || '2'
+const current_conversion_value = Astro.url.searchParams.get('current_conversion_value') || '42'
 ---
 
 <Layout
@@ -58,7 +61,7 @@ const strategy = Astro.url.searchParams.get('strategy') || 'mobile'
 								>Conversion rate</label
 							>
 							<div class="relative mt-2 rounded-xl shadow-sm">
-								<CurrentConversionRateInput client:load />
+								<CurrentConversionRateInput client:load initialValue={current_conversion_rate} />
 								<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
 									<span class="text-white sm:text-sm">&#37;</span>
 								</div>
@@ -93,7 +96,7 @@ const strategy = Astro.url.searchParams.get('strategy') || 'mobile'
 								<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
 									<span class="text-white sm:text-sm">$</span>
 								</div>
-								<CurrentConversionValueInput client:load />
+								<CurrentConversionValueInput client:load initialValue={current_conversion_value} />
 								<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
 									<span class="text-white sm:text-sm" id="price-currency">USD</span>
 								</div>
@@ -107,7 +110,7 @@ const strategy = Astro.url.searchParams.get('strategy') || 'mobile'
 								>Monthly traffic</label
 							>
 							<div class="mt-2">
-								<CurrentMonthlyTrafficInput client:load />
+								<CurrentMonthlyTrafficInput client:load initialValue={current_monthly_traffic} />
 							</div>
 						</div>
 					</div>
