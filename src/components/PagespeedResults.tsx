@@ -118,7 +118,7 @@ const PagespeedResults = (props: Props) => {
                         current_conversion_value={props.current_conversion_value}
                         current_monthly_traffic={props.current_monthly_traffic}
                         current_conversion_rate={props.current_conversion_rate}
-                        firstContentfulPaint={data()?.data.lighthouse.audits["largest-contentful-paint"]}
+                        firstContentfulPaint={data()?.data.lighthouse.audits["first-contentful-paint"]}
                         speedIndex={data()?.data.lighthouse.audits['speed-index']}
                         timeToInteractive={data()?.data.lighthouse.audits['interactive']}
                         firstMeaningfulPaint={data()?.data.lighthouse.audits['first-meaningful-paint']}
@@ -137,7 +137,7 @@ const PagespeedResults = (props: Props) => {
                         current_conversion_value={props.current_conversion_value}
                         current_monthly_traffic={props.current_monthly_traffic}
                         current_conversion_rate={props.current_conversion_rate}
-                        firstContentfulPaint={data()?.data.lighthouse.audits["largest-contentful-paint"]}
+                        firstContentfulPaint={data()?.data.lighthouse.audits["first-contentful-paint"]}
                         speedIndex={data()?.data.lighthouse.audits['speed-index']}
                         timeToInteractive={data()?.data.lighthouse.audits['interactive']}
                         firstMeaningfulPaint={data()?.data.lighthouse.audits['first-meaningful-paint']}
