@@ -14,11 +14,13 @@ async function fetchString(apiUrl: string): Promise<string> {
 }
 
 // Function to start a WebPageTest and return the test ID and JSON URL
-async function startWptTest(url: string) {
+async function startWptTest(url: string, strategy: string) {
+  const isMobile = strategy === 'mobile' ? '1' : '0';
   const apiUrl = new URL('https://www.webpagetest.org/runtest.php');
   apiUrl.searchParams.append('url', url);
   apiUrl.searchParams.append('f', 'json');
   apiUrl.searchParams.append('lighthouse', '1');  // Enable Lighthouse testing
+  apiUrl.searchParams.append('mobile', isMobile);      // Use mobile settings
   const responseText = await fetchString(apiUrl.href);
   const response = JSON.parse(responseText);
   if (response.statusCode !== 200) {
@@ -36,6 +38,7 @@ export const GET: APIRoute = async ({ request }) => {
   }
   const url = new URL(request.url);
   const web_page_url = url.searchParams.get("web_page_url");
+  const strategy = url.searchParams.get("strategy");
 
   if (!web_page_url) {
     return new Response(JSON.stringify({ message: "Please provide a URL." }), { status: 400, headers: { 'Content-Type': 'application/json' } });
@@ -45,7 +48,7 @@ export const GET: APIRoute = async ({ request }) => {
 
   try {
     await db.insert(Query).values({ web_page_url: normalizedUrl });
-    const { testId, jsonUrl } = await startWptTest(normalizedUrl);
+    const { testId, jsonUrl } = await startWptTest(normalizedUrl, strategy || 'mobile');
 
     return new Response(JSON.stringify({
       message: "Test initiated successfully!",
