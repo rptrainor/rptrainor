@@ -1,139 +1,157 @@
-import { createSignal, createResource, Switch, Match, Suspense, createEffect, createMemo, onCleanup } from "solid-js";
-import type { LighthouseData } from "../types";
+import { createResource, Switch, createSignal, Match, Suspense, createEffect, createMemo, onCleanup } from "solid-js";
 import PagespeedDisplay from "./PagespeedDisplay";
 import Loader from "./Loader";
+import { fetchWithTimeout } from "./fetchWithTimeout";
 
-type FetchProps = {
-  web_page_url: string,
-  strategy: string,
-  current_conversion_value: number, // Changed to number
-  current_monthly_traffic: number, // Changed to number
-  current_conversion_rate: number // Changed to number
+interface TestResult {
+    statusCode: number;
+    data: any;  // Define a more specific type or interface for the data if possible
+}
+
+interface ApiResponse {
+    statusCode: number;
+    testId?: string;
+    resultsUrl?: string;
+    message?: string;
+}
+
+
+const pollForResults = async (jsonUrl: string, retryInterval = 30000, timeout = 10000): Promise<TestResult> => {
+    while (true) {
+        try {
+            // console.log(`Polling results from: ${jsonUrl}`);
+            const response = await fetchWithTimeout(jsonUrl, { timeout });
+            if (!response.ok) {
+                throw new Error(`Server responded with an error: ${response.status}`);
+            }
+
+            const data: TestResult = await response.json();
+            // console.log(`Received data: ${JSON.stringify(data)}`);
+
+            switch (data.statusCode) {
+                case 200:
+                    // console.log('Test completed successfully.');
+                    return data;  // Test completed successfully
+                case 101:
+                    // console.log('Test still running, retrying...');
+                    await new Promise(resolve => setTimeout(resolve, retryInterval));
+                    break;  // Continue the loop after a delay
+                case 100:
+                    // console.log('Just started test still running, retrying...');
+                    await new Promise(resolve => setTimeout(resolve, retryInterval));
+                    break;  // Continue the loop after a delay
+                default:
+                    // console.log(`Unexpected status code received: ${data.statusCode}`);
+                    throw new Error(`Test failed or unavailable, status code: ${data.statusCode}`);
+            }
+        } catch (error) {
+            // console.error('Error polling for results:', error);
+            throw error;  // Rethrow to be caught by the caller
+        }
+    }
 };
 
-const sanitizeInputValue = (value: string, defaultValue: number): number => {
-  const sanitizedValue = parseFloat(value.replace(/[^0-9.]/g, '')); // Remove non-numeric characters
-  return isNaN(sanitizedValue) ? defaultValue : sanitizedValue;
-};
 
-const fetchPagespeedData = async (props: FetchProps) => {
-  if (!props.web_page_url) return;
-  const queryParams = new URLSearchParams({
-    web_page_url: props.web_page_url,
-    strategy: props.strategy,
-    current_conversion_value: props.current_conversion_value.toString(),
-    current_monthly_traffic: props.current_monthly_traffic.toString(),
-    current_conversion_rate: props.current_conversion_rate.toString() // Assume this API can handle floats
-  }).toString();
-  const API_URL = `/api/pagespeed?${queryParams}`;
-  const response = await fetch(API_URL);
-  return response.json() as Promise<LighthouseData>;
+const fetchPagespeedData = async (props: { web_page_url: string; strategy: string }): Promise<any> => {
+    const initiationResponse = await fetch(`/api/pagespeed?web_page_url=${encodeURIComponent(props.web_page_url)}&strategy=${props.strategy}`);
+    if (!initiationResponse.ok) throw new Error('Failed to initiate test');
+
+    const initiationData: ApiResponse = await initiationResponse.json();
+    if (!initiationData.resultsUrl) throw new Error('Response did not contain results URL');
+
+    return await pollForResults(initiationData.resultsUrl);
 };
 
 type Props = {
-  web_page_url: string;
-  strategy: string;
-  current_conversion_value: string;
-  current_monthly_traffic: string;
-  current_conversion_rate: string;
+    web_page_url: string;
+    strategy: string;
+    current_conversion_value: string;
+    current_monthly_traffic: string;
+    current_conversion_rate: string;
 };
 
 const PagespeedResults = (props: Props) => {
-  const [width, setWidth] = createSignal(0);
+    const [width, setWidth] = createSignal(0);
+    const [data] = createResource(() => fetchPagespeedData(props), {
+        initialValue: []
+    });
 
-  // Sanitize and validate input values
-  const sanitizedValues = {
-    current_conversion_rate: sanitizeInputValue(props.current_conversion_rate, 2), // Default to 2%
-    current_monthly_traffic: sanitizeInputValue(props.current_monthly_traffic, 1650), // Default to 1650
-    current_conversion_value: sanitizeInputValue(props.current_conversion_value, 42) // Default to $42
-  };
+    createEffect(() => {
+        if (data.loading) {
+          const intervalId = setInterval(() => {
+            setWidth((currentWidth) => currentWidth + 1);
+          }, 1200);
+    
+          onCleanup(() => clearInterval(intervalId));
+        }
+      });
 
-  const [resourceParams] = createSignal({
-    web_page_url: props.web_page_url,
-    strategy: props.strategy || 'mobile',
-    current_conversion_value: sanitizedValues.current_conversion_value,
-    current_monthly_traffic: sanitizedValues.current_monthly_traffic,
-    current_conversion_rate: sanitizedValues.current_conversion_rate
-  });
+    const testCountString = createMemo(() => {
+        const testCount = (width() / 10).toFixed();
+        const isCompletedTestCountPlural = testCount === '1' ? '' : 's';
+        return `Completed ${testCount} test${isCompletedTestCountPlural}`;
+      });
 
-  const [data] = createResource(resourceParams, fetchPagespeedData);
-
-  createEffect(() => {
-    if (data.loading) {
-      const intervalId = setInterval(() => {
-        setWidth((currentWidth) => currentWidth + 1);
-      }, 1200);
-
-      onCleanup(() => clearInterval(intervalId));
-    }
-  });
-
-  const testCountString = createMemo(() => {
-    const testCount = (width() / 10).toFixed();
-    const isCompletedTestCountPlural = testCount === '1' ? '' : 's';
-    return `Completed ${testCount} test${isCompletedTestCountPlural}`;
-  });
-
-  return (
-      <Suspense fallback={
-        <>
-          <div class="col-span-3 col-start-1 row-start-2 place-content-end"><p class="text-white w-full text-center uppercase animate-pulse">Completed 0 tests</p></div>
-          <div class="col-span-3 col-start-1 row-start-3"><Loader width={0} /></div>
-        </>
-      }>
-        <Switch fallback={
-                <>
-                <div class="col-span-3 col-start-1 row-start-2 place-content-end"><p class="text-white w-full text-center uppercase animate-pulse">Completed 0 tests</p></div>
-                <div class="col-span-3 col-start-1 row-start-3"><Loader width={0} /></div>
-              </>
-        }>
-          <Match when={data.loading}>
+    return (
+        <Suspense fallback={
             <>
-              <div class="col-span-3 col-start-1 row-start-2 place-content-end"><p class="text-white w-full text-center uppercase animate-pulse">{testCountString()}</p></div>
-              <div class="col-span-3 col-start-1 row-start-3"><Loader width={width()} /></div>
+              <div class="col-span-3 col-start-1 row-start-2 place-content-end"><p class="text-white w-full text-center uppercase animate-pulse">Completed 0 tests</p></div>
+              <div class="col-span-3 col-start-1 row-start-3"><Loader width={10} /></div>
             </>
-          </Match>
-          <Match when={data.error}>
-            <PagespeedDisplay
-              web_page_url={props.web_page_url}
-              strategy={props.strategy}
-              current_conversion_value={props.current_conversion_value}
-              current_monthly_traffic={props.current_monthly_traffic}
-              current_conversion_rate={props.current_conversion_rate}
-              firstContentfulPaint={data()?.audits['first-contentful-paint']}
-              speedIndex={data()?.audits['speed-index']}
-              timeToInteractive={data()?.audits['interactive']}
-              firstMeaningfulPaint={data()?.audits['first-meaningful-paint']}
-              largestContentfulPaint={data()?.audits['largest-contentful-paint']}
-              firstInputDelay={data()?.audits['max-potential-fid']}
-              cumulativeLayoutShift={data()?.audits['cumulative-layout-shift']}
-              timeToFirstByte={data()?.audits['server-response-time']}
-              totalBlockingTime={data()?.audits['total-blocking-time']}
-              perf={data()?.perf ?? 0}
-            />
-          </Match>
-          <Match when={data()}>
-            <PagespeedDisplay
-              web_page_url={props.web_page_url}
-              strategy={props.strategy}
-              current_conversion_value={props.current_conversion_value}
-              current_monthly_traffic={props.current_monthly_traffic}
-              current_conversion_rate={props.current_conversion_rate}
-              firstContentfulPaint={data()?.audits['first-contentful-paint']}
-              speedIndex={data()?.audits['speed-index']}
-              timeToInteractive={data()?.audits['interactive']}
-              firstMeaningfulPaint={data()?.audits['first-meaningful-paint']}
-              largestContentfulPaint={data()?.audits['largest-contentful-paint']}
-              firstInputDelay={data()?.audits['max-potential-fid']}
-              cumulativeLayoutShift={data()?.audits['cumulative-layout-shift']}
-              timeToFirstByte={data()?.audits['server-response-time']}
-              totalBlockingTime={data()?.audits['total-blocking-time']}
-              perf={data()?.perf ?? 0}
-            />
-          </Match>
-        </Switch>
-      </Suspense>
-  );
+          }>
+            <Switch fallback={
+                <>
+                    <div class="col-span-3 col-start-1 row-start-2 place-content-end"><p class="text-white w-full text-center uppercase animate-pulse">Completed 0 tests</p></div>
+                    <div class="col-span-3 col-start-1 row-start-3"><Loader width={0} /></div>
+                </>
+            }>
+                <Match when={data.loading}>
+                    <>
+                        <div class="col-span-3 col-start-1 row-start-2 place-content-end"><p class="text-white w-full text-center uppercase animate-pulse">{testCountString()}</p></div>
+                        <div class="col-span-3 col-start-1 row-start-3"><Loader width={width()} /></div>
+                    </>
+                </Match>
+                <Match when={data.error}>
+                    <PagespeedDisplay
+                        web_page_url={props.web_page_url}
+                        strategy={props.strategy}
+                        current_conversion_value={props.current_conversion_value}
+                        current_monthly_traffic={props.current_monthly_traffic}
+                        current_conversion_rate={props.current_conversion_rate}
+                        firstContentfulPaint={data()?.data.lighthouse.audits["largest-contentful-paint"]}
+                        speedIndex={data()?.data.lighthouse.audits['speed-index']}
+                        timeToInteractive={data()?.data.lighthouse.audits['interactive']}
+                        firstMeaningfulPaint={data()?.data.lighthouse.audits['first-meaningful-paint']}
+                        largestContentfulPaint={data()?.data.lighthouse.audits['largest-contentful-paint']}
+                        firstInputDelay={data()?.data.lighthouse.audits['max-potential-fid']}
+                        cumulativeLayoutShift={data()?.data.lighthouse.audits['cumulative-layout-shift']}
+                        timeToFirstByte={data()?.data.lighthouse.audits['server-response-time']}
+                        totalBlockingTime={data()?.data.lighthouse.audits['total-blocking-time']}
+                        perf={data()?.data.lighthouse.categories.performance.score ?? 0}
+                    />
+                </Match>
+                <Match when={data()}>
+                    <PagespeedDisplay
+                        web_page_url={props.web_page_url}
+                        strategy={props.strategy}
+                        current_conversion_value={props.current_conversion_value}
+                        current_monthly_traffic={props.current_monthly_traffic}
+                        current_conversion_rate={props.current_conversion_rate}
+                        firstContentfulPaint={data()?.data.lighthouse.audits["largest-contentful-paint"]}
+                        speedIndex={data()?.data.lighthouse.audits['speed-index']}
+                        timeToInteractive={data()?.data.lighthouse.audits['interactive']}
+                        firstMeaningfulPaint={data()?.data.lighthouse.audits['first-meaningful-paint']}
+                        largestContentfulPaint={data()?.data.lighthouse.audits['largest-contentful-paint']}
+                        firstInputDelay={data()?.data.lighthouse.audits['max-potential-fid']}
+                        cumulativeLayoutShift={data()?.data.lighthouse.audits['cumulative-layout-shift']}
+                        timeToFirstByte={data()?.data.lighthouse.audits['server-response-time']}
+                        totalBlockingTime={data()?.data.lighthouse.audits['total-blocking-time']}
+                        perf={data()?.data.lighthouse.categories.performance.score ?? 0}
+                    />
+                </Match>
+            </Switch>
+        </Suspense>
+    );
 };
 
 export default PagespeedResults;
