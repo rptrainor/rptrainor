@@ -3,6 +3,8 @@ export const prerender = true
 
 import { ViewTransitions } from 'astro:transitions'
 
+import GA from '../components/GA.astro'
+
 interface Props {
 	title: string
 	description: string
@@ -50,6 +52,7 @@ const { title, description } = Astro.props
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<ViewTransitions />
+		<GA />
 	</head>
 	<body class="h-full bg-background">
 		<div

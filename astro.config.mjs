@@ -5,6 +5,8 @@ import tailwind from '@astrojs/tailwind'
 import solidJs from '@astrojs/solid-js'
 import sitemap from '@astrojs/sitemap'
 
+import partytown from '@astrojs/partytown'
+
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://rptrainor.com',
@@ -16,5 +18,15 @@ export default defineConfig({
 			enabled: true
 		}
 	}),
-	integrations: [tailwind(), sitemap(), db(), solidJs()]
+	integrations: [
+		tailwind(),
+		sitemap(),
+		db(),
+		solidJs(),
+		partytown({
+			config: {
+				forward: ['dataLayer.push']
+			}
+		})
+	]
 })
