@@ -53,10 +53,14 @@ const pollForResults = async (jsonUrl: string, retryInterval = 10000, timeout = 
 
 const fetchPagespeedData = async (props: { web_page_url: string; strategy: string }): Promise<any> => {
     const initiationResponse = await fetch(`/api/pagespeed?web_page_url=${encodeURIComponent(props.web_page_url)}&strategy=${props.strategy}`);
-    if (!initiationResponse.ok) return new Error('Failed to initiate test');
+    if (!initiationResponse.ok) {
+        throw new Error(`Failed to initiate test: ${initiationResponse.status} ${initiationResponse.statusText}`);
+    };
 
     const initiationData: ApiResponse = await initiationResponse.json();
-    if (!initiationData.resultsUrl) return new Error('Response did not contain results URL');
+    if (!initiationData.resultsUrl) {
+        throw new Error('Response did not contain results URL')
+    };
 
     return await pollForResults(initiationData.resultsUrl);
 };
@@ -111,23 +115,7 @@ const PagespeedResults = (props: Props) => {
                     </>
                 </Match>
                 <Match when={data.error}>
-                    <PagespeedDisplay
-                        web_page_url={props.web_page_url}
-                        strategy={props.strategy}
-                        current_conversion_value={props.current_conversion_value}
-                        current_monthly_traffic={props.current_monthly_traffic}
-                        current_conversion_rate={props.current_conversion_rate}
-                        firstContentfulPaint={data()?.data?.lighthouse?.audits["first-contentful-paint"]}
-                        speedIndex={data()?.data?.lighthouse?.audits['speed-index']}
-                        timeToInteractive={data()?.data?.lighthouse?.audits['interactive']}
-                        firstMeaningfulPaint={data()?.data?.lighthouse?.audits['first-meaningful-paint']}
-                        largestContentfulPaint={data()?.data?.lighthouse?.audits['largest-contentful-paint']}
-                        firstInputDelay={data()?.data?.lighthouse?.audits['max-potential-fid']}
-                        cumulativeLayoutShift={data()?.data?.lighthouse?.audits['cumulative-layout-shift']}
-                        timeToFirstByte={data()?.data?.lighthouse?.audits['server-response-time']}
-                        totalBlockingTime={data()?.data?.lighthouse?.audits['total-blocking-time']}
-                        perf={data()?.data?.lighthouse?.categories?.performance?.score ?? 0}
-                    />
+                    {null}
                 </Match>
                 <Match when={data()}>
                     <PagespeedDisplay
