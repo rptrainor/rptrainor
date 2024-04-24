@@ -33,9 +33,6 @@ async function startWptTest(url: string, strategy: string) {
 }
 
 export const GET: APIRoute = async ({ request }) => {
-  if (import.meta.env.DEV) {
-    return new Response(JSON.stringify({ message: "This endpoint is not available in development." }), { status: 400, headers: { 'Content-Type': 'application/json' } });
-  }
   const url = new URL(request.url);
   const web_page_url = url.searchParams.get("web_page_url");
   const strategy = url.searchParams.get("strategy");
@@ -47,6 +44,9 @@ export const GET: APIRoute = async ({ request }) => {
   const normalizedUrl = web_page_url.startsWith('http://') || web_page_url.startsWith('https://') ? web_page_url : `https://${web_page_url}`;
 
   try {
+    if (import.meta.env.DEV) {
+      throw new Error("This endpoint is not available in development.");
+    }
     await db.insert(Query).values({ web_page_url: normalizedUrl });
     const { testId, jsonUrl } = await startWptTest(normalizedUrl, strategy || 'mobile');
 

@@ -27,7 +27,6 @@ const pollForResults = async (jsonUrl: string, retryInterval = 10000, timeout = 
 
             const data: TestResult = await response.json();
             // console.log(`Received data: ${JSON.stringify(data)}`);
-
             switch (data.statusCode) {
                 case 200:
                     // console.log('Test completed successfully.');
@@ -54,10 +53,10 @@ const pollForResults = async (jsonUrl: string, retryInterval = 10000, timeout = 
 
 const fetchPagespeedData = async (props: { web_page_url: string; strategy: string }): Promise<any> => {
     const initiationResponse = await fetch(`/api/pagespeed?web_page_url=${encodeURIComponent(props.web_page_url)}&strategy=${props.strategy}`);
-    if (!initiationResponse.ok) throw new Error('Failed to initiate test');
+    if (!initiationResponse.ok) return new Error('Failed to initiate test');
 
     const initiationData: ApiResponse = await initiationResponse.json();
-    if (!initiationData.resultsUrl) throw new Error('Response did not contain results URL');
+    if (!initiationData.resultsUrl) return new Error('Response did not contain results URL');
 
     return await pollForResults(initiationData.resultsUrl);
 };
@@ -65,6 +64,9 @@ const fetchPagespeedData = async (props: { web_page_url: string; strategy: strin
 type Props = {
     web_page_url: string;
     strategy: string;
+    current_conversion_rate: string;
+    current_monthly_traffic: string;
+    current_conversion_value: string;
 };
 
 const PagespeedResults = (props: Props) => {
@@ -75,27 +77,27 @@ const PagespeedResults = (props: Props) => {
 
     createEffect(() => {
         if (data.loading) {
-          const intervalId = setInterval(() => {
-            setWidth((currentWidth) => currentWidth + 1);
-          }, 1200);
-    
-          onCleanup(() => clearInterval(intervalId));
+            const intervalId = setInterval(() => {
+                setWidth((currentWidth) => currentWidth + 1);
+            }, 1200);
+
+            onCleanup(() => clearInterval(intervalId));
         }
-      });
+    });
 
     const testCountString = createMemo(() => {
         const testCount = (width() / 10).toFixed();
         const isCompletedTestCountPlural = testCount === '1' ? '' : 's';
         return `Completed ${testCount} test${isCompletedTestCountPlural}`;
-      });
+    });
 
     return (
         <Suspense fallback={
             <>
-              <div class="col-span-3 col-start-1 row-start-2 place-content-end"><p class="text-white w-full text-center uppercase animate-pulse">Completed 0 tests</p></div>
-              <div class="col-span-3 col-start-1 row-start-3"><Loader width={10} /></div>
+                <div class="col-span-3 col-start-1 row-start-2 place-content-end"><p class="text-white w-full text-center uppercase animate-pulse">Completed 0 tests</p></div>
+                <div class="col-span-3 col-start-1 row-start-3"><Loader width={0} /></div>
             </>
-          }>
+        }>
             <Switch fallback={
                 <>
                     <div class="col-span-3 col-start-1 row-start-2 place-content-end"><p class="text-white w-full text-center uppercase animate-pulse">Completed 0 tests</p></div>
@@ -112,38 +114,38 @@ const PagespeedResults = (props: Props) => {
                     <PagespeedDisplay
                         web_page_url={props.web_page_url}
                         strategy={props.strategy}
-                        // current_conversion_value={props.current_conversion_value}
-                        // current_monthly_traffic={props.current_monthly_traffic}
-                        // current_conversion_rate={props.current_conversion_rate}
-                        firstContentfulPaint={data()?.data.lighthouse.audits["first-contentful-paint"]}
-                        speedIndex={data()?.data.lighthouse.audits['speed-index']}
-                        timeToInteractive={data()?.data.lighthouse.audits['interactive']}
-                        firstMeaningfulPaint={data()?.data.lighthouse.audits['first-meaningful-paint']}
-                        largestContentfulPaint={data()?.data.lighthouse.audits['largest-contentful-paint']}
-                        firstInputDelay={data()?.data.lighthouse.audits['max-potential-fid']}
-                        cumulativeLayoutShift={data()?.data.lighthouse.audits['cumulative-layout-shift']}
-                        timeToFirstByte={data()?.data.lighthouse.audits['server-response-time']}
-                        totalBlockingTime={data()?.data.lighthouse.audits['total-blocking-time']}
-                        perf={data()?.data.lighthouse.categories.performance.score ?? 0}
+                        current_conversion_value={props.current_conversion_value}
+                        current_monthly_traffic={props.current_monthly_traffic}
+                        current_conversion_rate={props.current_conversion_rate}
+                        firstContentfulPaint={data()?.data?.lighthouse?.audits["first-contentful-paint"]}
+                        speedIndex={data()?.data?.lighthouse?.audits['speed-index']}
+                        timeToInteractive={data()?.data?.lighthouse?.audits['interactive']}
+                        firstMeaningfulPaint={data()?.data?.lighthouse?.audits['first-meaningful-paint']}
+                        largestContentfulPaint={data()?.data?.lighthouse?.audits['largest-contentful-paint']}
+                        firstInputDelay={data()?.data?.lighthouse?.audits['max-potential-fid']}
+                        cumulativeLayoutShift={data()?.data?.lighthouse?.audits['cumulative-layout-shift']}
+                        timeToFirstByte={data()?.data?.lighthouse?.audits['server-response-time']}
+                        totalBlockingTime={data()?.data?.lighthouse?.audits['total-blocking-time']}
+                        perf={data()?.data?.lighthouse?.categories?.performance?.score ?? 0}
                     />
                 </Match>
                 <Match when={data()}>
                     <PagespeedDisplay
                         web_page_url={props.web_page_url}
                         strategy={props.strategy}
-                        // current_conversion_value={props.current_conversion_value}
-                        // current_monthly_traffic={props.current_monthly_traffic}
-                        // current_conversion_rate={props.current_conversion_rate}
-                        firstContentfulPaint={data()?.data.lighthouse.audits["first-contentful-paint"]}
-                        speedIndex={data()?.data.lighthouse.audits['speed-index']}
-                        timeToInteractive={data()?.data.lighthouse.audits['interactive']}
-                        firstMeaningfulPaint={data()?.data.lighthouse.audits['first-meaningful-paint']}
-                        largestContentfulPaint={data()?.data.lighthouse.audits['largest-contentful-paint']}
-                        firstInputDelay={data()?.data.lighthouse.audits['max-potential-fid']}
-                        cumulativeLayoutShift={data()?.data.lighthouse.audits['cumulative-layout-shift']}
-                        timeToFirstByte={data()?.data.lighthouse.audits['server-response-time']}
-                        totalBlockingTime={data()?.data.lighthouse.audits['total-blocking-time']}
-                        perf={data()?.data.lighthouse.categories.performance.score ?? 0}
+                        current_conversion_value={props.current_conversion_value}
+                        current_monthly_traffic={props.current_monthly_traffic}
+                        current_conversion_rate={props.current_conversion_rate}
+                        firstContentfulPaint={data()?.data?.lighthouse?.audits["first-contentful-paint"]}
+                        speedIndex={data()?.data?.lighthouse?.audits['speed-index']}
+                        timeToInteractive={data()?.data?.lighthouse?.audits['interactive']}
+                        firstMeaningfulPaint={data()?.data?.lighthouse?.audits['first-meaningful-paint']}
+                        largestContentfulPaint={data()?.data?.lighthouse?.audits['largest-contentful-paint']}
+                        firstInputDelay={data()?.data?.lighthouse?.audits['max-potential-fid']}
+                        cumulativeLayoutShift={data()?.data?.lighthouse?.audits['cumulative-layout-shift']}
+                        timeToFirstByte={data()?.data?.lighthouse?.audits['server-response-time']}
+                        totalBlockingTime={data()?.data?.lighthouse?.audits['total-blocking-time']}
+                        perf={data()?.data?.lighthouse?.categories?.performance?.score ?? 0}
                     />
                 </Match>
             </Switch>

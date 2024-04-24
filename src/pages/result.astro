@@ -1,10 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import PagespeedResults from '../components/PagespeedResults.tsx'
 import GridContainer from '../layouts/GridContainer.astro'
-import CurrentConversionRateInput from '../components/CurrentConversionRateInput'
-import CurrentConversionValueInput from '../components/CurrentConversionValueInput'
-import CurrentMonthlyTrafficInput from '../components/CurrentMonthlyTrafficInput'
+import ResultsFormComponent from '../components/ResultsFormComponent'
 
 const web_page_url = Astro.url.searchParams.get('web_page_url') || ''
 const strategy = Astro.url.searchParams.get('strategy') || 'mobile'
@@ -18,117 +15,13 @@ const current_conversion_value = Astro.url.searchParams.get('current_conversion_
 	description="Use the free CRO calculator to see how many customers you are losing due to underperforming pages."
 >
 	<GridContainer>
-		<form class="col-span-3 h-full place-content-end">
-			<div class="space-y-2 xs:space-y-4">
-				<div class="">
-					<h1
-						class="w-full text-balance text-center text-xl font-semibold text-white xs:text-3xl md:text-4xl"
-					>
-						Google Core Web Vitals ROI Calculator
-					</h1>
-					<p
-						class="mt-1 w-full text-balance text-center text-xs text-gray-200 xs:text-sm md:text-lg"
-					>
-						Find out how much money you are losing due to slow-loading pages.
-					</p>
-				</div>
-
-				<div class="">
-					<div class="grid grid-cols-8 gap-x-1 gap-y-2 xs:gap-x-4 xs:gap-y-4">
-						<div class="col-span-full">
-							<label
-								for="web_page_url"
-								class="block text-xs font-medium leading-6 text-white xs:text-sm"
-								>Landing page URL</label
-							>
-							<div class="mt-2">
-								<input
-									type="text"
-									name="web_page_url"
-									id="web_page_url"
-									autocomplete="url"
-									required
-									placeholder="https://example.com/landing-page"
-									value={web_page_url}
-									class="block w-full rounded-xl border-0 bg-white/10 py-1.5 text-white placeholder-white/60 shadow-sm ring-1 ring-inset ring-black focus:ring-2 focus:ring-inset focus:ring-contrast sm:text-sm sm:leading-6"
-								/>
-							</div>
-						</div>
-						<div class="col-span-4 xs:col-span-4 sm:col-span-2">
-							<label
-								for="current_conversion_rate"
-								class="block text-xs font-medium leading-6 text-white xs:text-sm"
-								>Conversion rate</label
-							>
-							<div class="relative mt-2 rounded-xl shadow-sm">
-								<CurrentConversionRateInput client:load initialValue={current_conversion_rate} />
-								<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-									<span class="text-white sm:text-sm">&#37;</span>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-span-4 xs:col-span-4 sm:col-span-2">
-							<label
-								for="strategy"
-								class="block text-xs font-medium leading-6 text-white xs:text-sm">Device</label
-							>
-							<div class="mt-2">
-								<select
-									id="strategy"
-									name="strategy"
-									autocomplete="device"
-									class="block w-full rounded-xl border-0 bg-white/5 py-1.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-contrast sm:text-sm sm:leading-6 [&_*]:text-black"
-								>
-									<option value="mobile" selected={strategy === 'mobile'}>Mobile</option>
-									<option value="desktop" selected={strategy === 'desktop'}>Desktop</option>
-								</select>
-							</div>
-						</div>
-
-						<div class="col-span-full xs:col-span-4 sm:col-span-2">
-							<label
-								for="current_conversion_value"
-								class="block text-xs font-medium leading-6 text-white xs:text-sm"
-								>Conversion value</label
-							>
-							<div class="relative mt-2 rounded-xl shadow-sm">
-								<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-									<span class="text-white sm:text-sm">$</span>
-								</div>
-								<CurrentConversionValueInput client:load initialValue={current_conversion_value} />
-								<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-									<span class="text-white sm:text-sm" id="price-currency">USD</span>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-span-full xs:col-span-4 sm:col-span-2">
-							<label
-								for="current_monthly_traffic"
-								class="block text-xs font-medium leading-6 text-white xs:text-sm"
-								>Monthly traffic</label
-							>
-							<div class="mt-2">
-								<CurrentMonthlyTrafficInput client:load initialValue={current_monthly_traffic} />
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="mt-4 flex items-center justify-end">
-				<button
-					type="submit"
-					class="rounded-xl border-contrast bg-white px-3 py-2 text-sm font-semibold text-background shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-contrast"
-					>Calculate</button
-				>
-			</div>
-		</form>
-		<PagespeedResults
-			client:only="solid-js"
+		<ResultsFormComponent
 			web_page_url={web_page_url}
 			strategy={strategy}
+			current_monthly_traffic={current_monthly_traffic}
+			current_conversion_rate={current_conversion_rate}
+			current_conversion_value={current_conversion_value}
+			client:only="solid-js"
 		/>
 	</GridContainer>
 </Layout>
