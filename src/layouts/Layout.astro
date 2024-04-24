@@ -43,15 +43,16 @@ const { title, description } = Astro.props
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content="/rptrainor_og_1200x630.png" />
 		<meta name="twitter:creator" content="@rptrainor" />
-		<meta name="twitter:card" content="summary_large_image" /></head
-	>
-	<meta property="og:locale" content="en_US" />
-	<meta name="theme-color" content="#010203" />
-
-	<meta name="generator" content={Astro.generator} />
-	<title>{title}</title>
-	<ViewTransitions />
-
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta property="og:locale" content="en_US" />
+		<meta name="theme-color" content="#010203" />
+		<meta name="twitter:title" content={title}>
+		<meta name="twitter:description" content={description}>
+		<meta name="twitter:image" content="/rptrainor_og_1200x630.png">
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ViewTransitions />
+	</head>
 	<body class="h-full bg-background">
 		<div
 			class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -79,73 +80,72 @@ const { title, description } = Astro.props
 			</div>
 		</div>
 		<PostHog />
+		<style is:global>
+			@font-face {
+				font-family: 'Montserrat';
+				src: url('/fonts/Montserrat-VariableFont_wght.ttf') format('ttf');
+				font-style: normal;
+				font-weight: 100 900; /* Ensure this range includes the bold weight */
+				font-display: swap;
+			}
+
+			body,
+			html {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				min-width: 0;
+				font-family:
+					'Montserrat',
+					'Montserrat Variable' sans-serif;
+				font-size: 16px;
+			}
+
+			:root {
+				--fast: #0cce6b;
+				--avg: #ffa400;
+				--slow: #ff4e42;
+			}
+
+			.is--fast {
+				color: var(--fast);
+				fill: var(--fast);
+				stroke: var(--fast);
+			}
+
+			.is--avg {
+				color: var(--avg);
+				fill: var(--avg);
+				stroke: var(--avg);
+			}
+
+			.is--slow {
+				color: var(--slow);
+				fill: var(--slow);
+				stroke: var(--slow);
+			}
+
+			.svg-circle {
+				opacity: 0.1;
+				stroke-width: 8;
+			}
+
+			.svg-circle__arc {
+				fill: none;
+				stroke-width: 8;
+			}
+
+			.stroke--slow {
+				stroke: var(--slow);
+			}
+
+			.stroke--avg {
+				stroke: var(--avg);
+			}
+
+			.stroke--fast {
+				stroke: var(--fast);
+			}
+		</style>
 	</body>
-
-	<style is:global>
-		@font-face {
-			font-family: 'Montserrat';
-			src: url('/fonts/Montserrat-VariableFont_wght.ttf') format('ttf');
-			font-style: normal;
-			font-weight: 100 900; /* Ensure this range includes the bold weight */
-			font-display: swap;
-		}
-
-		body,
-		html {
-			margin: 0;
-			padding: 0;
-			width: 100%;
-			min-width: 0;
-			font-family:
-				'Montserrat',
-				'Montserrat Variable' sans-serif;
-			font-size: 16px;
-		}
-
-		:root {
-			--fast: #0cce6b;
-			--avg: #ffa400;
-			--slow: #ff4e42;
-		}
-
-		.is--fast {
-			color: var(--fast);
-			fill: var(--fast);
-			stroke: var(--fast);
-		}
-
-		.is--avg {
-			color: var(--avg);
-			fill: var(--avg);
-			stroke: var(--avg);
-		}
-
-		.is--slow {
-			color: var(--slow);
-			fill: var(--slow);
-			stroke: var(--slow);
-		}
-
-		.svg-circle {
-			opacity: 0.1;
-			stroke-width: 8;
-		}
-
-		.svg-circle__arc {
-			fill: none;
-			stroke-width: 8;
-		}
-
-		.stroke--slow {
-			stroke: var(--slow);
-		}
-
-		.stroke--avg {
-			stroke: var(--avg);
-		}
-
-		.stroke--fast {
-			stroke: var(--fast);
-		}
-	</style>
 </html>
