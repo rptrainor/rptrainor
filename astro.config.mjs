@@ -20,7 +20,7 @@ export default defineConfig({
   }),
   integrations: [tailwind(), sitemap(), db(), solidJs(), partytown({
     config: {
-      forward: ['dataLayer.push', 'posthog'],
+      forward: ['posthog'],
     }
   })]
 });

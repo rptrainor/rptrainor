@@ -51,6 +51,7 @@ const { title, description } = Astro.props
 		<meta name="twitter:image" content="/rptrainor_og_1200x630.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<PostHog />
 		<ViewTransitions />
 	</head>
 	<body class="h-full bg-background">
@@ -146,6 +147,5 @@ const { title, description } = Astro.props
 				stroke: var(--fast);
 			}
 		</style>
-		<PostHog />
 	</body>
 </html>
