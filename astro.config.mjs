@@ -1,8 +1,6 @@
 import { defineConfig } from 'astro/config'
 import cloudflare from '@astrojs/cloudflare'
-import db from '@astrojs/db'
 import tailwind from '@astrojs/tailwind'
-import solidJs from '@astrojs/solid-js'
 import sitemap from '@astrojs/sitemap'
 
 import partytown from '@astrojs/partytown'
@@ -21,8 +19,6 @@ export default defineConfig({
 	integrations: [
 		tailwind(),
 		sitemap(),
-		db(),
-		solidJs(),
 		partytown({
 			config: {
 				forward: ['dataLayer.push']
