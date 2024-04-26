@@ -41,7 +41,7 @@ const pollForResults = async (jsonUrl: string, retryInterval = 10000, timeout = 
                     break;  // Continue the loop after a delay
                 default:
                     // console.log(`Unexpected status code received: ${data.statusCode}`);
-                    throw new Error(`Test failed or unavailable, status code: ${data.statusCode}`);
+                    return data;  // Return the data to be handled by the caller
             }
         } catch (error) {
             // console.error('Error polling for results:', error);
@@ -54,12 +54,14 @@ const pollForResults = async (jsonUrl: string, retryInterval = 10000, timeout = 
 const fetchPagespeedData = async (props: { web_page_url: string; strategy: string }): Promise<any> => {
     const initiationResponse = await fetch(`/api/pagespeed?web_page_url=${encodeURIComponent(props.web_page_url)}&strategy=${props.strategy}`);
     if (!initiationResponse.ok) {
-        throw new Error(`Failed to initiate test: ${initiationResponse.status} ${initiationResponse.statusText}`);
+        return initiationResponse;
+        // throw new Error(`Failed to initiate test: ${initiationResponse.status} ${initiationResponse.statusText}`);
     };
 
     const initiationData: ApiResponse = await initiationResponse.json();
     if (!initiationData.resultsUrl) {
-        throw new Error('Response did not contain results URL')
+        // throw new Error('Response did not contain results URL')
+        return initiationData;
     };
 
     return await pollForResults(initiationData.resultsUrl);
@@ -97,16 +99,18 @@ const PagespeedResults = (props: Props) => {
 
     return (
         <Suspense fallback={
-            <>
-                <div class="col-span-3 col-start-1 row-start-2 place-content-end"><p class="text-white w-full text-center uppercase animate-pulse">Completed 0 tests</p></div>
-                <div class="col-span-3 col-start-1 row-start-3"><Loader width={0} /></div>
-            </>
+
+            <div class="col-span-3 col-start-1 row-start-3 flex flex-col justify-start max-w-4xl w-full mx-auto">
+                <p class="text-white w-full text-center uppercase animate-pulse">Completed 0 tests</p>
+                <Loader width={0} />
+            </div>
+
         }>
             <Switch fallback={
-                <>
-                    <div class="col-span-3 col-start-1 row-start-2 place-content-end"><p class="text-white w-full text-center uppercase animate-pulse">Completed 0 tests</p></div>
-                    <div class="col-span-3 col-start-1 row-start-3"><Loader width={0} /></div>
-                </>
+                <div class="col-span-3 col-start-1 row-start-3 flex flex-col justify-start max-w-4xl w-full mx-auto">
+                    <p class="text-white w-full text-center uppercase animate-pulse">Completed 0 tests</p>
+                    <Loader width={0} />
+                </div>
             }>
                 <Match when={data.loading}>
                     <>

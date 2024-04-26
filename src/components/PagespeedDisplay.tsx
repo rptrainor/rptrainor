@@ -8,7 +8,7 @@ type Props = {
   strategy: string;
   current_conversion_rate: string;
   current_monthly_traffic: string;
-  current_conversion_value : string;
+  current_conversion_value: string;
   firstContentfulPaint: DataRunOutput | undefined;
   speedIndex: DataRunOutput | undefined;
   timeToInteractive: DataRunOutput | undefined;
@@ -30,21 +30,21 @@ export default function PagespeedDisplay(props: Props) {
 
   const improved_conversion_rate = createMemo(() => {
     const baseConversionRate = parseFloat(props.current_conversion_rate || "0");
-  
+
     const currentLCPScore = props.largestContentfulPaint?.score || 0;
 
     // Calculate improvement factor based on Rakuten's observed outcome
     const improvementFactor = (1 - currentLCPScore) * 0.6113;
-  
+
     // Calculate the improved conversion rate based on the improvement factor
     const improvedConversionRate = baseConversionRate + (baseConversionRate * improvementFactor);
-  
+
     // Cap the conversion rate at 100%
     const standardizedConversionRate = improvedConversionRate > 100 ? 100 : improvedConversionRate;
-  
+
     return parseFloat(standardizedConversionRate.toFixed(2));
   });
-  
+
   const current_conversion_count = createMemo(() => {
     const number_of_traffic = parseFloat(props.current_monthly_traffic || "0");
     return number_of_traffic * (parseFloat(props.current_conversion_rate || "0") / 100)
@@ -67,9 +67,9 @@ export default function PagespeedDisplay(props: Props) {
 
   return (
     <>
-      <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-2 gap-y-4 grid-rows-auto col-span-3 col-start-1 row-start-2">
+      <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-4 gap-y-4 grid-rows-auto col-span-3 col-start-1 row-start-3">
 
-        <div class="flex flex-col">
+        <div class="flex flex-col bg-brand_gray rounded-xl border border-black px-4 py-2">
           <p class="text-lg font-medium leading-6 text-gray-200">Performance Score</p>
           <p class="flex items-baseline gap-x-2 flex-col">
             <span class="text-lg text-slow uppercase font-semibold">Now</span>
@@ -81,7 +81,7 @@ export default function PagespeedDisplay(props: Props) {
           </p>
         </div>
 
-        <div class="flex flex-col">
+        <div class="flex flex-col bg-brand_gray rounded-xl border border-black px-4 py-2">
           <p class="text-lg font-medium leading-6 text-gray-200">Conversion Rate</p>
           <p class="flex items-baseline gap-x-2 flex-col">
             <span class="text-lg text-slow uppercase font-semibold">Now</span>
@@ -93,7 +93,7 @@ export default function PagespeedDisplay(props: Props) {
           </p>
         </div>
 
-        <div class="flex flex-col">
+        <div class="flex flex-col bg-brand_gray rounded-xl border border-black px-4 py-2">
           <p class="text-lg font-medium leading-6 text-gray-200">Monthly Conversions</p>
           <p class="flex items-baseline gap-x-2 flex-col">
             <span class="text-lg text-slow uppercase font-semibold">Now</span>
@@ -105,7 +105,7 @@ export default function PagespeedDisplay(props: Props) {
           </p>
         </div>
 
-        <div class="flex flex-col">
+        <div class="flex flex-col bg-brand_gray rounded-xl border border-black px-4 py-2">
           <p class="text-lg font-medium leading-6 text-gray-200">Monthly Revenue</p>
           <p class="flex items-baseline gap-x-2 flex-col">
             <span class="text-lg text-slow uppercase font-semibold">Now</span>
@@ -118,82 +118,6 @@ export default function PagespeedDisplay(props: Props) {
         </div>
 
       </div>
-
-      <dl class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 grid-rows-auto col-span-3 col-start-1 row-start-3">
-
-        <div class="relative overflow-hidden rounded-xl">
-          <dt>
-            <ScoreChart score={props.firstContentfulPaint?.score} variant="small" />
-
-            <p class="ml-16 truncate text-lg font-medium text-white">{props.firstContentfulPaint?.title}</p>
-          </dt>
-          <dd class="ml-16 flex flex-col items-baseline">
-            <p class={`${getClassByScore(props.firstContentfulPaint?.score || 0)} text-2xl font-semibold`}>{props.firstContentfulPaint?.displayValue}</p>
-            <p class='text-gray-200 text-sm text-wrap max-w-full'>First Contentful Paint marks the time at which the first text or image is painted.</p>
-          </dd>
-        </div>
-
-        <div class="relative overflow-hidden rounded-xl">
-          <dt>
-            <ScoreChart score={props.largestContentfulPaint?.score} variant="small" />
-
-            <p class="ml-16 truncate text-lg font-medium text-white">{props.largestContentfulPaint?.title}</p>
-          </dt>
-          <dd class="ml-16 flex flex-col items-baseline">
-            <p class={`${getClassByScore(props.largestContentfulPaint?.score || 0)} text-2xl font-semibold`}>{props.largestContentfulPaint?.displayValue}</p>
-            <p class='text-gray-200 text-sm text-wrap max-w-full'>Largest Contentful Paint marks the time at which the largest text or image is painted</p>
-          </dd>
-        </div>
-
-        <div class="relative overflow-hidden rounded-xl">
-          <dt>
-            <ScoreChart score={props.totalBlockingTime?.score} variant="small" />
-
-            <p class="ml-16 truncate text-lg font-medium text-white">{props.totalBlockingTime?.title}</p>
-          </dt>
-          <dd class="ml-16 flex flex-col items-baseline">
-            <p class={`${getClassByScore(props.totalBlockingTime?.score || 0)} text-2xl font-semibold`}>{props.totalBlockingTime?.displayValue}</p>
-            <p class='text-gray-200 text-sm text-wrap max-w-full'>Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds</p>
-          </dd>
-        </div>
-
-        <div class="relative overflow-hidden rounded-xl">
-          <dt>
-            <ScoreChart score={props.cumulativeLayoutShift?.score} variant="small" />
-
-            <p class="ml-16 truncate text-lg font-medium text-white">{props.cumulativeLayoutShift?.title}</p>
-          </dt>
-          <dd class="ml-16 flex flex-col items-baseline">
-            <p class={`${getClassByScore(props.cumulativeLayoutShift?.score || 0)} text-2xl font-semibold`}>{props.cumulativeLayoutShift?.displayValue}</p>
-            <p class='text-gray-200 text-sm text-wrap max-w-full'>Cumulative Layout Shift measures the movement of visible elements within the viewport.</p>
-          </dd>
-        </div>
-
-        <div class="relative overflow-hidden rounded-xl">
-          <dt>
-            <ScoreChart score={props.firstInputDelay?.score} variant="small" />
-
-            <p class="ml-16 truncate text-lg font-medium text-white">{props.firstInputDelay?.title}</p>
-          </dt>
-          <dd class="ml-16 flex flex-col items-baseline">
-            <p class={`${getClassByScore(props.firstInputDelay?.score || 0)} text-2xl font-semibold`}>{props.firstInputDelay?.displayValue}</p>
-            <p class='text-gray-200 text-sm text-wrap max-w-full'>The maximum potential First Input Delay that your users could experience is the duration of the longest task.</p>
-          </dd>
-        </div>
-
-        <div class="relative overflow-hidden rounded-xl">
-          <dt>
-            <ScoreChart score={props.speedIndex?.score} variant="small" />
-
-            <p class="ml-16 truncate text-lg font-medium text-white">{props.speedIndex?.title}</p>
-          </dt>
-          <dd class="ml-16 flex flex-col items-baseline">
-            <p class={`${getClassByScore(props.speedIndex?.score || 0)} text-2xl font-semibold`}>{props.speedIndex?.displayValue}</p>
-            <p class='text-gray-200 text-sm text-wrap max-w-full'>Speed Index shows how quickly the contents of a page are visibly populated</p>
-          </dd>
-        </div>
-
-      </dl>
     </>
   );
 }

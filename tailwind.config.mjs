@@ -5,6 +5,7 @@ export default {
 		extend: {
 			colors: {
 				background: '#010203',
+				brand_gray: '#222222',
 				accent: '#a28834',
 				contrast: '#d4af37',
 				fast: '#0cce6b',
