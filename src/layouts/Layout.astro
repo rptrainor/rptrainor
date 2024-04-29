@@ -4,6 +4,7 @@ export const prerender = true
 import { ViewTransitions } from 'astro:transitions'
 
 import GA from '../components/GA.astro'
+import PostHog from '../components/Posthog.astro'
 
 interface Props {
 	title: string
@@ -41,18 +42,25 @@ const { title, description } = Astro.props
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
-		<meta property="og:image" content="https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/420984ae-3ec2-4ccd-9ba5-bbec70f6e900/ogImage" />
+		<meta
+			property="og:image"
+			content="https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/420984ae-3ec2-4ccd-9ba5-bbec70f6e900/ogImage"
+		/>
 		<meta name="twitter:creator" content="@rptrainor" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta property="og:locale" content="en_US" />
 		<meta name="theme-color" content="#010203" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content="https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/420984ae-3ec2-4ccd-9ba5-bbec70f6e900/ogImage" />
+		<meta
+			name="twitter:image"
+			content="https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/420984ae-3ec2-4ccd-9ba5-bbec70f6e900/ogImage"
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<ViewTransitions />
 		<GA />
+		<PostHog />
 	</head>
 	<body class="h-full bg-background">
 		<div
