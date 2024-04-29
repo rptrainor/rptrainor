@@ -21,7 +21,14 @@ export default defineConfig({
 		sitemap(),
 		partytown({
 			config: {
-				forward: ['dataLayer.push']
+				forward: [
+					['dataLayer.push', { preserveBehavior: true }],
+					['posthog.split', { preserveBehavior: true }],
+					['posthog.slice', { preserveBehavior: true }],
+					['posthog.push', { preserveBehavior: true }],
+					['posthog.init', { preserveBehavior: true }],
+					['posthog', { preserveBehavior: true }]
+				]
 			}
 		})
 	]
