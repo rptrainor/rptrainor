@@ -3,8 +3,6 @@ import cloudflare from '@astrojs/cloudflare'
 import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
 
-import partytown from '@astrojs/partytown'
-
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://rptrainor.com',
@@ -16,13 +14,5 @@ export default defineConfig({
 			enabled: true
 		}
 	}),
-	integrations: [
-		tailwind(),
-		sitemap(),
-		partytown({
-			config: {
-				forward: ['dataLayer.push']
-			}
-		})
-	]
+	integrations: [tailwind(), sitemap()]
 })
