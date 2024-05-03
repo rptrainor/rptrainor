@@ -1,6 +1,8 @@
 ---
 export const prerender = true
 
+import '@fontsource-variable/montserrat'
+
 import { ViewTransitions } from 'astro:transitions'
 
 import PostHog from '../components/posthog.astro'
@@ -89,15 +91,6 @@ const { title, description } = Astro.props
 			</div>
 		</div>
 		<style is:global>
-			@font-face {
-				font-family: 'Montserrat';
-				src: url('/fonts/Montserrat-VariableFont_wght.ttf')
-					format('ttf');
-				font-weight: normal;
-				font-style: normal;
-				font-display: swap;
-			}
-
 			body,
 			html {
 				margin: 0;
