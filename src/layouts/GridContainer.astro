@@ -1,10 +1,12 @@
 ---
-import Header from './Header.astro'
-import Footer from '../layouts/Footer.astro'
+// import Header from './Header.astro'
+// import Footer from '../layouts/Footer.astro'
 ---
 
-<div class="grid grid-cols-phi grid-rows-phi gap-4 px-4 pt-24 min-h-full max-h-[calc(100vh-7rem)]">
-    <Header />
-    <slot />
-    <Footer />
+<div
+	class="grid h-full grid-cols-phi-middle grid-rows-phi-middle"
+>
+	<!-- <Header /> -->
+	<slot />
+	<!-- <Footer /> -->
 </div>

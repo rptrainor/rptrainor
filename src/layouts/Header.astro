@@ -4,14 +4,22 @@ import Logo from '../components/Logo.astro'
 export const prerender = true
 ---
 
-<header class="absolute inset-x-0 top-0 z-50">
-	<nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+<header class="absolute inset-x-0 top-0 z-50 mx-auto max-w-7xl">
+	<nav class="flex items-center justify-between px-0 py-6 sm:px-6 lg:px-8" aria-label="Global">
 		<div class="flex lg:flex-1">
 			<Logo />
 		</div>
 		<div class="flex gap-x-4 md:gap-x-8 lg:gap-x-12">
-			<a href="/process" class="text-sm font-semibold leading-6 text-white rounded-xl bg-none hover:bg-white/20 px-3.5 py-2.5 shadow-sm hover:animate-hover-pop focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-contrast">Process</a>
-			<a href="/pricing" class="text-sm font-semibold leading-6 text-white rounded-xl bg-none hover:bg-white/20 px-3.5 py-2.5 shadow-sm hover:animate-hover-pop focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-contrast">Pricing</a>
+			<a
+				href="/process"
+				class="rounded-xl bg-none px-3.5 py-2.5 text-sm font-semibold leading-6 text-white shadow-sm hover:animate-hover-pop hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-contrast"
+				>Process</a
+			>
+			<a
+				href="/pricing"
+				class="rounded-xl bg-none px-3.5 py-2.5 text-sm font-semibold leading-6 text-white shadow-sm hover:animate-hover-pop hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-contrast"
+				>Pricing</a
+			>
 		</div>
 	</nav>
 </header>

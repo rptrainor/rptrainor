@@ -1,24 +1,26 @@
 ---
-import { Image } from 'astro:assets'
 
 import GridContainer from '../layouts/GridContainer.astro'
 import Layout from '../layouts/Layout.astro'
-import wenchi_avatar from '../components/wenchi_avatar.jpeg'
+import Cal from '../components/Cal.astro'
+import Header from '../layouts/Header.astro'
+
 ---
 
 <Layout
 	title="RPTrainor: Turn Your Influence into a Thriving Business with Custom Apps"
 	description="Join RPTrainor in transforming your large audience into a thriving business. We build and maintain custom branded apps tailored to enhance your brand visibility. Start with just a $500 retainer and partner with us for lasting success—paying only 30% equity."
 >
+	<Header />
 	<GridContainer>
-		<div class="col-span-3 col-start-1 row-start-1 w-full place-content-end">
+		<div class="col-span-3 col-start-1 row-start-2 px-4 pb-4 sm:col-span-1 sm:col-start-2 lg:px-0 landscape:col-span-3 landscape:col-start-1">
 			<h1
-				class="mx-auto max-w-prose text-balance text-left text-4xl font-bold tracking-tight text-white sm:text-center sm:text-5xl"
+				class="mx-auto max-w-2xl text-balance text-left landscape:text-xl text-xl font-bold leading-tight tracking-tight text-white xs:text-4xl sm:text-2xl md:text-5xl"
 			>
 				Transforming Creators into Entrepreneurs with Custom App Development
 			</h1>
 			<p
-				class="mx-auto mt-6 max-w-prose text-balance text-left text-lg leading-tight text-gray-300 sm:text-center"
+				class="mx-auto mt-4 hidden max-w-2xl text-balance text-left text-lg landscape:text-sm leading-tight text-gray-300 xs:block md:text-xl"
 			>
 				Leverage your large audience into a profitable venture with RPTrainor. We specialize in
 				creating and managing custom branded apps to boost your brand visibility. Begin with a
@@ -27,8 +29,8 @@ import wenchi_avatar from '../components/wenchi_avatar.jpeg'
 			</p>
 		</div>
 
-		<div class="col-span-3 col-start-1 row-start-2 place-items-end">
-			<div class="flex items-center justify-center gap-x-6">
+		<div class="col-span-3 col-start-1 row-start-3 px-4 sm:col-span-1 sm:col-start-2 sm:px-0">
+			<div class="flex items-center justify-between gap-x-4">
 				<a
 					href="https://book.stripe.com/5kA9AK84Ia9KcLu4gm"
 					aria-describedby="retainer"
@@ -43,7 +45,23 @@ import wenchi_avatar from '../components/wenchi_avatar.jpeg'
 			</div>
 		</div>
 
-		<div class="col-span-3 col-start-1 row-start-3">
+		<div class="col-span-3 col-start-1 row-start-3 px-4 sm:col-span-1 sm:col-start-2 sm:px-0">
+			<div class="flex items-center justify-between gap-x-4">
+				<a
+					href="https://book.stripe.com/5kA9AK84Ia9KcLu4gm"
+					aria-describedby="retainer"
+					class="rounded-xl bg-white px-3.5 py-2.5 text-sm font-semibold text-background shadow-sm hover:animate-hover-pop focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-contrast"
+					>Start Your Project Now</a
+				>
+				<a
+					href="/process"
+					class="rounded-xl bg-none px-3.5 py-2.5 text-sm font-semibold leading-6 text-white shadow-sm hover:animate-hover-pop hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-contrast"
+					>How It Works&nbsp;<span aria-hidden="true">→</span></a
+				>
+			</div>
+		</div>
+
+		<!-- <div class="col-span-3 col-start-1 row-start-3">
 			<section class="">
 				<figure class="mx-auto max-w-3xl">
 					<p class="sr-only">5 out of 5 stars</p>
@@ -127,6 +145,9 @@ import wenchi_avatar from '../components/wenchi_avatar.jpeg'
 					</blockquote>
 				</figure>
 			</section>
-		</div>
+		</div> -->
+	</GridContainer>
+	<GridContainer>
+		<Cal />
 	</GridContainer>
 </Layout>

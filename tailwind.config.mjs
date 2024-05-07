@@ -25,6 +25,7 @@ export default {
 				lg: '1024px',
 				xl: '1280px',
 				'2xl': '1536px',
+				landscape: {'raw': '(orientation: landscape) and (aspect-ratio: 16/9)'},
 			},
 			gridTemplateColumns: {
 				phi: '1fr 0.618fr 1fr', // Custom grid template with the golden ratio
