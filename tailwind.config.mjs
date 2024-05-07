@@ -7,16 +7,16 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-        sans: ['Montserrat Variable', ...defaultTheme.fontFamily.sans],
-      },
+				sans: ['Montserrat Variable', ...defaultTheme.fontFamily.sans]
+			},
 			colors: {
 				background: '#010203',
 				brand_gray: '#222222',
 				accent: '#a28834',
 				contrast: '#d4af37',
 				fast: '#0cce6b',
-        avg: '#ffa400',
-        slow: '#ff4e42',
+				avg: '#ffa400',
+				slow: '#ff4e42'
 			},
 			screens: {
 				xs: '375px',
@@ -25,7 +25,9 @@ export default {
 				lg: '1024px',
 				xl: '1280px',
 				'2xl': '1536px',
-				landscape: {'raw': '(orientation: landscape) and (aspect-ratio: 16/9)'},
+        'short': { 'raw': '(max-height: 800px)' },
+        'extra-short': { 'raw': '(max-height: 320px)' },
+				// 'land': { 'raw': '(max-height: 800px) and (min-width: 640px)' },
 			},
 			gridTemplateColumns: {
 				phi: '1fr 0.618fr 1fr', // Custom grid template with the golden ratio
@@ -39,13 +41,13 @@ export default {
 			},
 			animation: {
 				'hover-pop': 'hover-pop 0.5s ease-out',
-				'slide-in-right': 'slideInRight 0.5s ease-out forwards',
+				'slide-in-right': 'slideInRight 0.5s ease-out forwards'
 			},
 			keyframes: {
 				slideInRight: {
-          '0%': { transform: 'translateX(100%)', opacity: 0 },
-          '100%': { transform: 'translateX(0)', opacity: 1 },
-        },
+					'0%': { transform: 'translateX(100%)', opacity: 0 },
+					'100%': { transform: 'translateX(0)', opacity: 1 }
+				},
 				'hover-pop': {
 					'0%': {
 						transform: 'scale(1)'
@@ -56,7 +58,7 @@ export default {
 					'100%': {
 						transform: 'scale(1)'
 					}
-				},
+				}
 			}
 		}
 	},
