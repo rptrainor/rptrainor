@@ -105,6 +105,13 @@ const { title, description } = Astro.props
 				min-width: 0;
 				font-size: 16px;
 			}
+
+			div[data-id='branding'] {
+				display: none !important;
+				height: 1px;
+				width: 1px;
+				z-index: -100;
+			}
 		</style>
 	</body>
 </html>
