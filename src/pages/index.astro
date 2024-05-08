@@ -1,9 +1,9 @@
 ---
 import GridContainer from '../layouts/GridContainer.astro'
 import Layout from '../layouts/Layout.astro'
-import Cal from '../components/Cal.astro'
 import Header from '../layouts/Header.astro'
 import Button from '../components/Button.astro'
+import WhoIsRyan from '../components/WhoIsRyan.astro'
 ---
 
 <Layout
@@ -14,15 +14,15 @@ import Button from '../components/Button.astro'
 		<GridContainer>
 			<Header />
 			<div
-				class="short:col-span-3 short:col-start-1 short:px-4 col-span-3 col-start-1 row-start-2 px-4 pb-4 sm:col-span-1 sm:col-start-2 sm:px-0"
+				class="col-span-3 col-start-1 row-start-2 px-4 pb-4 sm:col-span-1 sm:col-start-2 sm:px-0 short:col-span-3 short:col-start-1 short:px-4"
 			>
 				<h1
-					class="short:text-xl tall:text-4xl max-w-2xl text-balance text-left text-2xl font-bold leading-tight tracking-tight text-white xs:text-3xl"
+					class="max-w-2xl text-balance text-left text-2xl font-bold leading-tight tracking-tight text-white xs:text-3xl short:text-xl tall:text-4xl"
 				>
 					Transforming Creators into Entrepreneurs with Custom App Development
 				</h1>
 				<p
-					class="extra-short:hidden short:text-base tall:text-xl short:mt-4 mt-4 block max-w-2xl text-balance text-left text-base leading-tight text-gray-300 xs:mt-8 xs:text-lg"
+					class="mt-4 block max-w-2xl text-balance text-left text-base leading-tight text-gray-300 xs:mt-8 xs:text-lg short:mt-4 short:text-base extra-short:hidden tall:text-xl"
 				>
 					Leverage your large audience into a profitable venture with RPTrainor. We specialize in
 					creating and managing custom branded apps to boost your brand visibility. Begin with a
@@ -32,13 +32,13 @@ import Button from '../components/Button.astro'
 			</div>
 
 			<div
-				class="short:col-span-3 short:col-start-1 short:px-4 col-span-3 col-start-1 row-start-3 px-4 sm:col-span-1 sm:col-start-2 sm:px-0"
+				class="col-span-3 col-start-1 row-start-3 px-4 sm:col-span-1 sm:col-start-2 sm:px-0 short:col-span-3 short:col-start-1 short:px-4"
 			>
 				<div class="flex items-center justify-between gap-x-2 xs:gap-x-4">
 					<a
 						onclick="Calendly.initPopupWidget({url: 'https://calendly.com/rptrainor/initial-strategy-session?hide_gdpr_banner=1&background_color=010203&text_color=ffffff&primary_color=d4af37'});return false;"
 						aria-describedby="retainer"
-						class="tall:text-lg rounded-xl bg-white px-3.5 py-2.5 text-sm font-semibold text-background shadow-sm hover:animate-hover-pop focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-contrast"
+						class="rounded-xl bg-white px-3.5 py-2.5 short:px-2 short:py-1 text-sm font-semibold text-background shadow-sm hover:animate-hover-pop focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-contrast tall:text-lg"
 						>Reserve your slot</a
 					>
 					<Button />
@@ -46,7 +46,7 @@ import Button from '../components/Button.astro'
 			</div>
 		</GridContainer>
 		<GridContainer>
-			<Cal />
+			<WhoIsRyan />
 		</GridContainer>
 	</div>
 </Layout>
