@@ -4,29 +4,16 @@ import { Image } from 'astro:assets'
 import ryan from '../components/ryan.jpeg'
 ---
 
-<!-- <div class="col-span-3 col-start-1 row-start-1 flex flex-col place-content-end px-4">
-	<h1
-		class="lg:text-5xlmax-w-2xl text-balance text-left text-2xl font-bold leading-tight tracking-tight text-white xs:text-3xl short:text-base tall:text-4xl"
-	>
-		Meet the Founder
-	</h1>
-	<p class="text-lg text-gray-200 lg:text-xl extra-short:hidden block">
-		We help creators turn their influence into thriving businesses.
-	</p>
-</div> -->
 <div
-	class="sm:text-md col-span-3 col-start-1 row-start-2 grid h-auto grid-cols-phi gap-4 pt-4 text-base leading-normal text-white lg:text-lg extra-short:gap-0 extra-short:pt-0 place-items-center"
+	class="sm:text-md col-span-3 col-start-1 row-start-2 grid h-auto grid-cols-phi-middle place-items-center gap-0 text-base leading-normal text-white lg:text-lg"
 >
 	<h1
-		class="max-w-2xl text-balance text-left text-2xl font-bold leading-tight tracking-tight text-white lg:text-5xl xs:text-3xl short:text-base tall:text-4xl col-span-2 px-4"
+		class="col-span-2 max-w-2xl text-balance px-4 text-left text-2xl font-bold leading-tight tracking-tight text-white lg:text-5xl xs:text-3xl short:text-base tall:text-4xl short:col-start-1"
 	>
 		Meet the Founder
 	</h1>
-	<p class="block text-lg text-gray-200 lg:text-xl extra-short:hidden">
-		We help creators turn their influence into thriving businesses.
-	</p>
 	<Image
-		class="ml-auto aspect-square w-full rounded-xl object-contain sm:max-w-32 extra-short:ml-4 extra-short:mr-auto extra-short:max-w-8"
+		class="aspect-square rounded-xl object-contain px-4 sm:max-w-fit extra-short:max-w-8"
 		width={512}
 		height={512}
 		alt="Ryan Trainor"
@@ -35,7 +22,7 @@ import ryan from '../components/ryan.jpeg'
 	<article
 		class="col-span-3 flex h-fit flex-col gap-4 rounded-xl border border-black px-4 py-2 text-base font-medium leading-snug text-gray-200 shadow-inner shadow-black xs:col-span-2 extra-short:gap-2 extra-short:text-xs tall:gap-6 tall:rounded-2xl tall:border-2 tall:px-6 tall:py-4 tall:text-lg tall:leading-relaxed tall:shadow-lg"
 	>
-		<!-- <p>Hi, I'm Ryan!</p> -->
+		<p>Hi, I'm Ryan!</p>
 		<p>
 			I founded RPTrainor to transform creators into entrepreneurs. Icons like Logan Paul, MRBeast,
 			and Joe Rogan have turned their audiences into successful enterprises, and you can too. With
