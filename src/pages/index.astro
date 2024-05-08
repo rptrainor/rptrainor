@@ -15,36 +15,47 @@ import WhyRPTRAINOR from '../components/WhyRPTRAINOR.astro'
 		<GridContainer>
 			<Header />
 			<div
-				class="col-span-3 col-start-1 row-start-2 px-4 pb-4 sm:col-span-1 sm:col-start-2 sm:px-0 short:col-span-3 short:col-start-1 short:px-4"
+				class="col-span-3 col-start-1 row-start-2 flex flex-col justify-between gap-4 px-4 sm:col-span-1 sm:col-start-2 sm:px-0 short:col-span-3 short:col-start-1 short:gap-2 short:px-4"
 			>
-				<h1
-					class="max-w-2xl text-balance text-left text-2xl font-bold leading-tight tracking-tight text-white xs:text-3xl short:text-xl tall:text-4xl"
-				>
-					Transforming Creators into Entrepreneurs with Custom App Development
-				</h1>
-				<p
-					class="mt-4 block max-w-2xl text-balance text-left text-base leading-tight text-gray-300 xs:mt-8 xs:text-lg short:mt-4 short:text-base extra-short:hidden tall:text-xl"
-				>
-					Leverage your large audience into a profitable venture with RPTrainor. We specialize in
-					creating and managing custom branded apps to boost your brand visibility. Begin with a
-					simple $500 retainer, and achieve greater success with only a 30% equity partnership.
-					Discover how to elevate your brand today!
-				</p>
+				<div class="flex flex-col items-center justify-between gap-y-2 tall:gap-y-8">
+					<h1
+						class="w-full text-balance text-left text-2xl font-bold leading-tight tracking-tight text-white xs:text-3xl short:text-xl tall:text-4xl"
+					>
+						Transforming Creators into Entrepreneurs with Custom App Development
+					</h1>
+					<p
+						class="block text-balance text-left text-base leading-tight text-gray-300 xs:text-lg short:text-base extra-short:hidden tall:text-xl"
+					>
+						Leverage your large audience into a profitable venture with RPTrainor. We specialize in
+						creating and managing custom branded apps to boost your brand visibility. Begin with a
+						simple $500 retainer, and achieve greater success with only a 30% equity partnership.
+						Discover how to elevate your brand today!
+					</p>
+				</div>
+				<div class="flex items-center justify-between gap-x-2 xs:gap-x-4 short:justify-around">
+					<a
+						onclick="Calendly.initPopupWidget({url: 'https://calendly.com/rptrainor/initial-strategy-session?hide_gdpr_banner=1&background_color=010203&text_color=ffffff&primary_color=d4af37'});return false;"
+						aria-describedby="retainer"
+						class="rounded-xl bg-white px-3.5 py-2.5 text-sm font-semibold text-background shadow-sm hover:animate-hover-pop focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-contrast short:px-2 short:py-1 tall:text-lg"
+						>Reserve your spot</a
+					>
+					<Button />
+				</div>
 			</div>
 
-			<div
+			<!-- <div
 				class="col-span-3 col-start-1 row-start-3 px-4 sm:col-span-1 sm:col-start-2 sm:px-0 short:col-span-3 short:col-start-1 short:px-4"
 			>
 				<div class="flex items-center justify-between gap-x-2 xs:gap-x-4">
 					<a
 						onclick="Calendly.initPopupWidget({url: 'https://calendly.com/rptrainor/initial-strategy-session?hide_gdpr_banner=1&background_color=010203&text_color=ffffff&primary_color=d4af37'});return false;"
 						aria-describedby="retainer"
-						class="rounded-xl bg-white px-3.5 py-2.5 short:px-2 short:py-1 text-sm font-semibold text-background shadow-sm hover:animate-hover-pop focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-contrast tall:text-lg"
+						class="rounded-xl bg-white px-3.5 py-2.5 text-sm font-semibold text-background shadow-sm hover:animate-hover-pop focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-contrast short:px-2 short:py-1 tall:text-lg"
 						>Reserve your spot</a
 					>
 					<Button />
 				</div>
-			</div>
+			</div> -->
 		</GridContainer>
 		<GridContainer>
 			<WhoIsRyan />
