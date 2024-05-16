@@ -1,14 +1,12 @@
 ---
-import Logo from '../components/Logo.astro'
-
 export const prerender = true
 ---
 
 <footer
-	class="fixed inset-x-0 bottom-0 z-50 col-span-3 col-start-1 row-start-1 mx-auto w-full max-w-none bg-background"
+	class="fixed inset-0 bottom-0 left-[calc(100vw-3.5rem)] z-50 w-full md:w-14 h-full max-w-none bg-background md:right-0 md:top-0"
 >
 	<nav
-		class="flex items-center justify-between gap-x-4 px-4 py-4 sm:px-6 md:gap-x-8 lg:gap-x-12 lg:px-8"
+		class="flex flex-row md:flex-col-reverse h-14 md:h-full items-center justify-around gap-4 p-4"
 		aria-label="Global"
 	>
 		<a href="https://twitter.com/rptrainor" class="h-6 text-gray-200 hover:text-gray-500">
