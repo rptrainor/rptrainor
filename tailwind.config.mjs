@@ -24,15 +24,6 @@ export default {
 				'extra-short': { raw: '(max-height: 320px)' },
 				tall: { raw: '(min-height: 800px)' },
 				...defaultTheme.screens
-				// xs: '375px',
-				// sm: '640px',
-				// md: '768px',
-				// lg: '1024px',
-				// xl: '1280px',
-				// '2xl': '1536px',
-				// 'short': { 'raw': '(max-height: 360px)' },
-				// 'extra-short': { 'raw': '(max-height: 320px)' },
-				// 'tall': { 'raw': '(min-height: 800px)' },
 			},
 			gridTemplateColumns: {
 				phi: '1fr 0.618fr 1fr', // Custom grid template with the golden ratio

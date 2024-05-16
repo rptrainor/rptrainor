@@ -1,67 +1,36 @@
 ---
-import GridContainer from '../layouts/GridContainer.astro'
+import { Image } from 'astro:assets'
 import Layout from '../layouts/Layout.astro'
 import Header from '../layouts/Header.astro'
-import Button from '../components/Button.astro'
-import WhoIsRyan from '../components/WhoIsRyan.astro'
-import WhyRPTRAINOR from '../components/WhyRPTRAINOR.astro'
+import ryan from '../components/ryan.jpeg'
 ---
 
 <Layout
-	title="RPTrainor: Turn Your Influence into a Thriving Business with Custom Apps"
-	description="Join RPTrainor in transforming your large audience into a thriving business. We build and maintain custom branded apps tailored to enhance your brand visibility. Start with just a $500 retainer and partner with us for lasting success—paying only 30% equity."
+	title="Ryan Trainor: Expert Laravel & JavaScript/TypeScript Engineer | Native & Web App Specialist"
+	description="Experienced startup veteran with 8+ years in software engineering. Specializing in Laravel, JavaScript/TypeScript, and building apps from the ground up for startups and small businesses. Let’s create your next big thing."
 >
-	<div class="flex h-screen snap-y snap-mandatory flex-col overflow-y-scroll">
-		<GridContainer>
-			<Header />
-			<div
-				class="col-span-3 col-start-1 row-start-2 flex flex-col justify-between gap-4 px-4 sm:col-span-1 sm:col-start-2 sm:px-0 short:col-span-3 short:col-start-1 short:gap-2 short:px-4"
-			>
-				<div class="flex flex-col items-center justify-between gap-y-2 tall:gap-y-8">
-					<h1
-						class="w-full text-balance text-left text-2xl font-bold leading-tight tracking-tight text-white xs:text-3xl short:text-xl tall:text-4xl"
-					>
-						Transforming Creators into Entrepreneurs with Custom App Development
-					</h1>
-					<p
-						class="block text-balance text-left text-base leading-tight text-gray-300 xs:text-lg short:text-base extra-short:hidden tall:text-xl"
-					>
-						Leverage your large audience into a profitable venture with RPTrainor. We specialize in
-						creating and managing custom branded apps to boost your brand visibility. Begin with a
-						simple $500 retainer, and achieve greater success with only a 30% equity partnership.
-						Discover how to elevate your brand today!
-					</p>
-				</div>
-				<div class="flex items-center justify-between gap-x-2 xs:gap-x-4 short:justify-around">
-					<a
-						onclick="Calendly.initPopupWidget({url: 'https://calendly.com/rptrainor/initial-strategy-session?hide_gdpr_banner=1&background_color=010203&text_color=ffffff&primary_color=d4af37'});return false;"
-						aria-describedby="retainer"
-						class="rounded-xl bg-white px-3.5 py-2.5 text-sm font-semibold text-background shadow-sm hover:animate-hover-pop focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-contrast short:px-2 short:py-1 tall:text-lg"
-						>Reserve your spot</a
-					>
-					<Button />
-				</div>
+	<div class="px-y flex h-screen flex-col">
+		<Header />
+		<div class="grid grid-cols-2 text-white px-4 h-auto gap-4">
+			<div class="col-span-1">
+				<h1 class="text-2xl font-black landscape:text-4xl">Ryan Patrick Trainor</h1>
 			</div>
 
-			<!-- <div
-				class="col-span-3 col-start-1 row-start-3 px-4 sm:col-span-1 sm:col-start-2 sm:px-0 short:col-span-3 short:col-start-1 short:px-4"
-			>
-				<div class="flex items-center justify-between gap-x-2 xs:gap-x-4">
-					<a
-						onclick="Calendly.initPopupWidget({url: 'https://calendly.com/rptrainor/initial-strategy-session?hide_gdpr_banner=1&background_color=010203&text_color=ffffff&primary_color=d4af37'});return false;"
-						aria-describedby="retainer"
-						class="rounded-xl bg-white px-3.5 py-2.5 text-sm font-semibold text-background shadow-sm hover:animate-hover-pop focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-contrast short:px-2 short:py-1 tall:text-lg"
-						>Reserve your spot</a
-					>
-					<Button />
-				</div>
-			</div> -->
-		</GridContainer>
-		<GridContainer>
-			<WhoIsRyan />
-		</GridContainer>
-		<GridContainer>
-			<WhyRPTRAINOR />
-		</GridContainer>
+			<div class="col-span-1">
+				<Image
+					class="aspect-square w-full rounded-xl object-contain p-0"
+					width={512}
+					height={512}
+					alt="Ryan Trainor"
+					src={ryan}
+				/>
+			</div>
+
+			<div class="col-span-2">
+				<p class="text-lg landscape:text-xl font-medium">
+					Experienced startup veteran with 8+ years in software engineering. Specializing in Laravel, JavaScript/TypeScript, and building apps from the ground up for startups and small businesses. Let’s create your next big thing.
+				</p>
+			</div>
+		</div>
 	</div>
 </Layout>
