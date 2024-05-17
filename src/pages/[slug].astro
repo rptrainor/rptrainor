@@ -2,6 +2,7 @@
 // import { Image } from 'astro:assets'
 
 import Layout from '../layouts/Layout.astro'
+// import Menu from '../components/Menu.astro'
 // import ryan from '../components/ryan.jpeg'
 
 import { PostsDictionary } from '../constants/Posts.ts'
@@ -13,22 +14,22 @@ console.log({ SinglePost })
 	title="R.P. Trainor: Expert Laravel & JavaScript/TypeScript Engineer | Native & Web App Specialist"
 	description="Experienced startup veteran with 8+ years in software engineering. Specializing in Laravel, JavaScript/TypeScript, and building apps from the ground up for startups and small businesses. Let’s create your next big thing."
 >
-	<div class="col-span-10 h-screen snap-y snap-mandatory overflow-y-auto md:col-span-11">
-		<div class="grid h-screen snap-center grid-cols-phi grid-rows-phi gap-4 p-4 sm:gap-8 sm:p-8">
-			<div class="col-span-3 col-start-1 row-span-1 row-start-1 place-content-end text-right">
-				<h1 class="text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
-					{SinglePost.title}
-				</h1>
-			</div>
 
-			<div class="col-span-2 col-start-1 row-span-1 row-start-2 place-content-start text-right">
-				<h2 class="text-balance text-2xl font-medium sm:text-3xl md:text-4xl">
-					{SinglePost.description}
-				</h2>
-			</div>
-			<div class="col-span-1 col-start-3 row-span-1 row-start-2 place-content-start">
-				{SinglePost.date}
-			</div>
+	<div class="grid h-screen snap-center grid-cols-phi grid-rows-phi gap-4 p-4 sm:gap-8 sm:p-8">
+		<div class="col-span-3 col-start-1 row-span-1 row-start-1 place-content-end text-right">
+			<h1 class="text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
+				{SinglePost.title}
+			</h1>
+		</div>
+
+		<div class="col-span-2 col-start-1 row-span-1 row-start-2 place-content-start text-right">
+			<h2 class="text-balance text-2xl font-medium sm:text-3xl md:text-4xl">
+				{SinglePost.description}
+			</h2>
+		</div>
+		<div class="col-span-1 col-start-3 row-span-1 row-start-2 place-content-start">
+			{SinglePost.date}
 		</div>
 	</div>
+	
 </Layout>

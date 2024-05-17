@@ -7,6 +7,7 @@ import { ViewTransitions } from 'astro:transitions'
 
 import PostHog from '../components/posthog.astro'
 import Menu from '../components/Menu.astro'
+import HomeButton from '../components/HomeButton.astro'
 
 interface Props {
 	title: string
@@ -82,7 +83,7 @@ const { title, description } = Astro.props
 							<slot />
 						</div>
 					</div>
-					<Menu />
+					{Astro.url.pathname === '/' ? <Menu /> : <HomeButton />}
 				</div>
 			</div>
 		</div>
