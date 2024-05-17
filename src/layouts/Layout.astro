@@ -6,6 +6,7 @@ import '@fontsource-variable/montserrat'
 import { ViewTransitions } from 'astro:transitions'
 
 import PostHog from '../components/posthog.astro'
+import Menu from '../components/Menu.astro'
 
 interface Props {
 	title: string
@@ -64,7 +65,7 @@ const { title, description } = Astro.props
 	</head>
 	<body class="h-full bg-background">
 		<div
-			class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 h-screen"
+			class="absolute inset-x-0 -top-40 -z-10 h-screen transform-gpu overflow-hidden blur-3xl sm:-top-80"
 			aria-hidden="true"
 		>
 			<div
@@ -75,7 +76,14 @@ const { title, description } = Astro.props
 		</div>
 		<div class="h-screen bg-repeat" style="background-image: url('/svgs/hound.svg');">
 			<div class="mx-auto h-screen max-w-7xl">
-				<slot />
+				<div class="grid h-full w-full grid-cols-11 text-white">
+					<div class="col-span-11 md:col-span-10">
+						<div class="col-span-10 h-screen snap-y snap-mandatory overflow-y-auto md:col-span-11">
+							<slot />
+						</div>
+					</div>
+					<Menu />
+				</div>
 			</div>
 		</div>
 		<div
