@@ -20,9 +20,6 @@ export default {
 			},
 			screens: {
 				xs: '375px',
-				short: { raw: '(max-height: 540px)' },
-				'extra-short': { raw: '(max-height: 320px)' },
-				tall: { raw: '(min-height: 800px)' },
 				...defaultTheme.screens
 			},
 			gridTemplateColumns: {
