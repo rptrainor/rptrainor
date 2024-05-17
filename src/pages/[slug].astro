@@ -1,11 +1,13 @@
 ---
-import { Image } from 'astro:assets'
+// import { Image } from 'astro:assets'
 
 import Layout from '../layouts/Layout.astro'
 import Menu from '../components/Menu.astro'
-import ryan from '../components/ryan.jpeg'
+// import ryan from '../components/ryan.jpeg'
 
-import { Posts } from '../constants/Posts.ts'
+import { PostsDictionary } from '../constants/Posts.ts'
+const SinglePost = PostsDictionary[Astro.params.slug ?? '']
+console.log({ SinglePost })
 ---
 
 <Layout
@@ -20,47 +22,19 @@ import { Posts } from '../constants/Posts.ts'
 				>
 					<div class="col-span-3 col-start-1 row-span-1 row-start-1 place-content-end text-right">
 						<h1 class="text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
-							Expert Laravel &amp; Typescript Engineer
+							{SinglePost.title}
 						</h1>
 					</div>
 
 					<div class="col-span-2 col-start-1 row-span-1 row-start-2 place-content-start text-right">
 						<h2 class="text-balance text-2xl font-medium sm:text-3xl md:text-4xl">
-							R&period;P&period; Trainor
+							{SinglePost.description}
 						</h2>
 					</div>
 					<div class="col-span-1 col-start-3 row-span-1 row-start-2 place-content-start">
-						<Image src={ryan} alt="Ryan Trainor" class="aspect-square h-auto w-24 rounded" />
+						{SinglePost.date}
 					</div>
 				</div>
-
-				{
-					Posts.map((post, index) => {
-						const isOdd = index % 2 === 0
-						return (
-							<a
-								class="grid h-screen cursor-pointer snap-center grid-cols-phi grid-rows-phi gap-4 p-4 sm:gap-8 sm:p-8"
-								href={`/${post.slug}`}
-							>
-								<div
-									class={`${isOdd ? 'col-span-3 row-start-1' : 'col-span-1 row-start-2'} col-start-1 row-span-1 place-content-end text-right`}
-								>
-									<h2 class="text-balance text-2xl font-medium sm:text-3xl md:text-4xl">
-										{post.date}
-									</h2>
-								</div>
-
-								<div
-									class={`${!isOdd ? 'col-span-3 row-start-1' : 'col-span-1 row-start-2'} col-start-1 row-span-1 place-content-start text-right`}
-								>
-									<h1 class="text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
-										{post.title}
-									</h1>
-								</div>
-							</a>
-						)
-					})
-				}
 			</div>
 		</div>
 

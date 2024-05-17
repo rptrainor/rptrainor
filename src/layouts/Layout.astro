@@ -33,7 +33,7 @@ const { title, description } = Astro.props
 		<meta name="description" content={description} />
 		<meta
 			name="keywords"
-			content="Ryan P Trainor Newsletter, Web Performance Tips, App Optimization Strategies, Sales Funnel Best Practices, Landing Page Design Insights, Tech Innovations by Ryan P Trainor, Software Development Techniques, Business Growth Hacks, Digital Marketing Trends, High-Performance Computing, Entrepreneurial Insights, User Experience Best Practices, Technology Leadership, Efficient Coding Practices, Ryan P Trainor Tech Insights"
+			content="Ryan P Trainor, RP Trainor, Ryan Trainor, React, React Native, Solid, Vue, Astro, Astro Build, Next, Nuxt, Tailwind, TailwindCSS, Javascript, Typescript, SQL, MySQL, PostgreSQL, SQLite, MongoDB, Firebase, Cloudflare, Cloudflare Pages, Cloudflare Workers, Cloudflare D1, Laravel, PHP, Software Engineer"
 		/>
 
 		<link rel="manifest" href="/site.webmanifest" />
@@ -43,20 +43,20 @@ const { title, description } = Astro.props
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
-		<meta
+		<!-- <meta
 			property="og:image"
 			content="https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/420984ae-3ec2-4ccd-9ba5-bbec70f6e900/ogImage"
-		/>
+		/> -->
 		<meta name="twitter:creator" content="@rptrainor" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta property="og:locale" content="en_US" />
 		<meta name="theme-color" content="#010203" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
-		<meta
+		<!-- <meta
 			name="twitter:image"
 			content="https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/420984ae-3ec2-4ccd-9ba5-bbec70f6e900/ogImage"
-		/>
+		/> -->
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<ViewTransitions />
@@ -96,13 +96,6 @@ const { title, description } = Astro.props
 				width: 100%;
 				min-width: 0;
 				font-size: 16px;
-			}
-
-			div[data-id='branding'] {
-				display: none !important;
-				height: 1px;
-				width: 1px;
-				z-index: -100;
 			}
 		</style>
 	</body>
