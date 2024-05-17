@@ -38,7 +38,10 @@ import { PostsSummary } from '../constants/PostsSummary.ts'
 					PostsSummary.map((post, index) => {
 						const isOdd = index % 2 === 0
 						return (
-							<div class="grid h-screen snap-center grid-cols-phi grid-rows-phi gap-4 p-4 sm:gap-8 sm:p-8">
+							<a
+								class="grid h-screen cursor-pointer snap-center grid-cols-phi grid-rows-phi gap-4 p-4 sm:gap-8 sm:p-8"
+								href={`/${post.slug}`}
+							>
 								<div
 									class={`${isOdd ? 'col-span-3 row-start-1' : 'col-span-1 row-start-2'} col-start-1 row-span-1 place-content-end text-right`}
 								>
@@ -54,7 +57,7 @@ import { PostsSummary } from '../constants/PostsSummary.ts'
 										{post.title}
 									</h1>
 								</div>
-							</div>
+							</a>
 						)
 					})
 				}
