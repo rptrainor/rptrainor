@@ -20,12 +20,17 @@ type Link = {
   url: string;
 };
 
+type Code = {
+  type: 'code';
+  text: string;
+}
+
 export type PostType = {
   title: string;
   description: string | undefined;
   date: string;
   slug: string;
-  steps: (Header | Paragraph | Image | Link)[];
+  steps: (Header | Paragraph | Image | Link | Code)[];
 };
 
 export const Posts = [
@@ -37,39 +42,47 @@ export const Posts = [
     steps: [
       {
         type: 'header',
-        text: "Rebuild the pages with Nuxt, TailwindCSS, and Vue, on Cloudflare Pages",
+        text: "Cloudflare Pages and using the least amount of Javascript possible is your path to success",
       },
       {
         type: 'paragraph',
-        text: "Hosting your clientside app on Cloudflare Pages allows you to take advantage of their global CDN, and their edge network, which can reduce latency between your client and the server"
+        text: "First create a new web app with your your framework of choice. I used Nuxt for this one, but I have also been using Astro with Solid, because I like the island architecture"
+      },
+      {
+        type: 'code',
+        text: "pnpm create cloudflare@latest my-nuxt-app -- --framework=nuxt",
+      },
+      {
+        type: 'paragraph',
+        text: "Download your font locally, you want to minimize the the requests that your app makes to external services"
+      },
+      {
+        type: 'paragraph',
+        text: "TailwindCSS is your best choice for CSS. You get CSS that is already highly optimized, and it is going to have a smaller bundle size that any other framework or your hand written CSS classes"
+      },
+      {
+        type: 'paragraph',
+        text: "Look for oppertunities to offload tasks to the server. For example, I replaced the Beehiiv newsletter subscription forms that were slow loading iframes with HTML, CSS, and a POST request to our server"
+      },
+      {
+        type: 'paragraph',
+        text: "Run your page through Google's Pagespeed Insights test, and look for opportunities to improve. For example, I found that I could optimize my images, and that I could offload some of the third party scripts to Cloudflare Workers"
+      },
+      {
+        type: 'paragraph',
+        text: "Convert your images to WebP format, and serve the correct image dimensions for different screen sizes"
+      },
+      {
+        type: 'paragraph',
+        text: "To avoid layout shifts, set HTML elements to have fixed heights and widths. Also, think about server side rendering or what is the most graceful way you can hanlde the loading to rendering state"
       },
       {
         type: 'header',
-        text: "Offload as much as possible to Cloudflare Workers or a Laravel Server",
+        text: "those are the tips that I have for building a fast loading web app."
       },
       {
         type: 'paragraph',
-        text: "Cloudflare Workers can be used to offload the server from doing heavy lifting, and can be used to cache responses, and serve them from the edge network"
-      },
-      {
-        type: 'paragraph',
-        text: "Analytics, and other third party scripts can be offloaded to Cloudflare Workers, so that they don't slow down the page load time"
-      },
-      {
-        type: 'header',
-        text: "Check Google's Pagespeed Insights test for opportunities to improve",
-      },
-      {
-        type: 'paragraph',
-        text: "Google's Pagespeed Insights test can give you a list of opportunities to improve your site's performance, and can give you a list of things that you can do to improve your site's performance"
-      },
-      {
-        type: 'paragraph',
-        text: 'Image optimization is a must, convert images to WebP format and make sure that you are serving the right size images for the device',
-      },
-      {
-        type: 'paragraph',
-        text: "Images can be a major contributor to the page load time, so it's important to make sure that they are optimized, and that you are serving the right size images for the device"
+        text: "Get the data as close as possible to the client, and use the least amount of Javascript and network requests as possible. This is the way to build a fast loading web app."
       },
       {
         type: 'link',
@@ -85,56 +98,80 @@ export const Posts = [
     slug: 'deploy-a-laravel-server',
     steps: [
       {
+        type: 'paragraph',
+        text: 'First you need to have PHP and Composer are installed on your local machine. You can check if you have PHP installed by running `php -v` and you can check if you have Composer installed by running `composer -v`'
+      },
+      {
         type: 'header',
-        text: "Create a Laravel App",
+        text: "Create a basic Laravel app",
+      },
+      {
+        type: 'code',
+        text: "composer create-project laravel/laravel library-api && cd library-api",
+      },
+      {
+        type: 'header',
+        text: 'Make sure you are the root of your Laravel app and run the app to make sure it worked',
+      },
+      {
+        type: 'code',
+        text: "php artisan serve",
+      },
+      {
+        type: 'header',
+        text: "Create your RESTful API, with your Laravel app",
       },
       {
         type: 'paragraph',
-        text: "From the command line run `composer create-project laravel/laravel` to create a new Laravel app"
-      },
-      {
-        type: 'header',
-        text: "Connect your database",
+        text: "Start with thinking about what data you want to store in your database with this API and what opperations you want to perform on that data"
       },
       {
         type: 'paragraph',
-        text: "Update the .env file with your database credentials. Then, update config/database.php with your database connection settings"
+        text: "Now that you know what data you want to store, you can create models and a schema to represent that data. I used the plural here, but I reccomend starting with a single model and table, and then adding more as you need them"
       },
       {
-        type: 'header',
-        text: "Create the models",
-      },
-      {
-        type: 'paragraph',
-        text: "Make sure you look up what are best practices and the specific syntax for creating models with the specific syntax that your choosen database uses, MySQL, Postgres, SQLite, etc."
-      },
-      {
-        type: 'header',
-        text: "Update migration files",
+        type: 'code',
+        text: "php artisan make:model NAME_OF_YOUR_MODEL_HERE -m",
       },
       {
         type: 'paragraph',
-        text: "Update the migration files in the database/migrations folder to match the schema of the tables you want to create. Then, run `php artisan migrate` to create the tables in the database"
+        text: 'This will create a new model in your `app/models` file, and a new migration file in your `database/migrations` file. In your new migration file, update the up function, with the properties of your new table that you defined in your schema'
       },
       {
         type: 'header',
-        text: "Create the controllers",
+        text: 'Double check your migration file, model, and schema, and then run the migration to create the table in your database'
+      },
+      {
+        type: 'code',
+        text: "php artisan migrate",
+      },
+      {
+        type: 'header',
+        text: 'Create a controller for your model',
+      },
+      {
+        type: 'code',
+        text: 'php artisan make:controller NAME_OF_YOUR_CONTROLLER_HERE'
       },
       {
         type: 'paragraph',
-        text: "The controllers are where you will define the logic for your routes. You can create a controller by running `php artisan make:controller BookController`"
-      },
-      {
-        type: 'header',
-        text: "Define your API routes",
+        text: 'Now you have a new controller file in `app\Http\Controllers\`. You can update and add methods to this controller to define the business logic for your API routes'
       },
       {
         type: 'paragraph',
-        text: "In `routes/api.php` you can define the routes for your API. You can use the `Route::get`, `Route::post`, `Route::put`, and `Route::delete` methods to define the routes for your API. These methods generally match with CRUD actions or Create, Read, Update, and Delete"
+        text: "Think about CRUD: create, read, update, and delete. Think about what opperations that you want to perform on the data you are storing in your database. And then define the methods in your controller that will perform those opperations"
       },
       {
         type: 'header',
-        text: 'Test your new Laravel API',
+        text: 'Define your API routes'
+      },
+      {
+        type: 'paragraph',
+        text: 'In `routes/api.php` you can define the routes for your API. You can use the `Route::get`, `Route::post`, `Route::put`, and `Route::delete` methods to define the routes for your API. These methods generally match with CRUD actions or Create, Read, Update, and Delete'
+      },
+      {
+        type: 'header',
+        text: 'Test your new Laravel API'
       },
       {
         type: 'paragraph',
@@ -142,7 +179,7 @@ export const Posts = [
       },
       {
         type: 'header',
-        text: "Deploy the Laravel Web Server",
+        text: 'Deploy the Laravel Web Server'
       },
       {
         type: 'paragraph',
@@ -161,8 +198,36 @@ export const Posts = [
         text: "Create a Nuxt App in the terminal",
       },
       {
+        type: 'code',
+        text: "pnpm create cloudflare@latest NAME_OF_YOUR_APP_HERE"
+      },
+      {
         type: 'paragraph',
-        text: "Run `pnpm create cloudflare@latest my-nuxt-app -- --framework=nuxt` to create a new Nuxt app and deploy that new app to Cloudflare Pages"
+        text: 'In the terminal select the `Website or web app` option, and then select the `Nuxt` option. This will create a new Nuxt app in the current directory'
+      },
+      {
+        type: 'paragraph',
+        text: 'When you are asked in the terminal if `Do you want to deploy your application?` select `Yes`'
+      },
+      {
+        type: 'code',
+        text: 'cd NAME_OF_YOUR_APP_HERE'
+      },
+      {
+        type: 'paragraph',
+        text: 'Run the development server'
+      },
+      {
+        type: 'code',
+        text: 'pnpm run dev'
+      },
+      {
+        type: 'paragraph',
+        text: ' Deploy your application'
+      },
+      {
+        type: 'code',
+        text: 'pnpm run deploy'
       },
       {
         type: 'header',
@@ -197,12 +262,8 @@ export const Posts = [
         text: "Cloudflare D1 database is a SQLite database that can be used to store data for your Nuxt app. You can connect your Nuxt app to the Cloudflare D1 database by setting the `DATABASE_URL` environment variable in the Cloudflare Pages dashboard"
       },
       {
-        type: 'header',
-        text: "Utilize your Cloudflare Page terminal commands",
-      },
-      {
         type: 'paragraph',
-        text: "`pnpm run dev` will start a development server for your Nuxt app. `pnpm run build` will build your Nuxt app for production. `pnpm run preview` will start a preview server for your Nuxt app. `pnpm run deploy` will deploy your Nuxt app to Cloudflare Pages"
+        text: "Enjoy your new Nuxt app on Cloudflare Pages. You now have a web app that is fast, secure, and scalable"
       }
     ]
   }

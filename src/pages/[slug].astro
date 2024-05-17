@@ -1,9 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Frame from '../components/Frame.astro';
-import { PostsDictionary } from '../constants/Posts.ts';
+import Layout from '../layouts/Layout.astro'
+import Frame from '../components/Frame.astro'
+import { PostsDictionary } from '../constants/Posts.ts'
 
-const SinglePost = PostsDictionary[Astro.params.slug ?? ''];
+const SinglePost = PostsDictionary[Astro.params.slug ?? '']
 ---
 
 <Layout
@@ -11,7 +11,7 @@ const SinglePost = PostsDictionary[Astro.params.slug ?? ''];
 	description="Experienced startup veteran with 8+ years in software engineering. Specializing in Laravel, JavaScript/TypeScript, and building apps from the ground up for startups and small businesses. Let’s create your next big thing."
 >
 	{
-		SinglePost.steps.map((step) => (
+		SinglePost?.steps?.map((step) => (
 			<>
 				{step.type === 'header' && (
 					<Frame>
@@ -23,7 +23,20 @@ const SinglePost = PostsDictionary[Astro.params.slug ?? ''];
 				{step.type === 'paragraph' && (
 					<Frame>
 						<div class="col-span-3 col-start-1 row-span-1 row-start-2 place-content-start">
-							{step.text}
+							<p class="text-xl font-medium sm:text-2xl md:text-3xl lg:text-4xl">{step.text}</p>
+						</div>
+					</Frame>
+				)}
+				{step.type === 'code' && (
+					<Frame>
+						<div class="col-span-3 col-start-1 row-span-1 row-start-2 place-content-start">
+							<div class="bg-gray-900 text-gray-100 p-4 rounded-lg shadow-lg">
+								<pre class="overflow-auto">
+									<code class="font-mono text-sm">
+										{step.text}
+									</code>
+								</pre>
+							</div>
 						</div>
 					</Frame>
 				)}
@@ -37,7 +50,9 @@ const SinglePost = PostsDictionary[Astro.params.slug ?? ''];
 				{step.type === 'link' && (
 					<Frame>
 						<div class="col-span-3 col-start-1 row-span-1 row-start-2 place-content-start">
-							<a href={step.url} class="text-blue-500 hover:underline">{step.text}</a>
+							<a href={step.url} class="text-blue-500 hover:underline">
+								{step.text}
+							</a>
 						</div>
 					</Frame>
 				)}
