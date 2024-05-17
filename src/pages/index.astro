@@ -1,9 +1,11 @@
 ---
 import { Image } from 'astro:assets'
+
 import Layout from '../layouts/Layout.astro'
-// import Header from '../layouts/Header.astro'
 import Menu from '../components/Menu.astro'
 import ryan from '../components/ryan.jpeg'
+
+import { PostsSummary } from '../constants/PostsSummary.ts'
 ---
 
 <Layout
@@ -13,17 +15,16 @@ import ryan from '../components/ryan.jpeg'
 	<div class="grid h-full w-full grid-cols-11 text-white">
 		<div class="col-span-11 md:col-span-10">
 			<div class="col-span-10 h-screen snap-y snap-mandatory overflow-y-auto md:col-span-11">
-				<div class="grid h-screen snap-center grid-cols-phi grid-rows-phi gap-4 p-4 sm:gap-8">
-
+				<div
+					class="grid h-screen snap-center grid-cols-phi grid-rows-phi gap-4 p-4 sm:gap-8 sm:p-8"
+				>
 					<div class="col-span-3 col-start-1 row-span-1 row-start-1 place-content-end text-right">
 						<h1 class="text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
 							Expert Laravel &amp; Typescript Engineer
 						</h1>
 					</div>
 
-					<div
-						class="col-span-2 col-start-1 row-span-1 row-start-2 place-content-start text-right"
-					>
+					<div class="col-span-2 col-start-1 row-span-1 row-start-2 place-content-start text-right">
 						<h2 class="text-balance text-2xl font-medium sm:text-3xl md:text-4xl">
 							R&period;P&period; Trainor
 						</h2>
@@ -32,16 +33,31 @@ import ryan from '../components/ryan.jpeg'
 						<Image src={ryan} alt="Ryan Trainor" class="aspect-square h-auto w-24 rounded" />
 					</div>
 				</div>
-			</div>
 
-			<div class="col-span-10 h-screen snap-y snap-mandatory overflow-y-auto md:col-span-11">
-				<div class="grid h-screen snap-center grid-cols-phi-middle grid-rows-phi-middle p-4">
-					<div
-						class="col-span-3 col-start-1 row-span-1 row-start-2 place-content-start text-center"
-					>
-						<h2 class="text-3xl font-bold"></h2>
-					</div>
-				</div>
+				{
+					PostsSummary.map((post, index) => {
+						const isOdd = index % 2 === 0
+						return (
+							<div class="grid h-screen snap-center grid-cols-phi grid-rows-phi gap-4 p-4 sm:gap-8 sm:p-8">
+								<div
+									class={`${isOdd ? 'col-span-3 row-start-1' : 'col-span-1 row-start-2'} col-start-1 row-span-1 place-content-end text-right`}
+								>
+									<h2 class="text-balance text-2xl font-medium sm:text-3xl md:text-4xl">
+										{post.date}
+									</h2>
+								</div>
+
+								<div
+									class={`${!isOdd ? 'col-span-3 row-start-1' : 'col-span-1 row-start-2'} col-start-1 row-span-1 place-content-start text-right`}
+								>
+									<h1 class="text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
+										{post.title}
+									</h1>
+								</div>
+							</div>
+						)
+					})
+				}
 			</div>
 		</div>
 
