@@ -1,35 +1,47 @@
 ---
-// import { Image } from 'astro:assets'
+import Layout from '../layouts/Layout.astro';
+import Frame from '../components/Frame.astro';
+import { PostsDictionary } from '../constants/Posts.ts';
 
-import Layout from '../layouts/Layout.astro'
-// import Menu from '../components/Menu.astro'
-// import ryan from '../components/ryan.jpeg'
-
-import { PostsDictionary } from '../constants/Posts.ts'
-const SinglePost = PostsDictionary[Astro.params.slug ?? '']
-console.log({ SinglePost })
+const SinglePost = PostsDictionary[Astro.params.slug ?? ''];
 ---
 
 <Layout
 	title="R.P. Trainor: Expert Laravel & JavaScript/TypeScript Engineer | Native & Web App Specialist"
 	description="Experienced startup veteran with 8+ years in software engineering. Specializing in Laravel, JavaScript/TypeScript, and building apps from the ground up for startups and small businesses. Let’s create your next big thing."
 >
-
-	<div class="grid h-screen snap-center grid-cols-phi grid-rows-phi gap-4 p-4 sm:gap-8 sm:p-8">
-		<div class="col-span-3 col-start-1 row-span-1 row-start-1 place-content-end text-right">
-			<h1 class="text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
-				{SinglePost.title}
-			</h1>
-		</div>
-
-		<div class="col-span-2 col-start-1 row-span-1 row-start-2 place-content-start text-right">
-			<h2 class="text-balance text-2xl font-medium sm:text-3xl md:text-4xl">
-				{SinglePost.description}
-			</h2>
-		</div>
-		<div class="col-span-1 col-start-3 row-span-1 row-start-2 place-content-start">
-			{SinglePost.date}
-		</div>
-	</div>
-	
+	{
+		SinglePost.steps.map((step) => (
+			<>
+				{step.type === 'header' && (
+					<Frame>
+						<div class="col-span-3 col-start-1 row-span-1 row-start-1 place-content-end text-right">
+							<h2 class="text-2xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">{step.text}</h2>
+						</div>
+					</Frame>
+				)}
+				{step.type === 'paragraph' && (
+					<Frame>
+						<div class="col-span-3 col-start-1 row-span-1 row-start-2 place-content-start">
+							{step.text}
+						</div>
+					</Frame>
+				)}
+				{step.type === 'image' && (
+					<Frame>
+						<div class="col-span-3 col-start-1 row-span-1 row-start-2 place-content-start">
+							<img src={step.src} alt={step.text} />
+						</div>
+					</Frame>
+				)}
+				{step.type === 'link' && (
+					<Frame>
+						<div class="col-span-3 col-start-1 row-span-1 row-start-2 place-content-start">
+							<a href={step.url} class="text-blue-500 hover:underline">{step.text}</a>
+						</div>
+					</Frame>
+				)}
+			</>
+		))
+	}
 </Layout>
