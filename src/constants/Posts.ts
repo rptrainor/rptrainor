@@ -42,27 +42,31 @@ export const Posts = [
     steps: [
       {
         type: 'header',
-        text: "Hosting on Cloudflare Pages and using as little Javascript as possible is your path to success",
+        text: "Hosting on Cloudflare and reducing clientside compute is your path to success",
       },
       {
         type: 'paragraph',
-        text: "first, create a new web app with your framework of choice. I used Nuxt for this one, but Astro and Solid is a good combo too with the island architecture"
+        text: "first, create a new web app with your framework of choice. I used Nuxt for this one, but Astro and Solid is a good combo too with thier island architecture"
       },
       {
         type: 'code',
-        text: "pnpm create cloudflare@latest NAME_OF_YOUR_APP_HERE",
+        text: "pnpm create cloudflare@latest NAME_OF_YOUR_APP",
       },
       {
         type: 'paragraph',
-        text: "download your font locally. You want to minimize the requests that your app makes to external services"
+        text: "download any fonts locally. You want to minimize the requests that your app makes to external services"
       },
       {
         type: 'paragraph',
-        text: "TailwindCSS is your best choice for CSS. You get CSS that is already highly optimized, and it is going to have a smaller bundle size than any other framework or your hand written CSS classes"
+        text: "TailwindCSS is your best choice for CSS. You get the smallest possible bundle size with Tailwind's optimizations"
       },
       {
         type: 'paragraph',
-        text: "look for opportunities to offload tasks to the server. For example, I replaced the Beehiiv newsletter subscription forms that were slow loading iframes with HTML, CSS, and a POST request to our server"
+        text: "look for opportunities to offload tasks to the server"
+      },
+      {
+        type: 'paragraph',
+        text: "for example, I replaced the Beehiiv forms that were slow loading iframes with HTML, CSS, and a POST request to our server"
       },
       {
         type: 'paragraph',
@@ -74,7 +78,11 @@ export const Posts = [
       },
       {
         type: 'paragraph',
-        text: "to avoid layout shifts, set HTML elements to have fixed heights and widths. Also, think about server side rendering or what is the most graceful way you can handle any loading state"
+        text: "to avoid layout shifts, set HTML elements to have fixed heights and widths"
+      },
+      {
+        type: 'paragraph',
+        text: "also, think about server side rendering or what is the most graceful way you can handle any loading state"
       },
       {
         type: 'header',
@@ -82,7 +90,15 @@ export const Posts = [
       },
       {
         type: 'header',
-        text: "Get the data as close as possible to the client. Use the least amount of Javascript and network requests as possible. This is the way to build a fast loading web app"
+        text: "Get the data as close as possible to the client"
+      },
+      {
+        type: 'header',
+        text: "Reduce the amount of clientside compute, and network requests"
+      },
+      {
+        type: 'header',
+        text: "This is the way to build a fast loading web app"
       },
       {
         type: 'link',
@@ -201,7 +217,7 @@ export const Posts = [
       },
       {
         type: 'code',
-        text: "pnpm create cloudflare@latest NAME_OF_YOUR_APP_HERE"
+        text: "pnpm create cloudflare@latest NAME_OF_YOUR_APP"
       },
       {
         type: 'paragraph',
@@ -213,7 +229,7 @@ export const Posts = [
       },
       {
         type: 'code',
-        text: 'cd NAME_OF_YOUR_APP_HERE'
+        text: 'cd NAME_OF_YOUR_APP'
       },
       {
         type: 'paragraph',
@@ -261,7 +277,11 @@ export const Posts = [
       },
       {
         type: 'paragraph',
-        text: "Cloudflare D1 database is a SQLite database that can be used to store data for your Nuxt app. You can connect your Nuxt app to the Cloudflare D1 database by setting the `DATABASE_URL` environment variable in the Cloudflare Pages dashboard"
+        text: "Cloudflare D1 database is a SQLite database that can be used to store data for your Nuxt app"
+      },
+      {
+        type: 'paragraph',
+        text: "connect your Nuxt app to the Cloudflare D1 database by setting the `DATABASE_URL` environment variable in the Cloudflare Pages dashboard"
       },
       {
         type: 'paragraph',
