@@ -112,15 +112,11 @@ export const Posts = [
       },
       {
         type: 'code',
-        text: "composer create-project laravel/laravel laravel-api && cd laravel-api",
-      },
-      {
-        type: 'code',
-        text: "php artisan serve",
+        text: "composer create-project laravel/laravel laravel-api && cd laravel-api && php artisan serve",
       },
       {
         type: 'header',
-        text: "Create your RESTful API, with your Laravel app",
+        text: "Now, let's create your RESTful API",
       },
       {
         type: 'paragraph',
@@ -136,7 +132,7 @@ export const Posts = [
       },
       {
         type: 'paragraph',
-        text: 'this will create a new model in your `app/models` file, and a new migration file in your `database/migrations` file. In your new migration file, update the up function, with the properties of your new table that you defined in your schema'
+        text: 'this will create a new model in `app/models`, and a new migration file in `database/migrations`. In your new migration file, update the `up` function, with the properties of your new table that you defined in your schema'
       },
       {
         type: 'header',
@@ -156,7 +152,7 @@ export const Posts = [
       },
       {
         type: 'paragraph',
-        text: 'now you have a new controller file in `app\Http\Controllers\`. You can update and add methods to this controller to define the business logic for your API routes'
+        text: 'now you have a new controller file in `app/\Http/\Controllers/\ \`. You can update and add methods to this controller to define the business logic for your API routes'
       },
       {
         type: 'paragraph',
@@ -184,7 +180,7 @@ export const Posts = [
       },
       {
         type: 'paragraph',
-        text: "There are a variety of ways to deploy your Laravel web server. Laravel Vapor is a serverless option that is supported by the Laravel team. Laravel Forge is a serverful option that is also supported by the Laravel team. You can also deploy your Laravel app on services like Digital Ocean, Fly.io, or shared storage."
+        text: "there are a variety of ways to deploy your Laravel web server. Laravel Vapor is a serverless option that is supported by the Laravel team. Laravel Forge is a serverful option that is also supported by the Laravel team. You can also deploy your Laravel app on services like Digital Ocean, Fly.io, or shared storage."
       },
       {
         type: 'link',
@@ -201,7 +197,7 @@ export const Posts = [
     steps: [
       {
         type: 'header',
-        text: "Create a Nuxt App in the terminal",
+        text: "Create a Nuxt App with Cloudflare Pages",
       },
       {
         type: 'code',
@@ -209,11 +205,11 @@ export const Posts = [
       },
       {
         type: 'paragraph',
-        text: 'In the terminal select the `Website or web app` option, and then select the `Nuxt` option. This will create a new Nuxt app in the current directory'
+        text: 'in the terminal select the `Website or web app` option, and then select the `Nuxt` option. This will create a new Nuxt app in the current directory'
       },
       {
         type: 'paragraph',
-        text: 'When you are asked in the terminal if `Do you want to deploy your application?` select `Yes`'
+        text: 'when you are asked in the terminal, `Do you want to deploy your application?` select `Yes`'
       },
       {
         type: 'code',
@@ -221,7 +217,7 @@ export const Posts = [
       },
       {
         type: 'paragraph',
-        text: 'Run the development server'
+        text: 'run the development server'
       },
       {
         type: 'code',
@@ -229,7 +225,7 @@ export const Posts = [
       },
       {
         type: 'paragraph',
-        text: ' Deploy your application'
+        text: 'deploy your application'
       },
       {
         type: 'code',
@@ -241,7 +237,7 @@ export const Posts = [
       },
       {
         type: 'paragraph',
-        text: "You can set any environment variables in the Cloudflare Pages dashboard. These environment variables will be available to your Nuxt app at runtime"
+        text: "you can set any environment variables in the Cloudflare Pages dashboard. These environment variables will be available to your Nuxt app at runtime"
       },
       {
         type: 'header',
