@@ -16,43 +16,60 @@ const SinglePost = PostsDictionary[Astro.params.slug ?? '']
 				{step.type === 'header' && (
 					<Frame>
 						<div class="col-span-3 col-start-1 row-span-1 row-start-1 place-content-end text-right">
-							<h2 class="text-2xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">{step.text}</h2>
+							<h2 class="text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
+								{step.text}&#8230;
+							</h2>
 						</div>
 					</Frame>
 				)}
 				{step.type === 'paragraph' && (
 					<Frame>
 						<div class="col-span-3 col-start-1 row-span-1 row-start-2 place-content-start">
-							<p class="text-xl font-medium sm:text-2xl md:text-3xl lg:text-4xl">{step.text}</p>
-						</div>
-					</Frame>
-				)}
-				{step.type === 'code' && (
-					<Frame>
-						<div class="col-span-3 col-start-1 row-span-1 row-start-2 place-content-start">
-							<div class="bg-gray-900 text-gray-100 p-4 rounded-lg shadow-lg">
-								<pre class="overflow-auto">
-									<code class="font-mono text-sm">
-										{step.text}
-									</code>
-								</pre>
-							</div>
+							<p class="text-lg sm:text-xl md:text-2xl lg:text-3xl">&#8230;{step.text}&#8230;</p>
 						</div>
 					</Frame>
 				)}
 				{step.type === 'image' && (
 					<Frame>
-						<div class="col-span-3 col-start-1 row-span-1 row-start-2 place-content-start">
-							<img src={step.src} alt={step.text} />
+						<div class="col-span-3 col-start-1 row-span-1 row-start-2 flex place-content-start justify-center gap-4">
+							<img src={step.src} alt={step.text} class="h-auto max-w-full rounded-lg shadow-md" />
+							<p class="text-center text-sm">{step.text}</p>
 						</div>
 					</Frame>
 				)}
 				{step.type === 'link' && (
 					<Frame>
-						<div class="col-span-3 col-start-1 row-span-1 row-start-2 place-content-start">
-							<a href={step.url} class="text-blue-500 hover:underline">
+						<div class="col-span-3 col-start-1 row-span-1 row-start-1 place-content-end">
+							<p class="text-base font-black uppercase tracking-widest text-white md:text-xl">
 								{step.text}
+							</p>
+							<a href={step.url}>
+								<code class="bg-gray-500/50 px-1 font-mono text-xl md:text-3xl md:leading-loose break-words">
+									{step.url}
+								</code>
 							</a>
+						</div>
+					</Frame>
+					// <Frame>
+					// 	<div class="col-span-3 col-start-1 row-span-1 row-start-2 place-content-start">
+					// 		<a
+					// 			href={step.url}
+					// 			class="text-lg text-blue-500 hover:text-blue-700 hover:underline sm:text-xl md:text-2xl lg:text-3xl"
+					// 		>
+					// 			{step.text}
+					// 		</a>
+					// 	</div>
+					// </Frame>
+				)}
+				{step.type === 'code' && (
+					<Frame>
+						<div class="col-span-3 col-start-1 row-span-1 row-start-1 place-content-end">
+							<p class="text-base font-black uppercase tracking-widest text-white md:text-xl">
+								run this command in your terminal:
+							</p>
+							<code class="bg-gray-500/50 px-1 font-mono text-xl md:text-3xl md:leading-loose">
+								{step.text}
+							</code>
 						</div>
 					</Frame>
 				)}
