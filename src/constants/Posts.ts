@@ -124,7 +124,7 @@ export const Posts = [
       },
       {
         type: 'paragraph',
-        text: 'first you need to have PHP and Composer are installed on your local machine. Then'
+        text: 'first you need to have PHP and Composer installed on your local machine. Then'
       },
       {
         type: 'code',
@@ -140,19 +140,27 @@ export const Posts = [
       },
       {
         type: 'paragraph',
-        text: "now that you know what data you want to store, you can create models and a schema to represent that data. I used the plural here, but I reccomend starting with a single model and table, and then adding more as you need them"
-      },
-      {
-        type: 'code',
-        text: "php artisan make:model NAME_OF_YOUR_MODEL_HERE -m",
+        text: "now that you know what data you want to store, you can create models and a schema to represent that data"
       },
       {
         type: 'paragraph',
-        text: 'this will create a new model in `app/models`, and a new migration file in `database/migrations`. In your new migration file, update the `up` function, with the properties of your new table that you defined in your schema'
+        text: "I used the plural here, but I reccomend starting with a single model and table, and then adding more as you need them"
       },
       {
-        type: 'header',
-        text: 'Double check your migration file, model, and schema, and then run the migration to create the table in your database'
+        type: 'code',
+        text: "php artisan make:model YOUR_MODEL_HERE -m",
+      },
+      {
+        type: 'paragraph',
+        text: 'this will create a new model in `app/models`, and a new migration file in `database/migrations`'
+      },
+      {
+        type: 'paragraph',
+        text: 'in your new migration file, update the `up` function, with the properties of your new table that you defined in your schema'
+      },
+      {
+        type: 'paragraph',
+        text: 'double check your migration file, model, and schema, and run the migration to create the table in your database'
       },
       {
         type: 'code',
@@ -164,7 +172,7 @@ export const Posts = [
       },
       {
         type: 'code',
-        text: 'php artisan make:controller NAME_OF_YOUR_CONTROLLER_HERE'
+        text: 'php artisan make:controller YOUR_CONTROLLER'
       },
       {
         type: 'paragraph',
@@ -172,7 +180,11 @@ export const Posts = [
       },
       {
         type: 'paragraph',
-        text: "think about CRUD: create, read, update, and delete. Think about what opperations that you want to perform on the data you are storing in your database. And then define the methods in your controller that will perform those opperations"
+        text: "think about CRUD: create, read, update, and delete. What opperations that you want to perform on the data you are storing"
+      },
+      {
+        type: 'paragraph',
+        text: "define the methods in your controller that will perform those opperations"
       },
       {
         type: 'header',
@@ -180,7 +192,11 @@ export const Posts = [
       },
       {
         type: 'paragraph',
-        text: 'in `routes/api.php` you can define the routes for your API. You can use the `Route::get`, `Route::post`, `Route::put`, and `Route::delete` methods to define the routes for your API. These methods generally match with CRUD actions or Create, Read, Update, and Delete'
+        text: 'in `routes/api.php` you can define the routes for your API'
+      },
+      {
+        type: 'paragraph',
+        text: 'as you define the routes for your API, generally think about CRUD actions or Create, Read, Update, and Delete'
       },
       {
         type: 'header',
@@ -188,7 +204,11 @@ export const Posts = [
       },
       {
         type: 'paragraph',
-        text: "you can test your new Laravel API by running `php artisan serve` and then making requests to the routes you defined in `routes/api.php`. You can use a tool like Postman to make requests to your API"
+        text: "you can test your new Laravel API by running `php artisan serve` and then making requests to the routes you defined in `routes/api.php`"
+      },
+      {
+        type: 'paragraph',
+        text: "you can use a tool like Postman to make requests to your API"
       },
       {
         type: 'header',
@@ -196,7 +216,15 @@ export const Posts = [
       },
       {
         type: 'paragraph',
-        text: "there are a variety of ways to deploy your Laravel web server. Laravel Vapor is a serverless option that is supported by the Laravel team. Laravel Forge is a serverful option that is also supported by the Laravel team. You can also deploy your Laravel app on services like Digital Ocean, Fly.io, or shared storage."
+        text: "Laravel Vapor is a serverless option that is supported by the Laravel team."
+      },
+      {
+        type: 'paragraph',
+        text: "Laravel Forge is a serverful option that is also supported by the Laravel team"
+      },
+      {
+        type: 'paragraph',
+        text: "you can also deploy your Laravel app on services like Digital Ocean, Fly.io, or shared storage"
       },
       {
         type: 'link',
