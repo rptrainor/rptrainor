@@ -1,11 +1,11 @@
 ---
 export const prerender = true
 
-import '@fontsource-variable/montserrat'
-
 import { ViewTransitions } from 'astro:transitions'
 
 import PostHog from '../components/posthog.astro'
+import Menu from '../components/Menu.astro'
+import HomeButton from '../components/HomeButton.astro'
 
 interface Props {
 	title: string
@@ -33,7 +33,7 @@ const { title, description } = Astro.props
 		<meta name="description" content={description} />
 		<meta
 			name="keywords"
-			content="Ryan P Trainor Newsletter, Web Performance Tips, App Optimization Strategies, Sales Funnel Best Practices, Landing Page Design Insights, Tech Innovations by Ryan P Trainor, Software Development Techniques, Business Growth Hacks, Digital Marketing Trends, High-Performance Computing, Entrepreneurial Insights, User Experience Best Practices, Technology Leadership, Efficient Coding Practices, Ryan P Trainor Tech Insights"
+			content="Ryan P Trainor, RP Trainor, Ryan Trainor, React, React Native, Solid, Vue, Astro, Astro Build, Next, Nuxt, Tailwind, TailwindCSS, Javascript, Typescript, SQL, MySQL, PostgreSQL, SQLite, MongoDB, Firebase, Cloudflare, Cloudflare Pages, Cloudflare Workers, Cloudflare D1, Laravel, PHP, Software Engineer"
 		/>
 
 		<link rel="manifest" href="/site.webmanifest" />
@@ -43,36 +43,28 @@ const { title, description } = Astro.props
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
-		<meta
+		<!-- <meta
 			property="og:image"
 			content="https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/420984ae-3ec2-4ccd-9ba5-bbec70f6e900/ogImage"
-		/>
+		/> -->
 		<meta name="twitter:creator" content="@rptrainor" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta property="og:locale" content="en_US" />
 		<meta name="theme-color" content="#010203" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
-		<meta
+		<!-- <meta
 			name="twitter:image"
 			content="https://imagedelivery.net/xHZxKHrwCcaO8iTco-Njhg/420984ae-3ec2-4ccd-9ba5-bbec70f6e900/ogImage"
-		/>
+		/> -->
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<ViewTransitions />
 		<PostHog />
-		<!-- Calendly link widget begin -->
-		<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-		<script
-			src="https://assets.calendly.com/assets/external/widget.js"
-			type="text/javascript"
-			is:inline></script>
-		<!-- <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/rptrainor/initial-strategy-session?hide_gdpr_banner=1&background_color=010203&text_color=ffffff&primary_color=d4af37'});return false;">Start your app built</a> -->
-		<!-- Calendly link widget end -->
 	</head>
 	<body class="h-full bg-background">
 		<div
-			class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+			class="absolute inset-x-0 -top-40 -z-10 h-screen transform-gpu overflow-hidden blur-3xl sm:-top-80"
 			aria-hidden="true"
 		>
 			<div
@@ -83,7 +75,14 @@ const { title, description } = Astro.props
 		</div>
 		<div class="h-screen bg-repeat" style="background-image: url('/svgs/hound.svg');">
 			<div class="mx-auto h-screen max-w-7xl">
-				<slot />
+				<div class="grid h-full w-full grid-cols-11 text-white">
+					<div class="col-span-11 md:col-span-10">
+						<div class="col-span-10 h-screen snap-y snap-mandatory overflow-y-auto md:col-span-11">
+							<slot />
+						</div>
+					</div>
+					{Astro.url.pathname === '/' ? <Menu /> : <HomeButton />}
+				</div>
 			</div>
 		</div>
 		<div
@@ -97,6 +96,14 @@ const { title, description } = Astro.props
 			</div>
 		</div>
 		<style is:global>
+			/* montserrat-latin-wght-normal */
+			@font-face {
+				font-family: 'Montserrat Variable';
+				font-style: normal;
+				font-display: swap;
+				font-weight: 100 900;
+				src: url(/fonts/Montserrat-VariableFont_wght.ttf) format('ttf');
+			}
 			body,
 			html {
 				margin: 0;
@@ -104,13 +111,8 @@ const { title, description } = Astro.props
 				width: 100%;
 				min-width: 0;
 				font-size: 16px;
-			}
-
-			div[data-id='branding'] {
-				display: none !important;
-				height: 1px;
-				width: 1px;
-				z-index: -100;
+				font-family: 'Montserrat Variable', sans-serif;
+				font-weight: 500;
 			}
 		</style>
 	</body>
