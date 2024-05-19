@@ -7,7 +7,7 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Montserrat Variable', ...defaultTheme.fontFamily.sans]
+				sans: ['Montserrat', ...defaultTheme.fontFamily.sans]
 			},
 			colors: {
 				background: '#010203',
