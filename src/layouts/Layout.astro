@@ -2,6 +2,8 @@
 export const prerender = true
 
 import { ViewTransitions } from 'astro:transitions'
+// Supports weights 100-900
+import '@fontsource-variable/montserrat';
 
 import PostHog from '../components/posthog.astro'
 import Menu from '../components/Menu.astro'
@@ -96,14 +98,6 @@ const { title, description } = Astro.props
 			</div>
 		</div>
 		<style is:global>
-			/* montserrat-latin-wght-normal */
-			@font-face {
-				font-family: 'Montserrat';
-				font-style: normal;
-				font-display: swap;
-				font-weight: 100 900;
-				src: url(/fonts/Montserrat-VariableFont_wght.ttf) format('ttf');
-			}
 			body,
 			html {
 				margin: 0;
@@ -111,7 +105,7 @@ const { title, description } = Astro.props
 				width: 100%;
 				min-width: 0;
 				font-size: 16px;
-				font-family: 'Montserrat', sans-serif;
+				font-family: 'Montserrat Variable', sans-serif;
 				font-weight: 500;
 			}
 		</style>
