@@ -4,7 +4,6 @@ import { Image } from 'astro:assets'
 import Layout from '../layouts/Layout.astro'
 import ryan from '../components/ryan.jpeg'
 
-import { Posts } from '../constants/Posts.ts'
 import Frame from '../components/Frame.astro'
 ---
 
@@ -29,26 +28,43 @@ import Frame from '../components/Frame.astro'
 		</div>
 	</Frame>
 
-	{
-		Posts.map((post, index) => {
-			const isOdd = index % 2 === 0
-			return (
-				<a class="cursor-pointer" href={`/${post.slug}`}>
-					<Frame>
-						<div
-							class={`${isOdd ? 'col-span-3 row-start-1' : 'col-span-1 row-start-2'} col-start-1 row-span-1 place-content-end text-right`}
-						>
-							<h2 class="text-balance text-2xl font-medium sm:text-3xl md:text-4xl">{post.date}</h2>
-						</div>
+	<a class="cursor-pointer" href="improve-shaan-puri-blog">
+		<Frame>
+			<div class="col-span-3 col-start-1 row-span-1 row-start-1 place-content-end text-right">
+				<h2 class="text-balance text-2xl font-medium sm:text-3xl md:text-4xl">2024-05-16</h2>
+			</div>
 
-						<div
-							class={`${!isOdd ? 'col-span-3 row-start-1' : 'col-span-1 row-start-2'} col-start-1 row-span-1 place-content-start text-right`}
-						>
-							<h1 class="text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">{post.title}</h1>
-						</div>
-					</Frame>
-				</a>
-			)
-		})
-	}
+			<div class="col-span-1 col-start-1 row-span-1 row-start-2 place-content-start text-right">
+				<h1 class="text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
+					Improve Shaan Puri's Blog
+				</h1>
+			</div>
+		</Frame>
+	</a>
+	<a class="cursor-pointer" href="deploy-a-laravel-server">
+		<Frame>
+			<div class="col-span-1 col-start-1 row-span-1 row-start-2 place-content-end text-right">
+				<h2 class="text-balance text-2xl font-medium sm:text-3xl md:text-4xl">2024-05-15</h2>
+			</div>
+
+			<div class="col-span-3 col-start-1 row-span-1 row-start-1 place-content-start text-right">
+				<h1 class="text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
+					Deploy a RESTful Laravel Server
+				</h1>
+			</div>
+		</Frame>
+	</a>
+	<a class="cursor-pointer" href="deploy-nuxt-on-cloudflare-pages">
+		<Frame>
+			<div class="col-span-3 col-start-1 row-span-1 row-start-1 place-content-end text-right">
+				<h2 class="text-balance text-2xl font-medium sm:text-3xl md:text-4xl">2024-05-14</h2>
+			</div>
+
+			<div class="col-span-1 col-start-1 row-span-1 row-start-2 place-content-start text-right">
+				<h1 class="text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
+					Deploy Nuxt on Cloudflare Pages
+				</h1>
+			</div>
+		</Frame>
+	</a>
 </Layout>
