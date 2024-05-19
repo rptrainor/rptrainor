@@ -1,27 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import Frame from '../components/Frame.astro'
 ---
 
 <Layout title="Page not found · RPTrainor" description="">
-	<main class="col-span-3 row-start-2">
-		<div class="text-center">
-			<p class="text-base font-semibold text-contrast">404</p>
-			<h1 class="mt-4 text-3xl font-bold tracking-tight text-white sm:text-5xl">Page not found</h1>
-			<p class="mt-6 text-base leading-7 text-gray-200">
+	<Frame>
+		<div class="col-span-full col-start-1 row-start-2 flex flex-col gap-2 pb-12 xs:gap-4">
+			<h1 class="text-center text-xl font-bold tracking-tight text-white xs:text-3xl sm:text-5xl">
 				Sorry, we couldn&#39;t find the page you&#39;re looking for.
-			</p>
-			<div class="mt-10 flex items-center justify-center gap-x-6">
+			</h1>
+			<div class="flex items-center justify-center gap-x-4 xs:gap-x-6">
 				<a
 					href="/"
-					class="rounded-xl bg-white px-3.5 py-2.5 text-sm font-semibold text-background shadow-sm hover:animate-hover-pop focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-contrast"
+					class="rounded-xl bg-white px-4 py-2 text-sm font-semibold text-background shadow-sm hover:animate-hover-pop focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-contrast xs:px-3.5 xs:py-2.5"
 					>Go back home</a
 				>
 				<a
 					href="mailto:ryan@rptrainor.com"
-					class="rounded-xl border border-white px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:animate-hover-pop focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-contrast"
-					>Contact support <span aria-hidden="true">&rarr;</span></a
+					class="rounded-xl border border-white px-4 py-2 text-sm font-semibold text-white shadow-sm hover:animate-hover-pop focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-contrast xs:px-3.5 xs:py-2.5"
+					>Contact Ryan</a
 				>
 			</div>
 		</div>
-	</main>
+	</Frame>
 </Layout>
