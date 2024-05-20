@@ -1,12 +1,10 @@
 # Ryan Trainor
-
-Minneapolis, MN | +1.612.747.5815 | <ryan@rptrainor.com>
+Minneapolis, MN | +1.612.747.5815 | ryan@rptrainor.com
 
 ## Experience
 
 ### Founder - Lightup
-
-*10/2023 - 05/2024*
+_10/2023 - 05/2024_
 
 - Architected a model-view-controller (MVC) system with PostgreSQL as the model, HTML/CSS and Solid as the view, and a custom-built TypeScript/JavaScript finite state machine as the controller
 - Designed and built pages for the 1st hosts on the platform
@@ -14,8 +12,7 @@ Minneapolis, MN | +1.612.747.5815 | <ryan@rptrainor.com>
 - **Technologies**: Solid.JS, Astro Build, Cloudflare Pages, PostgreSQL, Tailwind, HTML, CSS, REST
 
 ### Senior Software Engineer - OfColor
-
-*10/2022 - 10/2023*
+_10/2022 - 10/2023_
 
 - 2nd most senior member of the engineering team and 8th employee
 - Proposed, planned, and shipped the 1st native iOS and Android apps using React Native and Expo
@@ -25,8 +22,7 @@ Minneapolis, MN | +1.612.747.5815 | <ryan@rptrainor.com>
 - **Technologies**: React, React Native, Tailwind, Styled-Components, Remix, TypeScript, JavaScript, React Query, Docker, Nest
 
 ### Head of Frontend Engineering - Confidence
-
-*08/2020 - 10/2022*
+_08/2020 - 10/2022_
 
 - 1st employee who led and built a team of 8 engineers.
 - Led the startup from initial idea to product-market fit, first paying customers, and successful fundraising.
@@ -35,8 +31,7 @@ Minneapolis, MN | +1.612.747.5815 | <ryan@rptrainor.com>
 - **Technologies**: React, React Router, Express, REST API, HTML, CSS, JavaScript/TypeScript, Jest, and MySQL
 
 ### Software Engineer - Pushquery
-
-*08/2016 - 08/2020*
+_08/2016 - 08/2020_
 
 - Shipped first iOS and Android apps in the Apple App and Google Play stores.
 - Built and maintained a React and React Native component system across web and native apps.
@@ -57,6 +52,4 @@ Minneapolis, MN | +1.612.747.5815 | <ryan@rptrainor.com>
 
 ## Education
 
-### University of California, Berkeley
-
-**B.A. 09/2009 - 06/2012**
+### University of California, Berkeley - **B.A. 09/2009 - 06/2012**
