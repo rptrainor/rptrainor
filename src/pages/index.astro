@@ -4,7 +4,6 @@ import { Image } from 'astro:assets'
 import Layout from '../layouts/Layout.astro'
 import ryan_100 from '../components/ryan_100.webp'
 
-import { Posts } from '../constants/Posts.ts'
 import Frame from '../components/Frame.astro'
 
 let isOdd = false
@@ -36,7 +35,6 @@ let isOdd = false
 				/>
 			</div>
 		</Frame>
-
 		{
 			Posts.map((post) => {
 				isOdd = !isOdd
