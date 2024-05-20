@@ -7,7 +7,7 @@ import '@fontsource-variable/montserrat'
 
 import Menu from '../components/Menu.astro'
 import HomeButton from '../components/HomeButton.astro'
-
+import GA from '../components/GA.astro'
 interface Props {
 	title: string
 	description: string
@@ -62,6 +62,7 @@ const pathname = Astro.url.pathname
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<ViewTransitions />
+		<GA />
 	</head>
 	<body class="h-full bg-background">
 		<div
