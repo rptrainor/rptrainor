@@ -3,9 +3,8 @@ export const prerender = true
 
 import { ViewTransitions } from 'astro:transitions'
 // Supports weights 100-900
-import '@fontsource-variable/montserrat';
+import '@fontsource-variable/montserrat'
 
-// import PostHog from '../components/posthog.astro'
 import Menu from '../components/Menu.astro'
 import HomeButton from '../components/HomeButton.astro'
 
@@ -15,6 +14,7 @@ interface Props {
 }
 
 const { title, description } = Astro.props
+const pathname = Astro.url.pathname
 ---
 
 <!doctype html>
@@ -62,7 +62,6 @@ const { title, description } = Astro.props
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<ViewTransitions />
-		<!-- <PostHog /> -->
 	</head>
 	<body class="h-full bg-background">
 		<div
@@ -83,7 +82,7 @@ const { title, description } = Astro.props
 							<slot />
 						</div>
 					</div>
-					{Astro.url.pathname === '/' ? <Menu /> : <HomeButton />}
+					{pathname === '/' ? <Menu /> : <HomeButton />}
 				</div>
 			</div>
 		</div>
