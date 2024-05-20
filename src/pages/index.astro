@@ -2,69 +2,62 @@
 import { Image } from 'astro:assets'
 
 import Layout from '../layouts/Layout.astro'
-import ryan from '../components/ryan.jpeg'
+import ryan_100 from '../components/ryan_100.webp'
 
 import Frame from '../components/Frame.astro'
+
+let isOdd = false
 ---
 
 <Layout
 	title="Ryan Patrick Trainor: Experienced Software Engineer | Native & Web App Specialist"
 	description="Experienced startup veteran with 8+ years in software engineering. Specializing in Laravel, JavaScript/TypeScript, and building apps from the ground up for startups and small businesses. Let’s create your next big thing."
 >
-	<Frame>
-		<div class="col-span-3 col-start-1 row-span-1 row-start-1 place-content-end text-right">
-			<h1 class="text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
-				Experienced Software Engineer
-			</h1>
-		</div>
-
-		<div class="col-span-2 col-start-1 row-span-1 row-start-2 place-content-start text-right">
-			<h2 class="text-balance text-2xl font-medium sm:text-3xl md:text-4xl">
-				Ryan Patrick Trainor
-			</h2>
-		</div>
-		<div class="col-span-1 col-start-3 row-span-1 row-start-2 place-content-start">
-			<Image src={ryan} alt="Ryan Trainor" class="aspect-square h-auto w-24 rounded" />
-		</div>
-	</Frame>
-
-	<a class="cursor-pointer" href="improve-shaan-puri-blog">
+	<div>
 		<Frame>
 			<div class="col-span-3 col-start-1 row-span-1 row-start-1 place-content-end text-right">
-				<h2 class="text-balance text-2xl font-medium sm:text-3xl md:text-4xl">2024-05-16</h2>
-			</div>
-
-			<div class="col-span-1 col-start-1 row-span-1 row-start-2 place-content-start text-right">
 				<h1 class="text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
-					Improve Shaan Puri's Blog
+					Experienced Software Engineer
 				</h1>
 			</div>
-		</Frame>
-	</a>
-	<a class="cursor-pointer" href="deploy-a-laravel-server">
-		<Frame>
-			<div class="col-span-1 col-start-1 row-span-1 row-start-2 place-content-end text-right">
-				<h2 class="text-balance text-2xl font-medium sm:text-3xl md:text-4xl">2024-05-15</h2>
-			</div>
 
-			<div class="col-span-3 col-start-1 row-span-1 row-start-1 place-content-start text-right">
-				<h1 class="text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
-					Deploy a RESTful Laravel Server
-				</h1>
+			<div class="col-span-2 col-start-1 row-span-1 row-start-2 place-content-start text-right">
+				<h2 class="text-balance text-2xl font-medium sm:text-3xl md:text-4xl">
+					Ryan Patrick Trainor
+				</h2>
+			</div>
+			<div class="col-span-1 col-start-3 row-span-1 row-start-2 place-content-start">
+				<Image
+					src={ryan_100}
+					alt="Ryan Trainor"
+					class="aspect-square h-auto w-24 rounded"
+					loading="eager"
+				/>
 			</div>
 		</Frame>
-	</a>
-	<a class="cursor-pointer" href="deploy-nuxt-on-cloudflare-pages">
-		<Frame>
-			<div class="col-span-3 col-start-1 row-span-1 row-start-1 place-content-end text-right">
-				<h2 class="text-balance text-2xl font-medium sm:text-3xl md:text-4xl">2024-05-14</h2>
-			</div>
+		{
+			Posts.map((post) => {
+				isOdd = !isOdd
+				return (
+					<a class="cursor-pointer" href={`/${post.slug}`}>
+						<Frame>
+							<div
+								class={`${isOdd ? 'col-span-3 row-start-1' : 'col-span-1 row-start-2'} col-start-1 row-span-1 place-content-end text-right`}
+							>
+								<h2 class="text-balance text-2xl font-medium sm:text-3xl md:text-4xl">
+									{post.date}
+								</h2>
+							</div>
 
-			<div class="col-span-1 col-start-1 row-span-1 row-start-2 place-content-start text-right">
-				<h1 class="text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
-					Deploy Nuxt on Cloudflare Pages
-				</h1>
-			</div>
-		</Frame>
-	</a>
+							<div
+								class={`${!isOdd ? 'col-span-3 row-start-1' : 'col-span-1 row-start-2'} col-start-1 row-span-1 place-content-start text-right`}
+							>
+								<h1 class="text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">{post.title}</h1>
+							</div>
+						</Frame>
+					</a>
+				)
+			})
+		}
+	</div>
 </Layout>

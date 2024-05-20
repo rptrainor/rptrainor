@@ -5,7 +5,7 @@ import { ViewTransitions } from 'astro:transitions'
 // Supports weights 100-900
 import '@fontsource-variable/montserrat';
 
-import PostHog from '../components/posthog.astro'
+// import PostHog from '../components/posthog.astro'
 import Menu from '../components/Menu.astro'
 import HomeButton from '../components/HomeButton.astro'
 
@@ -62,7 +62,7 @@ const { title, description } = Astro.props
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<ViewTransitions />
-		<PostHog />
+		<!-- <PostHog /> -->
 	</head>
 	<body class="h-full bg-background">
 		<div
