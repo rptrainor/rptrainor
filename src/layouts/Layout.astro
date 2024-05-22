@@ -6,6 +6,7 @@ import { ViewTransitions } from 'astro:transitions'
 import '@fontsource-variable/montserrat'
 
 import Menu from '../components/Menu.astro'
+import HomeButton from '../components/HomeButton.astro'
 interface Props {
 	title: string
 	description: string
@@ -80,7 +81,7 @@ const pathname = Astro.url.pathname
 							<slot />
 						</div>
 					</div>
-					<Menu />
+					{pathname === '/' ? <Menu /> : <HomeButton />}
 				</div>
 			</div>
 		</div>
