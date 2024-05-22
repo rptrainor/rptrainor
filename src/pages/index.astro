@@ -3,10 +3,8 @@ import { Image } from 'astro:assets'
 
 import Layout from '../layouts/Layout.astro'
 import ryan_144 from '../components/ryan_144.webp'
-import { Posts } from '../constants/Posts'
 import Frame from '../components/Frame.astro'
-
-let isOdd = false
+import Video from '../components/Video.astro'
 ---
 
 <Layout
@@ -35,29 +33,8 @@ let isOdd = false
 				/>
 			</div>
 		</Frame>
-		{
-			Posts.map((post) => {
-				isOdd = !isOdd
-				return (
-					<a class="cursor-pointer" href={`/${post.slug}`}>
-						<Frame>
-							<div
-								class={`${isOdd ? 'col-span-3 row-start-1' : 'col-span-1 row-start-2'} col-start-1 row-span-1 place-content-end text-right`}
-							>
-								<h2 class="text-balance text-2xl font-medium sm:text-3xl md:text-4xl">
-									{post.date}
-								</h2>
-							</div>
-
-							<div
-								class={`${!isOdd ? 'col-span-3 row-start-1' : 'col-span-1 row-start-2'} col-start-1 row-span-1 place-content-start text-right`}
-							>
-								<h1 class="text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">{post.title}</h1>
-							</div>
-						</Frame>
-					</a>
-				)
-			})
-		}
+		<Frame>
+			<Video />
+		</Frame>
 	</div>
 </Layout>
