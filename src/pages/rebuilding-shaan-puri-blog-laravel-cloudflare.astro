@@ -11,7 +11,7 @@ const description =
 
 <Layout title={title} description={description}>
 	<article
-		class="prose lg:prose-xl prose-invert mx-auto my-8 mt-12 max-w-prose p-4 sm:mt-20 md:mt-24"
+		class="prose lg:prose-xl prose-invert mx-auto my-8 max-w-prose p-4 xs:mt-12 sm:mt-20 md:mt-24"
 	>
 		<h1>
 			How I Rebuilt Shaan Puri's Blog with Laravel & Cloudflare to Get Perfect 100 Google Web Vitals
@@ -310,20 +310,6 @@ protected $fillable = [
 			if (button instanceof HTMLAnchorElement && !button.href) {
 				button.href = 'https://youtube.com/watch?v=jqpJQUmsCQA'
 			}
-		})
-
-		const tocLinks = document.querySelectorAll('a[href^="#"]')
-		tocLinks.forEach((link) => {
-			link.addEventListener('click', (event) => {
-				event.preventDefault()
-				const targetId = link.getAttribute('href')?.substring(1)
-				if (targetId) {
-					const targetElement = document.getElementById(targetId)
-					if (targetElement) {
-						targetElement.scrollIntoView({ behavior: 'smooth' })
-					}
-				}
-			})
 		})
 	})
 </script>

@@ -4,7 +4,6 @@ import { Image } from 'astro:assets'
 import Layout from '../layouts/Layout.astro'
 import ryan_144 from '../components/ryan_144.webp'
 import Frame from '../components/Frame.astro'
-import Video from '../components/Video.astro'
 ---
 
 <Layout
@@ -34,7 +33,51 @@ import Video from '../components/Video.astro'
 			</div>
 		</Frame>
 		<Frame>
-			<Video />
+			<article
+				class="group relative col-span-3 row-start-2 mx-auto flex max-w-md flex-col items-start text-balance"
+			>
+				<h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+					<div
+						class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl dark:bg-zinc-800/50"
+					>
+					</div><a href="/rebuilding-shaan-puri-blog-laravel-cloudflare"
+						><span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"
+						></span><span class="relative z-10 text-sm xs:text-base"
+							>How I Rebuilt Shaan Puri's Blog with Laravel & Cloudflare to Get Perfect 100 Google
+							Web Vitals Scores</span
+						></a
+					>
+				</h2>
+				<time
+					class="relative z-10 order-first mb-3 hidden xs:flex items-center pl-3.5 text-xs text-zinc-400 xs:text-sm dark:text-zinc-500"
+					datetime="2024-05-23"
+				>
+					<span class="absolute inset-y-0 left-0 flex items-center" aria-hidden="true">
+						<span class="h-4 w-0.5 rounded-full bg-zinc-200 text-xs xs:text-base dark:bg-zinc-500">
+						</span>
+					</span>May 23, 2024
+				</time>
+				<p class="relative z-10 mt-1 xs:mt-2 text-xs text-zinc-600 xs:text-sm dark:text-zinc-400">
+					Join me as I rebuild Shaan Puri's blog using Laravel, Nuxt, and Cloudflare, achieving
+					perfect 100 Google Core Web Vitals scores. This post guides you through the entire
+					process, highlighting key optimizations for web performance.
+				</p><div
+					aria-hidden="true"
+					class="relative z-10 mt-2 xs:mt-4 flex items-center text-sm font-medium text-accent"
+				>
+					Read article<svg
+						viewBox="0 0 16 16"
+						fill="none"
+						aria-hidden="true"
+						class="ml-1 h-4 w-4 stroke-current"
+						><path
+							d="M6.75 5.75 9.25 8l-2.5 2.25"
+							stroke-width="1.5"
+							stroke-linecap="round"
+							stroke-linejoin="round"></path></svg
+					>
+				</div>
+			</article>
 		</Frame>
 	</div>
 </Layout>
