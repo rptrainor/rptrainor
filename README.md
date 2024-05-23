@@ -40,7 +40,7 @@ _08/2020 - 10/2022_
 - Led the startup from initial idea to product-market fit, first paying customers, and successful fundraising.
 - Interviewed and hired the frontend team from scratch.
 - Mentored junior engineers.
-- **Technologies**: React, React Router, Express, REST API, HTML, CSS, JavaScript/TypeScript, Jest, and MySQL
+- **Technologies**: React, React Router, Express, REST API, HTML, CSS, TypeScript, JavaScript, Jest, and MySQL
 
 **Software Engineer - Pushquery**
 _08/2016 - 08/2020_
@@ -49,7 +49,7 @@ _08/2016 - 08/2020_
 - Built and maintained a React and React Native component system across web and native apps.
 - Helped develop internal and external APIs.
 - Non-relational data modeling
-- **Technologies**:React, React Native, GraphQL, Apollo, Ethereum, MongoDB, and Firebase
+- **Technologies**: TypeScript, JavaScript, React, React Native, GraphQL, Apollo, Ethereum, MongoDB, and Firebase
 
 **University of California, Berkeley - B.A.**
 _09/2009 - 06/2012_
