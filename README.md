@@ -5,13 +5,13 @@ San Francisco, CA | +1.612.747.5815 | ryan@rptrainor.com
 
 **Summary**
 - **Experience**: 8+ years of designing and building full stack web and native iOS / Android applications.
-- **Skills**: Firm grasp of JavaScript and TypeScript languages, functional programming, deployed native apps to the Apple App and Google Play stores with native build tools (XCode, Gradle), experience designing and writing automated tests with end-to-end and unit tests.
+- **Skills**: Firm grasp of JavaScript and TypeScript languages, functional programming, deployed native apps to the Apple App and Google Play stores with native build tools (XCode, Gradle), experience designing and writing automated tests with end-to-end and unit tests. Strong communication and interpersonal skills, with experience working in agile methodologies.
 
 **Technologies**
-- **Frontend**: React, React Native, Solid, Vue, Astro, Next, Remix, TypeScript, JavaScript, Tailwind, HTML, CSS, GraphQL, REST
-- **Backend**: Laravel, Node.js, Express, RESTful API, GraphQL, Cloudflare runtime, Firebase, MySQL, PostgreSQL, SQLite, MongoDB, Firebase, Cloudflare D1
-- **Tools**: XCode, Gradle, Expo, Docker, Jest, React Query, Playwright 
-- **Other**: Functional Programming, Automated Testing, Relational, Non-relational Data Modeling
+- **Frontend**: React, React Native, Vue, Solid, Astro, Next, Remix, TypeScript, JavaScript, Tailwind, HTML, CSS, GraphQL, REST
+- **Backend**: Laravel, Python, Nest, Node, Express, RESTful API, GraphQL, Cloudflare runtime, Firebase, MySQL, PostgreSQL, SQLite, MongoDB, Cloudflare D1,
+- **Tools**: XCode, Gradle, Expo, Docker, Jest, React Query, Playwright, Git, Figma
+- **Other**: Functional Programming, Automated Testing, RDBMS and Non-relational Data Modeling
 
 ---
 
