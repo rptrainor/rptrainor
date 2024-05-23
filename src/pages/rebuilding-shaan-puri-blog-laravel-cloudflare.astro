@@ -23,13 +23,15 @@ const description =
 			100 Google Core Web Vitals scores. This post guides you through the entire process,
 			highlighting key optimizations for web performance.
 		</p>
-		<h2>Contents</h2>
+		<h2>Table of Contents</h2>
 		<ul>
-			<li>Create the Nuxt App and Deploy to Cloudflare Pages</li>
-			<li>Create a SQLite Database using Cloudflare's D1 Database</li>
-			<li>Create the Laravel Web Server</li>
-			<li>Create the Model, Controllers, and API Routes</li>
-			<li>Create a Cloudflare Worker for the Cache Layer</li>
+			<li><a href="#nuxt-app">Create the Nuxt App and Deploy to Cloudflare Pages</a></li>
+			<li><a href="#sqlite-db">Create a SQLite Database using Cloudflare's D1 Database</a></li>
+			<li><a href="#laravel-web-server">Create the Laravel Web Server</a></li>
+			<li><a href="#model-controllers-api">Create the Model, Controllers, and API Routes</a></li>
+			<li><a href="#cloudflare-worker">Create a Cloudflare Worker for the Cache Layer</a></li>
+			<li><a href="#conclusion">Conclusion</a></li>
+			<li><a href="#stay-updated">Stay Updated</a></li>
 		</ul>
 
 		<h2>Featured Technologies</h2>
@@ -72,7 +74,7 @@ const description =
 
 		<h2>Steps for Rebuilding Shaan Puri's Blog</h2>
 
-		<h3>Create the Nuxt App and Deploy to Cloudflare Pages</h3>
+		<h3 id="nuxt-app">Create the Nuxt App and Deploy to Cloudflare Pages</h3>
 		<ol>
 			<li>Make sure you create a Cloudflare account.</li>
 			<li>Log in to your Cloudflare account.</li>
@@ -110,7 +112,7 @@ const description =
 			<li>Now you can style and build your Nuxt app as you choose.</li>
 		</ol>
 
-		<h3>Create a SQLite Database using Cloudflare's D1 Database</h3>
+		<h3 id="sqlite-db">Create a SQLite Database using Cloudflare's D1 Database</h3>
 		<ol>
 			<li>Run <code>npx wrangler d1 create blog-db</code>.</li>
 			<li>
@@ -118,7 +120,7 @@ const description =
 			</li>
 		</ol>
 
-		<h3>Create the Laravel Web Server</h3>
+		<h3 id="laravel-web-server">Create the Laravel Web Server</h3>
 		<ol>
 			<li>Ensure you have PHP and Composer installed and running on your local machine.</li>
 			<li>Create a default Laravel app:</li>
@@ -171,7 +173,7 @@ const description =
 			</ul>
 		</ol>
 
-		<h3>Create the Model, Controllers, and API Routes</h3>
+		<h3 id="model-controllers-api">Create the Model, Controllers, and API Routes</h3>
 		<ol>
 			<li>Think about the data you want to persist in the D1 database.</li>
 			<li>
@@ -266,7 +268,7 @@ protected $fillable = [
 			</ul>
 		</ol>
 
-		<h3>Create a Cloudflare Worker for the Cache Layer</h3>
+		<h3 id="cloudflare-worker">Create a Cloudflare Worker for the Cache Layer</h3>
 		<ol>
 			<li>Back out of your Laravel API directory and prepare to create your Cloudflare Worker:</li>
 			<ul>
@@ -288,13 +290,13 @@ protected $fillable = [
 			<li>Use this worker as a cache layer to reduce latency for visitors to the blog.</li>
 		</ol>
 
-		<h3>Conclusion</h3>
+		<h3 id="conclusion">Conclusion</h3>
 		<p>
 			By following these steps, you can achieve perfect 100 Google Web Vitals scores for your blog.
 			Leveraging Laravel, Nuxt, and Cloudflare, you can create a fast, efficient, and scalable blog
 			that provides an excellent user experience.
 		</p>
-		<h3>Stay Updated</h3>
+		<h3 id="stay-updated">Stay Updated</h3>
 		<ul>
 			<li><a href="https://twitter.com/rptrainor" target="_blank">Twitter</a></li>
 			<li><a href="https://www.linkedin.com/in/rptrainor" target="_blank">LinkedIn</a></li>
@@ -308,6 +310,20 @@ protected $fillable = [
 			if (button instanceof HTMLAnchorElement && !button.href) {
 				button.href = 'https://youtube.com/watch?v=jqpJQUmsCQA'
 			}
+		})
+
+		const tocLinks = document.querySelectorAll('a[href^="#"]')
+		tocLinks.forEach((link) => {
+			link.addEventListener('click', (event) => {
+				event.preventDefault()
+				const targetId = link.getAttribute('href')?.substring(1)
+				if (targetId) {
+					const targetElement = document.getElementById(targetId)
+					if (targetElement) {
+						targetElement.scrollIntoView({ behavior: 'smooth' })
+					}
+				}
+			})
 		})
 	})
 </script>
