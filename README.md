@@ -1,8 +1,8 @@
 **Ryan Trainor**
-Minneapolis, MN | +1.612.747.5815 | ryan@rptrainor.com
+San Francisco, CA | +1.612.747.5815 | ryan@rptrainor.com
 
-**Rebuilt Shaan Puri's blog as a high-performance web app**
-https://shaan-nuxt.pages.dev
+**How I Rebuilt Shaan Puri's Blog w/ Laravel & Cloudflare, to Get Perfect 100 Google Web Vitals Scores**
+https://www.youtube.com/watch?v=jqpJQUmsCQA&t
 _05/2024_
 
 - Rewrote the UI of Shaan Puri's blog as a Nuxt/Vue app hosted on Cloudflare Pages with Tailwind.
