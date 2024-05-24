@@ -11,7 +11,7 @@ const description =
 
 <Layout title={title} description={description}>
 	<article
-		class="prose lg:prose-xl prose-invert mx-auto my-8 max-w-prose p-4 xs:mt-12 sm:mt-20 md:mt-24"
+		class="prose prose-invert mx-auto my-8 max-w-prose p-4 lg:prose-xl xs:mt-12 sm:mt-20 md:mt-24"
 	>
 		<h1>
 			How I Rebuilt Shaan Puri's Blog with Laravel & Cloudflare to Get Perfect 100 Google Web Vitals
@@ -24,7 +24,7 @@ const description =
 			highlighting key optimizations for web performance.
 		</p>
 		<h2>Table of Contents</h2>
-		<ul>
+		<ul class="break-words">
 			<li><a href="#nuxt-app">Create the Nuxt App and Deploy to Cloudflare Pages</a></li>
 			<li><a href="#sqlite-db">Create a SQLite Database using Cloudflare's D1 Database</a></li>
 			<li><a href="#laravel-web-server">Create the Laravel Web Server</a></li>
@@ -35,7 +35,7 @@ const description =
 		</ul>
 
 		<h2>Featured Technologies</h2>
-		<ul>
+		<ul class="break-words">
 			<li>Laravel</li>
 			<li>Nuxt</li>
 			<li>Cloudflare D1</li>
@@ -48,7 +48,7 @@ const description =
 		</ul>
 
 		<h2>Important Links</h2>
-		<ul>
+		<ul class="break-words">
 			<li>
 				<a href="https://shaan-nuxt.pages.dev/" target="_blank">Visit Shaan Puri's Rebuilt Blog</a>
 			</li>
@@ -75,7 +75,7 @@ const description =
 		<h2>Steps for Rebuilding Shaan Puri's Blog</h2>
 
 		<h3 id="nuxt-app">Create the Nuxt App and Deploy to Cloudflare Pages</h3>
-		<ol>
+		<ol class="break-words">
 			<li>Make sure you create a Cloudflare account.</li>
 			<li>Log in to your Cloudflare account.</li>
 			<li>In your terminal run: <code>npx wrangler login</code></li>
@@ -89,20 +89,10 @@ const description =
 			<li>Initialize git in the directory with <code>git init</code>.</li>
 			<li>
 				Create a new repository in GitHub and then connect and push your local app to the newly
-				created repository:
+				created repository.
 			</li>
-			<ul>
-				<li><code>git add .</code></li>
-				<li><code>git commit -m "create nuxt app on Cloudflare pages"</code></li>
-				<li>
-					<code
-						>git remote add origin https://github.com/YOUR_GITHUB_USERNAME_HERE/blog-app-client.git
-						&& git branch -M main && git push -u origin main</code
-					>
-				</li>
-			</ul>
 			<li>Add TailwindCSS to your app:</li>
-			<ul>
+			<ul class="break-words">
 				<li>Run <code>npx nuxi@latest module add tailwindcss</code></li>
 				<li>Create your TailwindCSS config file with <code>npx tailwindcss init --ts</code></li>
 			</ul>
@@ -113,7 +103,7 @@ const description =
 		</ol>
 
 		<h3 id="sqlite-db">Create a SQLite Database using Cloudflare's D1 Database</h3>
-		<ol>
+		<ol class="break-normal">
 			<li>Run <code>npx wrangler d1 create blog-db</code>.</li>
 			<li>
 				Save the <code>database_id</code> found in the terminal for later use in your Laravel web server.
@@ -121,10 +111,10 @@ const description =
 		</ol>
 
 		<h3 id="laravel-web-server">Create the Laravel Web Server</h3>
-		<ol>
+		<ol class="break-normal">
 			<li>Ensure you have PHP and Composer installed and running on your local machine.</li>
 			<li>Create a default Laravel app:</li>
-			<ul>
+			<ul class="break-all">
 				<li>
 					In a new directory run <code
 						>composer create-project --prefer-dist laravel/laravel="10.*" laravel-api && cd
@@ -135,18 +125,18 @@ const description =
 			<li>
 				In the directory of your Laravel web server, open the <code>.env</code> file and add the following
 				environment variables:
-				<ul>
+				<ul class="break-all">
 					<li><code>CLOUDFLARE_D1_DATABASE_ID</code></li>
 					<li><code>CLOUDFLARE_ACCOUNT_ID</code></li>
 					<li><code>CLOUDFLARE_TOKEN</code></li>
 				</ul>
 			</li>
 			<li>Create the D1 database connection with the L1 library:</li>
-			<ul>
+			<ul class="break-all">
 				<li>Run <code>composer require renoki-co/l1</code>.</li>
 				<li>
 					In <code>config/database.php</code> add the following connector:
-					<pre><code>{`
+					<pre><code class="overflow-scroll">{`
         
   'connections' => [
     'd1' => [
@@ -174,11 +164,11 @@ const description =
 		</ol>
 
 		<h3 id="model-controllers-api">Create the Model, Controllers, and API Routes</h3>
-		<ol>
+		<ol class="break-normal">
 			<li>Think about the data you want to persist in the D1 database.</li>
 			<li>
 				Create your first model in the <code>laravel-api</code> directory:
-				<ul>
+				<ul class="break-normal">
 					<li>Run <code>php artisan make:model articles -m</code>.</li>
 				</ul>
 			</li>
@@ -187,7 +177,7 @@ const description =
 					>database/migrations/</code
 				> to match your schema:
 			</li>
-			<pre><code>{`
+			<pre><code class="overflow-scroll">{`
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -227,13 +217,13 @@ return new class extends Migration
     `}
     </code></pre>
 			<li>Run your first migration against the D1 database:</li>
-			<ul>
+			<ul class="break-normal">
 				<li>Run <code>php artisan migrate</code>.</li>
 			</ul>
 			<li>Check your migration in the Cloudflare dashboard.</li>
 			<li>
 				Update the model file in <code>app/Models/</code> to define which attributes are assignable:
-				<pre><code>{`
+				<pre><code class="overflow-scroll">{`
       
 namespace App\Models;
 
@@ -257,33 +247,33 @@ protected $fillable = [
       </code></pre>
 			</li>
 			<li>Create the controller:</li>
-			<ul>
+			<ul class="break-normal">
 				<li>Run <code>php artisan make:controller ArticleController</code>.</li>
 			</ul>
 			<li>Add public methods for each CRUD action in the controller file.</li>
 			<li>Define the API endpoints for your Laravel REST API in <code>routes/api.php</code>.</li>
 			<li>Test your Laravel API server:</li>
-			<ul>
+			<ul class="break-normal">
 				<li>Run <code>php artisan serve</code>.</li>
 			</ul>
 		</ol>
 
 		<h3 id="cloudflare-worker">Create a Cloudflare Worker for the Cache Layer</h3>
-		<ol>
+		<ol class="break-normal">
 			<li>Back out of your Laravel API directory and prepare to create your Cloudflare Worker:</li>
-			<ul>
+			<ul class="break-normal">
 				<li>Run <code>pnpm create cloudflare@latest blog-worker</code>.</li>
 			</ul>
 			<li>
 				Follow the prompts in the terminal:
-				<ul>
+				<ul class="break-normal">
 					<li>Select <strong>Hello World</strong> Worker.</li>
 					<li>Select <strong>Yes</strong> for TypeScript.</li>
 					<li>Select <strong>Yes</strong> to deploy your application.</li>
 				</ul>
 			</li>
 			<li>Change directory into your new Cloudflare Worker:</li>
-			<ul>
+			<ul class="break-normal">
 				<li>Run <code>pnpm run start</code>.</li>
 				<li>Run <code>pnpm run deploy</code>.</li>
 			</ul>
@@ -297,7 +287,7 @@ protected $fillable = [
 			that provides an excellent user experience.
 		</p>
 		<h3 id="stay-updated">Stay Updated</h3>
-		<ul>
+		<ul class="break-normal">
 			<li><a href="https://twitter.com/rptrainor" target="_blank">Twitter</a></li>
 			<li><a href="https://www.linkedin.com/in/rptrainor" target="_blank">LinkedIn</a></li>
 		</ul>
