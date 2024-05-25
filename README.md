@@ -3,9 +3,9 @@ _8+ years of designing and building full stack web and native iOS and Android ap
 
 **Technologies**
 
-- _Frontend_: TypeScript, JavaScript, Effect, React, React Native, Vue, Solid, Astro, Next, Remix, Tailwind, HTML, and CSS.
+- _Frontend_: TypeScript, JavaScript, Effect, React, React Native, Supabase, Vue, Solid, Astro, Next, Remix, Tailwind, HTML, and CSS.
 - _Backend_: TypeScript, JavaScript, Node, Laravel, Python, C, Rust, Solana, Ethereum, Solidity, Express, RESTful API, Cloudflare, Firebase, MySQL, PostgreSQL, SQLite, and MongoDB.
-- _Tools_: XCode, Expo, Docker, Jest, React Query, Playwright, Git, Figma, and AWS.
+- _Tools_: XCode, Expo, Docker, Jest, React Query, Playwright, Git, Figma, Cloudflare, Vercel, and AWS.
 - _Other_: Functional Programming, Automated Testing, RDBMS and Non-Relational Data Modeling, Secure Coding Practices, and OWASP Guidelines.
 
 **Key Skills and Responsibilities**
@@ -19,6 +19,7 @@ _8+ years of designing and building full stack web and native iOS and Android ap
 - _Best Practices_: Suggested and implemented best practices and standards.
 - _Database Management_: Good knowledge of database design, performance, and SQL.
 - _Secure Coding_: Reasonable understanding of secure coding best practices and OWASP guidelines.
+- _0 to 1 Product Development_: Extensive experience in taking products from initial idea to product-market fit, acquiring first customers, and achieving successful fundraising.
 
 **Professional Experience**
 _Founder - Lightup_ | 10/2023 - 05/2024 | https://lightup.fyi
