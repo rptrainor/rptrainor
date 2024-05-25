@@ -1,61 +1,56 @@
-**Ryan Trainor**
-San Francisco, CA | +1.612.747.5815 | ryan@rptrainor.com
-
----
-**Summary**
-- **Experience**: 8+ years of designing and building full stack web and native iOS/Android applications.
-- **Skills**: Firm grasp of PHP, JavaScript, TypeScript, React, React Native, HTML, CSS, and application frameworks. Expertise in React, React Native, and Laravel. Strong understanding of functionaltional and object oriented programming, testing, design patterns, and web application design principles. Experience with hosted web applications/SaaS. Experience architecting and implementing frontend and backend applications.
+**Ryan Trainor** | San Fransisco, CA | Open to Relocate | +1.612.747.5815 | ryan@rptrainor.com
+_8+ years of designing and building full stack web and native iOS/Android applications_
 
 **Technologies**
-- **Frontend**: React, React Native, Vue, Solid, Astro, Next, Remix, TypeScript, JavaScript, Tailwind, HTML, CSS, GraphQL, REST
-- **Backend**: Laravel, Python, Nest, Node, Express, RESTful API, GraphQL, Cloudflare runtime, Firebase, MySQL, PostgreSQL, SQLite, MongoDB, Cloudflare D1
-- **Tools**: XCode, Gradle, Expo, Docker, Jest, React Query, Playwright, Git, Figma, AWS
-- **Other**: Functional Programming, Automated Testing, RDBMS and Non-relational Data Modeling, Secure Coding Practices, OWASP Guidelines
+
+- _Frontend_: TypeScript, JavaScript, Effect, React, React Native, Vue, Solid, Astro, Next, Remix, Tailwind, HTML, CSS
+- _Backend_: TypeScript, JavaScript, Node, Laravel, Python, C, Rust, Solana, Ethereum, Solidity, Express, RESTful API, Cloudflare, Firebase, MySQL, PostgreSQL, SQLite, MongoDB
+- _Tools_: XCode, Expo, Docker, Jest, React Query, Playwright, Git, Figma, AWS
+- _Other_: Functional Programming, Automated Testing, RDBMS and Non-relational Data Modeling, Secure Coding Practices, OWASP Guidelines
 
 **Key Skills and Responsibilities**
-- **Design and Develop**: Created responsive, scalable, and secure user interface features and backend services using React, React Native, and Laravel.
-- **Architect and Implement**: Developed efficient, modular, and reusable front-end and back-end systems.
-- **Code Optimization**: Used code optimization techniques to improve robustness and performance.
-- **Real-Time Feeds and APIs**: Supported and modified real-time feeds and APIs to ensure timely data rendering.
-- **Collaborative Development**: Actively participated in design discussions, code reviews, and code analysis.
-- **Process Improvement**: Continuously worked to improve front-end design and implementation processes.
-- **Team Collaboration**: Collaborated with Product Designers, Customer Success Managers, and Software Engineers to deliver compelling user-facing products.
-- **Best Practices**: Suggested and implemented best practices and standards.
-- **Database Management**: Good knowledge of database design, performance, and SQL.
-- **Version Control**: Proficient in using versioning tools such as Git.
-- **AWS Cloud Services**: Experience with AWS cloud services.
-- **Secure Coding**: Reasonable understanding of secure coding best practices and OWASP guidelines.
 
----
+- _Architecture and Implementation_: Used software design patterns to develop efficient, modular, and reusable front-end and back-end systems.
+- _Code Optimization_: Used code optimization techniques to improve robustness and performance.
+- _Real-Time Feeds and APIs_: Supported and modified real-time feeds and APIs to ensure timely data rendering.
+- _Collaborative Development_: Actively participated in feature planning, design discussions, code reviews, and code analysis.
+- _Process Improvement_: Continuously worked to improve software development and implementation processes.
+- _Team Collaboration_: Collaborated with Product Designers, Customer Success Managers, and Software Engineers to deliver compelling user-facing products.
+- _Best Practices_: Suggested and implemented best practices and standards.
+- _Database Management_: Good knowledge of database design, performance, and SQL.
+- _Secure Coding_: Reasonable understanding of secure coding best practices and OWASP guidelines.
 
-**How I Rebuilt Shaan Puri's Blog w/ Laravel & Cloudflare, to Get Perfect 100 Google Web Vitals Scores** _05/2024_
-https://www.youtube.com/watch?v=jqpJQUmsCQA&t
-- Rewrote Shaan Puri's blog UI as a Nuxt/Vue app with Tailwind, hosted on Cloudflare Pages.
-- Built a custom Cloudflare Worker for caching and a Laravel REST API server for business logic.
-- Achieved perfect Google Core Web Vitals scores and tripled initial page load speed.
+**Professional Experience**
+_Founder - Lightup_ | 10/2023 - 05/2024 | https://lightup.fyi
 
-**Founder - Lightup** _10/2023 - 05/2024_
-https://lightup.fyi
-- Architected an MVC system using PostgreSQL, Solid.JS, and a custom TypeScript/JavaScript controller.
-- Designed and built initial pages for platform hosts.
+- Architected an MVC system using PostgreSQL, Solid.JS, and a custom TypeScript controller.
+- Designed and built pages for platform hosts.
 - Managed the full app architecture, from database to client.
 
-**Senior Software Engineer - OfColor** _10/2022 - 10/2023_
-https://www.ofcolor.com
+_Senior Software Engineer - OfColor_ | 10/2022 - 10/2023\_ | https://www.ofcolor.com
+
 - Planned and shipped the first React Native iOS and Android apps using Expo.
 - Converted the codebase from Styled Components to TailwindCSS.
 - Proposed and built new features, and conducted user interviews.
 
-**Head of Frontend Engineering - Confidence** _08/2020 - 10/2022_
-https://www.confidence.com
-- Led a team of 8 engineers from initial idea to product-market fit, first customers, and successful fundraising.
-- Interviewed and hired the frontend team, mentoring junior engineers.
+_Head of Frontend Engineering - Confidence_ | 08/2020 - 10/2022 | https://www.confidence.com
+
+- Founding engineer that grew a team from 1 to 8 staff, while manaing interview process and mentoring juniors.
+- Led startup form 0 to 1: from initial idea to product-market fit, first customers, and successful fundraising.
 - Oversaw frontend development using React, React Router, Express, and REST APIs.
 
-**Software Engineer - Pushquery** _08/2016 - 08/2020_
+_Software Engineer - Pushquery_ | 08/2016 - 08/2020
+
 - Shipped first iOS and Android apps in the Apple App and Google Play stores.
 - Built and maintained a React and React Native component system across web and native apps.
-- Developed internal and external APIs.
+- Wrote smart contracts with Solidity to store records of changes to Pushquery records on the blockchain.
 
-**University of California, Berkeley - B.A.**
-_09/2009 - 06/2012_
+**Projects**
+_How I Rebuilt Shaan Puri's Blog w/ Laravel & Cloudflare, to Get Perfect 100 Google Web Vitals Scores_ | 05/2024 | https://www.youtube.com/watch?v=jqpJQUmsCQA&t
+
+- Rewrote Shaan Puri's blog UI as a Nuxt/Vue app with Tailwind, hosted on Cloudflare Pages.
+- Built a custom Cloudflare Worker for caching and a Laravel REST API server for business logic.
+- Achieved perfect Google Core Web Vitals scores and tripled initial page load speed.
+
+**Education**
+_University of California, Berkeley - B.A._ | 09/2009 - 06/2012
