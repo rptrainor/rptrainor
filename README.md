@@ -1,12 +1,12 @@
-**Ryan Trainor** | San Fransisco, CA | Open to Relocate | +1.612.747.5815 | ryan@rptrainor.com
-_8+ years of designing and building full stack web and native iOS/Android applications_
+**Ryan Trainor** | San Francisco, CA | Open to Relocate | +1.612.747.5815 | ryan@rptrainor.com
+_8+ years of designing and building full stack web and native iOS and Android applications_
 
 **Technologies**
 
-- _Frontend_: TypeScript, JavaScript, Effect, React, React Native, Vue, Solid, Astro, Next, Remix, Tailwind, HTML, CSS
-- _Backend_: TypeScript, JavaScript, Node, Laravel, Python, C, Rust, Solana, Ethereum, Solidity, Express, RESTful API, Cloudflare, Firebase, MySQL, PostgreSQL, SQLite, MongoDB
-- _Tools_: XCode, Expo, Docker, Jest, React Query, Playwright, Git, Figma, AWS
-- _Other_: Functional Programming, Automated Testing, RDBMS and Non-relational Data Modeling, Secure Coding Practices, OWASP Guidelines
+- _Frontend_: TypeScript, JavaScript, Effect, React, React Native, Vue, Solid, Astro, Next, Remix, Tailwind, HTML, and CSS
+- _Backend_: TypeScript, JavaScript, Node, Laravel, Python, C, Rust, Solana, Ethereum, Solidity, Express, RESTful API, Cloudflare, Firebase, MySQL, PostgreSQL, SQLite, and MongoDB
+- _Tools_: XCode, Expo, Docker, Jest, React Query, Playwright, Git, Figma, and AWS
+- _Other_: Functional Programming, Automated Testing, RDBMS and Non-Relational Data Modeling, Secure Coding Practices, and OWASP Guidelines
 
 **Key Skills and Responsibilities**
 
@@ -15,7 +15,7 @@ _8+ years of designing and building full stack web and native iOS/Android applic
 - _Real-Time Feeds and APIs_: Supported and modified real-time feeds and APIs to ensure timely data rendering.
 - _Collaborative Development_: Actively participated in feature planning, design discussions, code reviews, and code analysis.
 - _Process Improvement_: Continuously worked to improve software development and implementation processes.
-- _Team Collaboration_: Collaborated with Product Designers, Customer Success Managers, and Software Engineers to deliver compelling user-facing products.
+- _Team Collaboration_: Collaborated with product designers, customer success managers, and software engineers to deliver compelling user-facing products.
 - _Best Practices_: Suggested and implemented best practices and standards.
 - _Database Management_: Good knowledge of database design, performance, and SQL.
 - _Secure Coding_: Reasonable understanding of secure coding best practices and OWASP guidelines.
@@ -35,8 +35,8 @@ _Senior Software Engineer - OfColor_ | 10/2022 - 10/2023\_ | https://www.ofcolor
 
 _Head of Frontend Engineering - Confidence_ | 08/2020 - 10/2022 | https://www.confidence.com
 
-- Founding engineer that grew a team from 1 to 8 staff, while manaing interview process and mentoring juniors.
-- Led startup form 0 to 1: from initial idea to product-market fit, first customers, and successful fundraising.
+- Founding engineer that grew a team from 1 to 8 staff while managing the interview process and mentoring juniors.
+- Led startup from 0 to 1: from initial idea to product-market fit, first customers, and successful fundraising.
 - Oversaw frontend development using React, React Router, Express, and REST APIs.
 
 _Software Engineer - Pushquery_ | 08/2016 - 08/2020
