@@ -4,7 +4,7 @@ _8+ years of designing and building full stack web and native iOS and Android ap
 **Technologies**
 
 - _Frontend_: TypeScript, JavaScript, Effect, React, React Native, Supabase, Vue, Solid, Astro, Next, Remix, Tailwind, HTML, and CSS.
-- _Backend_: TypeScript, JavaScript, Node, Laravel, Python, C, Rust, Solana, Ethereum, Solidity, Express, RESTful API, Cloudflare, Firebase, MySQL, PostgreSQL, SQLite, and MongoDB.
+- _Backend_: TypeScript, JavaScript, Effect, Node, Laravel, Python, C, Rust, Solana, Ethereum, Solidity, Express, RESTful API, Cloudflare, Firebase, MySQL, PostgreSQL, SQLite, and MongoDB.
 - _Tools_: XCode, Expo, Docker, Jest, React Query, Playwright, Git, Figma, Logging and Telemetry, Cloudflare, Vercel, and AWS.
 - _Other_: Functional Programming, Automated Testing, RDBMS and Non-Relational Data Modeling, Machine Learning, NPL, LLM, Computer Vision, CI/CD, Project Management, and Progress Tracking
 
