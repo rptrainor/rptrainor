@@ -3,10 +3,10 @@ _8+ years of designing and building full stack web and native iOS and Android ap
 
 **Technologies**
 
-- _Frontend_: TypeScript, JavaScript, Effect, React, React Native, Vue, Solid, Astro, Next, Remix, Tailwind, HTML, and CSS
-- _Backend_: TypeScript, JavaScript, Node, Laravel, Python, C, Rust, Solana, Ethereum, Solidity, Express, RESTful API, Cloudflare, Firebase, MySQL, PostgreSQL, SQLite, and MongoDB
-- _Tools_: XCode, Expo, Docker, Jest, React Query, Playwright, Git, Figma, and AWS
-- _Other_: Functional Programming, Automated Testing, RDBMS and Non-Relational Data Modeling, Secure Coding Practices, and OWASP Guidelines
+- _Frontend_: TypeScript, JavaScript, Effect, React, React Native, Vue, Solid, Astro, Next, Remix, Tailwind, HTML, and CSS.
+- _Backend_: TypeScript, JavaScript, Node, Laravel, Python, C, Rust, Solana, Ethereum, Solidity, Express, RESTful API, Cloudflare, Firebase, MySQL, PostgreSQL, SQLite, and MongoDB.
+- _Tools_: XCode, Expo, Docker, Jest, React Query, Playwright, Git, Figma, and AWS.
+- _Other_: Functional Programming, Automated Testing, RDBMS and Non-Relational Data Modeling, Secure Coding Practices, and OWASP Guidelines.
 
 **Key Skills and Responsibilities**
 
@@ -35,7 +35,7 @@ _Senior Software Engineer - OfColor_ | 10/2022 - 10/2023\_ | https://www.ofcolor
 
 _Head of Frontend Engineering - Confidence_ | 08/2020 - 10/2022 | https://www.confidence.com
 
-- Founding engineer that grew a team from 1 to 8 staff while managing the interview process and mentoring juniors.
+- Founding engineer who grew a team from 1 to 8 staff while managing the interview process and mentoring juniors.
 - Led startup from 0 to 1: from initial idea to product-market fit, first customers, and successful fundraising.
 - Oversaw frontend development using React, React Router, Express, and REST APIs.
 
@@ -43,7 +43,7 @@ _Software Engineer - Pushquery_ | 08/2016 - 08/2020
 
 - Shipped first iOS and Android apps in the Apple App and Google Play stores.
 - Built and maintained a React and React Native component system across web and native apps.
-- Wrote smart contracts with Solidity to store records of changes to Pushquery records on the blockchain.
+- Wrote smart contracts with Solidity to store records of changes to Pushquery records on the Ethereum blockchain.
 
 **Projects**
 _How I Rebuilt Shaan Puri's Blog w/ Laravel & Cloudflare, to Get Perfect 100 Google Web Vitals Scores_ | 05/2024 | https://www.youtube.com/watch?v=jqpJQUmsCQA&t
